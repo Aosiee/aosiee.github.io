@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Header Include -->
+    <include src="./assets/dynamics/header.html"></include>
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation Include -->
+    <include src="./assets/dynamics/nav.html"></include>
+
+    <div data-router-wrapper>
+        <div data-router-view="home">
+
+            <div style="min-height: 95vh; overflow: hidden; padding: 0;">
+
+                <!-- Images -->
+                <section>
+                    <div class="container image-container" style="max-width: 100%;">
+                        <div class="row">
+
+                            <!-- Left Column -->
+                            <div class="col-12 col-md-10 col-lg-8" style="margin: 6vh 0vw 0;">
+
+                                <!-- Interior Left Spacer -->
+                                <div style="margin:0 6vw">
+                                    <!-- ////////////////////////////////// Title Div //////////////////////////////////-->
+                                    <div>
+                                        <!-- Project Tite -->
+                                        <h1 class="d-none d-sm-flex">Quest for Valour A.I</h1>
+                                        <h1 style="font-size: 2rem;" class="d-flex d-sm-none">Quest for Valour A.I</h1>
+
+                                        <!-- Status Indicator -->
+                                        <div class="align-items-center w-75">
+                                            <h4 class="progress-bar progress-bar-animated progress-bar-striped" style="background-color: black; color: white; margin: 0, 5%; text-align: center;">Status: Completed</h4>
+                                        </div>
+
+                                        <!-- Project Info -->
+                                        <p style="color: grey;">Vancouver Film School | Programmer | ~1 Week
+
+                                        </p>
+                                    </div>
+
+
+                                    <!-- ////////////////////////////////// Header Div ////////////////////////////////// -->
+                                    <div>
+                                        <!-- Video Div -->
+                                        <!-- <div style="padding-bottom: 25px;">
+                                            <div class="embed-responsive embed-responsive-16by9" style="height: 100%;">
+
+                                                Embed
+                                                <iframe width="1920" height="1080" src="https://www.youtube-nocookie.com/embed/CEN9Z9yFBho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                Video
+                                                <video preload="none" poster="../img/project-img/CodingAdventures/astar-pathing/PawnStress2-Poster.png" autoplay loop ame="media" playsinline muted class="home-hero-video">
+                                            <source src="../img/project-img/CodingAdventures/astar-pathing/PawnStressTest2.mp4">
+                                            </video>
+
+                                            </div>
+                                        </div> -->
+
+                                        <!-- Section Title -->
+                                        <h2 class="section-title">
+                                            Summary
+                                        </h2>
+
+                                        <!-- Descriptive Blurb -->
+                                        <p class="row" style="margin-left: 8%;">
+                                            This project started in the midst of VFS's Quest for Valour assignment. In which it soon turned into a brief passion project where I re-wrote the deprecrated A.I system to function off of the Unreal EQS and Behaviour Tree Systems. Along the way learning
+                                            many fruitful lessons.
+                                        </p>
+
+                                        <!-- Section Title -->
+                                        <h2 class="section-title">
+                                            Accomplishments
+                                        </h2>
+
+                                        <!-- List of Section Above -->
+                                        <div class="project-dir">
+                                            <p class="row project-shortcut">
+                                                <a href="#qfv-combat-design">• Combat Orientated A.I Design</a>
+                                            </p>
+                                            <p class="project-shortcut">
+                                                <a href="#qfv-combat-melee">• Melee</a>
+                                            </p>
+                                            <p class="project-shortcut">
+                                                <a href="#qfv-combat-ranged">• Ranged</a>
+                                            </p>
+                                            <p class="project-shortcut">
+                                                <a href="#qfv-combat-magic">• Magic</a>
+                                            </p>
+
+                                            <p class="row project-shortcut">
+                                                <a href="#qfv-optimization">• A.I Optimization</a>
+                                            </p>
+                                            <p class="row project-shortcut">
+                                                <a href="#qfv-ai-pathing">• Efficent A.I Pathing</a>
+                                            </p>
+                                            <p class="row project-shortcut">
+                                                <a href="#qfv-shared-senses">• Shared A.I Senses</a>
+                                            </p>
+                                            <p class="row project-shortcut">
+                                                <a href="#qfv-factions">• Factions</a>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- ////////////////////////////////// Content Div ////////////////////////////////// -->
+                                    <div>
+                                        <!-- Section Title -->
+                                        <div id="qfv-combat-design">
+                                            <h2 class="section-title" style="margin-top: 25px;">
+                                                Combat Orientated A.I Design
+                                            </h2>
+                                            <p class="row section-text">
+                                                For the A.I I had to devise how I could create a series of behaviours that woudl allow for the player to both have an enjoyable challenge without absolutely destroying them. That thought process left me with 3 distinct designs. Although cliche, I thought
+                                                they fit with the Quest for Valour hand-painted look.
+                                            </p>
+                                        </div>
+
+                                        <!-- Section Title -->
+                                        <div id="qfv-combat-melee">
+                                            <h2 class="section-title" style="margin-top: 25px;">
+                                                Melee
+                                            </h2>
+
+                                            <p class="row section-text">
+                                                <b>Base Behaviour</b> For the base melee behaviour the design based around the idea of a "bad guy" from a cartoon, somewhat buffoonish in nature.
+                                            </p>
+
+                                            <div class="section-image">
+                                                <img src="../img/project-img/Shift/melee-process.jpeg" style="object-fit: scale-down; width: 100%;" loading="lazy">
+                                                <p class="ms-0 align-items-start" style="font-size: small;">Melee Behaviour Tree Concept</p>
+                                            </div>
+
+                                            <p class="row section-text">
+                                                For the A.I's that were Melee, they all ended up having a main attack and a secondary with the vast majority also having a unique attack. Therefore I made that the basis of this specific behaviour tree with the ease to add in the two other variants to
+                                                spice up the gameplay.
+                                            </p>
+
+                                            <div class="section-image">
+                                                <img src="../img/project-img/Shift/attack-patterns.jpg" style="object-fit: scale-down; width: 100%;" loading="lazy">
+                                                <p class="ms-0 align-items-start" style="font-size: small;">1. Main Attack &nbsp 2. Secondary Attack &nbsp 3. Smash Attack</p>
+                                            </div>
+
+                                            <p class="row section-text">
+                                                <b>Charger Variant</b> This variant is based off of the "Has Target" node on the behaviour tree. If the distance happens to get past a certain metric, the A.I triggers a "charge" attack which paths in an
+                                                absolute straight line towards the player.
+                                            </p>
+
+                                            <p class="row section-text">
+                                                <b>Smasher Variant</b> This variant was created to fit some of the faction's larger npc's who had another set of "smash-esc" animations. The behaviours for those animations were slotted in, before the main
+                                                attack and secondary attack behaviours as they have a far larger cooldown to accommodate for their more area-of-effect attack pattern.
+                                            </p>
+                                        </div>
+
+                                        <!-- Section Title -->
+                                        <div id="qfv-combat-ranged">
+                                            <h2 class="section-title" style="margin-top: 25px;">
+                                                Ranged
+                                            </h2>
+
+                                            <p class="row section-text">
+                                                <b>Base Behaviour</b> For the Ranged A.I I wanted to create a behaviour that would walk the fine line between almost annoying yet fun to engage in combat with. In order to do this the Ranged A.I deviates
+                                                from the Melee A.I by having evasive behaviours where it will run from its target as a start to establish a distance. Then afterwards if it has succeeding in creating that distance within a finite time,
+                                                it'll check if there is a ranged ally nearby and ensure some distance from them as well to create a more entertaining fight. Other than that, the base behaviour is quite similar.
+                                            </p>
+
+                                            <div class="section-image">
+                                                <img src="../img/project-img/Shift/ranged-process.jpeg" style="object-fit: scale-down; width: 100%;" loading="lazy">
+                                                <p class="ms-0 align-items-start" style="font-size: small;">Ranged Behaviour Tree Concept</p>
+                                            </div>
+
+                                            <div class="section-image">
+                                                <img src="../img/project-img/Shift/ranged-attack.jpg" style="object-fit: scale-down; width: 100%;" loading="lazy">
+                                                <p class="ms-0 align-items-start" style="font-size: small;">Ranged Attack Diagram
+
+                                                </p>
+                                            </div>
+
+                                            <p class="row section-text">
+                                                <b>Machine-Gun Variant</b> The machine gun variant has an extra ability where it will rapid fire arrows but have a far longer pause inbetween the attacks. This variant overrides the main and secondary attack
+                                                to prevent the combat from becoming too difficult for the player as Quest for Valour wasn't designed for too intense combat.
+                                            </p>
+                                        </div>
+
+                                        <!-- Section Title -->
+                                        <div id="qfv-combat-magic">
+                                            <h2 class="section-title" style="margin-top: 25px;">
+                                                Magic
+                                            </h2>
+
+                                            <p class="row section-text">
+                                                <b>Base Behaviour</b> When it came to the Magic users in the factions, I planned on them being largely support mostly due to the odd animations which they already had. Therefore they have very similar behaviours
+                                                to the ranged with the exception that they all had to be customed to the faction as to how they would position themselves in combat.
+                                            </p>
+
+                                            <div class="section-image">
+                                                <img src="../img/project-img/Shift/magic-process.jpeg" style="object-fit: scale-down; width: 100%;" loading="lazy">
+                                                <p class="ms-0 align-items-start" style="font-size: small;">Magic Behaviour Tree Concept</p>
+                                            </div>
+
+                                            <p class="row section-text">
+                                                <b> Single Caster</b> This type specifically refers to A.I's who fire a single projectile or do singular attacks. The Single Casters focus on finding a position that is flanking the percieved enemy as to
+                                                force the player to move in more abstract and entertaining patterns.
+                                            </p>
+
+                                            <p class="row section-text">
+                                                <b>Multi Caster</b> This type refers to Magic A.I who on attack launch more than one projectie in one of the three patterns listed below. Multi-casters are even more picky when it comes to selecting an advantageous
+                                                position to ensure that their projectiles are used in the most effective manner possible.
+                                            </p>
+
+                                            <div class="section-image">
+                                                <img src="../img/project-img/Shift/magic-multi-pattern.jpg" style="object-fit: scale-down; width: 100%;" loading="lazy">
+                                                <p class="ms-0 align-items-start" style="font-size: small;">1. Three-Shot &nbsp 2. Scatter-Shot &nbsp 3. Wide-Shot</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Section Title -->
+                                        <div id="qfv-optimization">
+                                            <h2 class="section-title" style="margin-top: 25px;">
+                                                A.I Optimization
+                                            </h2>
+
+                                            <p class="row section-text">
+                                                When it comes to A.I optimization there are two major points which I focused on, the "brain" aspect (how the A.I processes it's information and senses), and the pathing. I'm splitting the brain aspect in this section, the pathing in the section below.
+                                            </p>
+
+                                            <p class="row section-text">
+                                                When it comes to processing the information that the A.I is recieving, optimization at it's root is minimizing the amount of checks in any one time and situation. In other words keeping the A.I as simple as possible with as much percieved depth for the
+                                                smallest process. One way which I optimized the A.I's "thought process" was by streamlining the 3 distinct modes of the A.I's. If the A.I was in the default Patrol / Guard mode, it would sit cob-webbed until
+                                                it recieved an awaken call from the player or another hostile such as another A.I who was of an opposing faction. Then it would engage into Attack mode. Through creating a cob-webbed version of the A.I it
+                                                allows in-active A.I to be far less expensive than they would be otherwise.
+                                            </p>
+                                        </div>
+
+                                        <!-- Section Title -->
+                                        <div id="qfv-ai-pathing">
+                                            <h2 class="section-title" style="margin-top: 25px;">
+                                                Efficent A.I Pathing
+                                            </h2>
+
+                                            <p class="row section-text">
+                                                When it comes to Pathing, at least with the Enviroment Query System (EQS), it's all about filtering the pathing to reduce the amount of pathing tries and potential calculations on "desirability" of any given point. That being said outside of the EQS,
+                                                making it run less times in an increment of time will likewise decrease the expense of the pathing.
+                                            </p>
+                                        </div>
+
+                                        <!-- Section Title -->
+                                        <div id="qfv-shared-senses">
+                                            <h2 class="section-title" style="margin-top: 25px;">
+                                                Shared A.I Senses
+                                            </h2>
+
+                                            <p class="row section-text">
+                                                In order to have the A.I operate in a more organic manner, I added the ability for the A.I to share their own senses with each other. For example, if a Skeleton Swordsman saw the player, it would call out to it's neighbours near it and alert them of the
+                                                intruder and where it last saw the player. Therefore the Skeletons would go investigate the last seen location with their own random variance in pathing. Overall creating the illusion of a communicative
+                                                and united enemy front who actually investigate the area around where the player was last spotted.
+                                            </p>
+                                        </div>
+
+                                        <!-- Section Title -->
+                                        <div id="qfv-factions">
+                                            <h2 class="section-title" style="margin-top: 25px;">
+                                                Factions
+                                            </h2>
+
+                                            <p class="row section-text">
+                                                When it came to Shift, as we had many hands on the project we had to sort out some manner of testing things at a rapid pace and being able to ensure that our builds would be readily avaliable and accessable for our own team and even Mentors and Instructors.
+                                                In order to facilitate this we were provided with a base script for automating the building procedure in Unreal. Past the base script I further expanded it in and tied it into our version control, backup
+                                                management. Through which I had to re-write the script from scratch several times.
+                                            </p>
+
+                                            <div class="accordion accordion-flush" id="factionAccordion" style="margin: 25px 0;">
+                                                <div class="accordion-item qfv-faction-item">
+                                                    <h2 class="accordion-header" id="flush-headingOne">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                      Demon Faction
+                                                    </button>
+                                                    </h2>
+                                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#factionAccordion">
+                                                        <div class="accordion-body section-text">
+                                                            <b>Melee</b> <br>• Boss Demon <br> • Bomb Demon <br> • Demon Grunt <br> • Melee Imp
+                                                        </div>
+                                                        <div class="accordion-body section-text">
+                                                            <b>Ranged</b> <br>• Ranged Demon
+                                                        </div>
+                                                        <div class="accordion-body section-text">
+                                                            <b>Magic</b> <br>• Caster Imp <br> • Winged Demon
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item qfv-faction-item">
+                                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                      Skeletal Faction
+                                                    </button>
+                                                    </h2>
+                                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#factionAccordion">
+                                                        <div class="accordion-body section-text">
+                                                            <b>Melee</b> <br>• Skeleton King <br> • Skeleton Grunt <br> • Skeleton Swordsman
+                                                        </div>
+                                                        <div class="accordion-body section-text">
+                                                            <b>Ranged</b> <br>• Skeleton Archer
+                                                        </div>
+                                                        <div class="accordion-body section-text">
+                                                            <b>Magic</b> <br>• Skeleton Mage
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item qfv-faction-item">
+                                                    <h2 class="accordion-header" id="flush-headingThree">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                      Zombie Faction
+                                                    </button>
+                                                    </h2>
+                                                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#factionAccordion">
+                                                        <div class="accordion-body section-text">
+                                                            <b>Melee</b> <br>• Zombie Boss <br> • Zombie Commoner <br> • Zombie Slammer <br> • Zombie Snapper
+                                                        </div>
+                                                        <div class="accordion-body section-text">
+                                                            <b>Ranged</b> <br>• Zombie Murderer
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item qfv-faction-item">
+                                                    <h2 class="accordion-header" id="flush-headingFour">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                                      Human Faction
+                                                    </button>
+                                                    </h2>
+                                                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#factionAccordion">
+                                                        <div class="accordion-body section-text">
+                                                            <b>Melee</b> <br>• Human Boss <br> • Human Warrior <br> • Human Worker
+                                                        </div>
+                                                        <div class="accordion-body section-text">
+                                                            <b>Ranged</b> <br>• Human Archer
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item qfv-faction-item">
+                                                    <h2 class="accordion-header" id="flush-headingFive">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                                      Animal Faction
+                                                    </button>
+                                                    </h2>
+                                                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#factionAccordion">
+                                                        <div class="accordion-body section-text">
+                                                            <b>Melee</b> <br>• Cat <br> • Cow <br> • Pig <br> • Rooster
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item qfv-faction-item">
+                                                    <h2 class="accordion-header" id="flush-headingSix">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                                      Dragon Faction
+                                                    </button>
+                                                    </h2>
+                                                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#factionAccordion">
+                                                        <div class="accordion-body section-text">
+                                                            <b>Melee</b> <br>• Micro Dragon
+                                                        </div>
+                                                        <div class="accordion-body section-text">
+                                                            <b>Magic</b> <br>• Mini Dragon
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-none d-md-block">
+                            <img src="../img/project-img/QFV/Tree.jpg" class="projects-side-image half-opacity-third" loading="lazy">
+                        </div>
+                    </div>
+
+
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Include -->
+    <include src="./assets/dynamics/footer.html" defer></include>
+</body>
+
+</html>
