@@ -23,7 +23,7 @@
         "prebuild": "npx rimraf build",
         "build": "parcel build --public-url ./ ./src/index.html",
         "watch": "parcel watch ./src/index.html",
-        "deploy": "git subtree push --prefix dist origin gh-pages"
+        "deploy": "git subtree push --prefix dist origin gh-pages-live"
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.5.0",
