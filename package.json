@@ -1,6 +1,6 @@
 {
     "name": "felipe-lara-reforged",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Personal & Portfolio Website",
     "repository": {
         "url": "https://example.com/your-username/my-new-project",
@@ -23,10 +23,11 @@
         "prebuild": "npx rimraf build",
         "build": "parcel build --public-url ./ ./src/index.html",
         "watch": "parcel watch ./src/index.html",
-        "push": "push-dir --dir=dist --branch=gh-pages-live"
+        "deploy": "gh-pages-deploy -- 'yarn auto deployed'"
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.5.0",
+        "gh-pages": "^4.0.0",
         "posthtml-doctype": "^1.1.1",
         "posthtml-include": "^1.7.3"
     }
