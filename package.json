@@ -3,7 +3,7 @@
     "version": "1.0.1",
     "description": "Personal & Portfolio Website",
     "repository": {
-        "url": "https://example.com/your-username/my-new-project",
+        "url": "https://github.com/Aosiee/aosiee.github.io.git",
         "type": "git"
     },
     "author": "Felipe Lara",
@@ -28,6 +28,7 @@
     "devDependencies": {
         "@parcel/transformer-sass": "^2.5.0",
         "gh-pages": "^4.0.0",
+        "gh-pages-deploy": "^0.5.1",
         "posthtml-doctype": "^1.1.1",
         "posthtml-include": "^1.7.3"
     }
