@@ -22,7 +22,11 @@
         "dev": "parcel ./src/index.html",
         "prebuild": "npx rimraf build",
         "build": "parcel build --public-url ./ ./src/index.html",
-        "watch": "parcel watch ./src/index.html"
+        "watch": "parcel watch ./src/index.html",
+
+
+        "prepush": "git fetch https://github.com/Aosiee/aosiee.github.io.git --verbose",
+        "push": "push-dir --dir=dist --branch=gh-pages-live"
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.5.0",
