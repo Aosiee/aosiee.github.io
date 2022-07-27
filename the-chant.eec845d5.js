@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"8vlzz":[function(require,module,exports) {
+})({"lnGHJ":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -563,6 +563,6 @@ window.addEventListener('DOMContentLoaded', (event)=>{
     });
 });
 
-},{}]},["8vlzz","c6dUj"], "c6dUj", "parcelRequiredddd")
+},{}]},["lnGHJ","c6dUj"], "c6dUj", "parcelRequiredddd")
 
 //# sourceMappingURL=the-chant.eec845d5.js.map
