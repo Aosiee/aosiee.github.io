@@ -30,7 +30,7 @@
 77E:\GitProjects\aosiee.github.io\node_modules\cosmiconfig\dist\ExplorerSync.js133036721997536439 0
 42E:\GitProjects\aosiee.github.io\readme.txt133036722056957443 0
 81E:\GitProjects\aosiee.github.io\node_modules\@parcel\config-default\test\.babelrc133036721894007388 0
-36E:\GitProjects\aosiee.github.io\dist133036725596217495 1
+36E:\GitProjects\aosiee.github.io\dist133036726330795249 1
 66E:\GitProjects\aosiee.github.io\node_modules\mdn-data\api\index.js133036722005406578 0
 81E:\GitProjects\aosiee.github.io\node_modules\winston\node_modules\async\README.md133036722021306420 0
 61E:\GitProjects\aosiee.github.io\node_modules\tslib\tslib.html133036722018816419 0
@@ -2410,7 +2410,7 @@
 67E:\GitProjects\aosiee.github.io\node_modules\lodash\fp\isInteger.js133036722004376580 0
 67E:\GitProjects\aosiee.github.io\node_modules\minimist\test\short.js133036722006656583 0
 67E:\GitProjects\aosiee.github.io\node_modules\svgo\lib\svgo\tools.js133036722017137499 0
-58E:\GitProjects\aosiee.github.io\dist\template-project.html133036725077379096 0
+58E:\GitProjects\aosiee.github.io\dist\template-project.html133036726330775250 0
 51E:\GitProjects\aosiee.github.io\img\project-img\QFV133036721890997346 1
 68E:\GitProjects\aosiee.github.io\node_modules\supports-color\index.js133036722017067500 0
 74E:\GitProjects\aosiee.github.io\img\project-img\TheChant\the-chant-low.jpg133036721891807348 0
@@ -2673,7 +2673,7 @@
 63E:\GitProjects\aosiee.github.io\node_modules\lodash\fp\hasIn.js133036722004336581 0
 70E:\GitProjects\aosiee.github.io\node_modules\ncp\test\symlink-fixtures133036722008927475 1
 62E:\GitProjects\aosiee.github.io\node_modules\lodash\fp\prop.js133036722004486584 0
-47E:\GitProjects\aosiee.github.io\dist\shift.html133036725077379096 0
+47E:\GitProjects\aosiee.github.io\dist\shift.html133036726330775250 0
 105E:\GitProjects\aosiee.github.io\node_modules\ndjson\node_modules\readable-stream\lib\_stream_transform.js133036722009257474 0
 128E:\GitProjects\aosiee.github.io\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\source-not-symlinked\source.js133036721896937384 0
 66E:\GitProjects\aosiee.github.io\node_modules\safe-buffer\README.md133036722015237502 0
@@ -2876,7 +2876,7 @@
 93E:\GitProjects\aosiee.github.io\node_modules\require-module\node_modules\resolve\test\core.js133036722013937506 0
 93E:\GitProjects\aosiee.github.io\node_modules\require-module\node_modules\resolve\test\mock.js133036722014027501 0
 66E:\GitProjects\aosiee.github.io\node_modules\lodash\_arrayEvery.js133036722003646584 0
-59E:\GitProjects\aosiee.github.io\assets\dynamics\header.html133036723024105985 0
+59E:\GitProjects\aosiee.github.io\assets\dynamics\header.html133036726219177477 0
 70E:\GitProjects\aosiee.github.io\node_modules\@parcel\markdown-ansi\lib133036721896817388 1
 98E:\GitProjects\aosiee.github.io\node_modules\require-module\node_modules\resolve\test\mock_sync.js133036722014047501 0
 64E:\GitProjects\aosiee.github.io\docs\level-editor-3.59557e3a.jpg133036721877107355 0
@@ -7126,7 +7126,7 @@
 75E:\GitProjects\aosiee.github.io\node_modules\@parcel\hash\node_modules\.bin133036721896707391 1
 91E:\GitProjects\aosiee.github.io\node_modules\@parcel\hash\node_modules\.bin\detect-libc.cmd133036721896717446 0
 66E:\GitProjects\aosiee.github.io\node_modules\@parcel\graph\LICENSE133036721896667385 0
-51E:\GitProjects\aosiee.github.io\dist\the-chant.html133036725077369102 0
+51E:\GitProjects\aosiee.github.io\dist\the-chant.html133036726330775250 0
 71E:\GitProjects\aosiee.github.io\node_modules\@parcel\graph\package.json133036721896687385 0
 84E:\GitProjects\aosiee.github.io\node_modules\@parcel\graph\test\ContentGraph.test.js133036721896697387 0
 71E:\GitProjects\aosiee.github.io\node_modules\@parcel\graph\src\Graph.js133036721896687385 0
@@ -7433,7 +7433,7 @@
 62E:\GitProjects\aosiee.github.io\docs\the-chant.a061a1e6.js.map133036721877547353 0
 63E:\GitProjects\aosiee.github.io\docs\town-one-high.16334869.jpg133036721877697353 0
 54E:\GitProjects\aosiee.github.io\docs\Tree.1e23cc42.jpg133036721875007355 0
-50E:\GitProjects\aosiee.github.io\dist\about-me.html133036725077369102 0
+50E:\GitProjects\aosiee.github.io\dist\about-me.html133036726330775250 0
 72E:\GitProjects\aosiee.github.io\dist\angle-left-solid-white.84eb15de.svg133036722632265436 0
 73E:\GitProjects\aosiee.github.io\dist\angle-right-solid-white.d34cbf35.svg133036721861777361 0
 65E:\GitProjects\aosiee.github.io\dist\attack-patterns.2ce7ca6c.jpg133036722628400940 0
@@ -7446,7 +7446,7 @@
 54E:\GitProjects\aosiee.github.io\dist\index.d567e7cd.js133036721865767360 0
 58E:\GitProjects\aosiee.github.io\dist\index.d567e7cd.js.map133036721865767360 0
 54E:\GitProjects\aosiee.github.io\dist\index.f4008cca.js133036722652617905 0
-47E:\GitProjects\aosiee.github.io\dist\index.html133036725603307487 0
+47E:\GitProjects\aosiee.github.io\dist\index.html133036726330775250 0
 54E:\GitProjects\aosiee.github.io\dist\LD48.5c0641fa.jpg133036721843549073 0
 58E:\GitProjects\aosiee.github.io\dist\linkedin.1d920ea0.png133036721866277359 0
 60E:\GitProjects\aosiee.github.io\dist\logo-black.052bdf1b.svg133036722638587913 0
@@ -7459,7 +7459,7 @@
 58E:\GitProjects\aosiee.github.io\dist\main.47ca9330.css.map133036721866317362 0
 64E:\GitProjects\aosiee.github.io\dist\melee-process.b22301f3.jpeg133036722627650933 0
 64E:\GitProjects\aosiee.github.io\dist\melee-process.b9831395.jpeg133036721866327360 0
-61E:\GitProjects\aosiee.github.io\dist\multithreaded-astar.html133036725077379096 0
+61E:\GitProjects\aosiee.github.io\dist\multithreaded-astar.html133036726330775250 0
 60E:\GitProjects\aosiee.github.io\dist\my-favicon.7a68ec95.ico133036721866327360 0
 72E:\GitProjects\aosiee.github.io\dist\original-concept-shift.b23fbecd.jpg133036722628400940 0
 65E:\GitProjects\aosiee.github.io\dist\PawnStressTest2.3ca6faee.gif133036721846594112 0
@@ -7467,8 +7467,8 @@
 65E:\GitProjects\aosiee.github.io\dist\shift-thumbnail.8ee5a5b4.jpg133036722634295434 0
 65E:\GitProjects\aosiee.github.io\dist\PawnStressTest2.e0f0a425.gif133036722649337904 0
 65E:\GitProjects\aosiee.github.io\dist\PawnStressTest4.b7a8ff2d.gif133036722633765439 0
-50E:\GitProjects\aosiee.github.io\dist\projects.html133036725077369102 0
-48E:\GitProjects\aosiee.github.io\dist\qfv-ai.html133036725077369102 0
+50E:\GitProjects\aosiee.github.io\dist\projects.html133036726330775250 0
+48E:\GitProjects\aosiee.github.io\dist\qfv-ai.html133036726330775250 0
 63E:\GitProjects\aosiee.github.io\dist\QFV-Greathall.91a9707b.jpg133036722634295434 0
 63E:\GitProjects\aosiee.github.io\dist\QFV-WaterCave.27632370.png133036722634295434 0
 63E:\GitProjects\aosiee.github.io\dist\QFV-WaterCave.e8653c33.png133036721861067359 0
