@@ -26,7 +26,7 @@
         "build-dev": "parcel build ./src/index.html --no-optimize --public-url ./",
         "prebuild": "shx rm -rf dist/*",
         "build": "parcel build ./src/index.html --public-url ./",
-        "push-gh-pages": "push-dir --dir=dist --branch=gh-pages-live-4 --cleanup --verbose",
+        "push-gh-pages": "push-dir --dir=dist --branch=gh-pages-live-5 --cleanup --verbose",
         "clean-source": "rimraf README.md src webroot package.json"
     },
     "devDependencies": {
