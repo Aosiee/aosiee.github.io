@@ -1,2 +1,0 @@
-function e(e){let t="#";var n=Math.ceil(function(e,t){const n=new Date(e),a=new Date(t).getTime()-n.getTime();return Math.round(a/864e5)}(e,Date.now())/30),a=Math.trunc(n/12);return t=n>=12?a+" yr "+(n-12*a)+" mos":n+" mos",t}var t=document.getElementById("BrassToken");t&&t.appendChild(document.createTextNode(e("8/30/2021")));var n=document.getElementById("VFS-Ambassador");n&&n.appendChild(document.createTextNode(e("2/1/2022")));
-//# sourceMappingURL=about-me.782f5633.js.map
