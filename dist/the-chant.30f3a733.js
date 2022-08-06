@@ -1,2 +1,0 @@
-let container=document.querySelector(".image-container"),imgLoad=imagesLoaded(container);imgLoad.on("progress",(function(a,i){var o;i.img.classList.contains("half-opacity")&&(o=i.isLoaded?"loaded-half-opacity":"broken",i.img.classList.add(o)),i.img.classList.contains("half-opacity-third")?(o=i.isLoaded?"loaded-half-opacity-third":"broken",i.img.classList.add(o)):(o=i.isLoaded?"loaded":"broken",i.img.classList.add(o))}));
-//# sourceMappingURL=the-chant.30f3a733.js.map
