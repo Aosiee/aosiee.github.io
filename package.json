@@ -12,12 +12,6 @@
         "parcel": "^2.5.0",
         "yarn": "^1.22.18"
     },
-    "gh-pages-deploy": {
-        "staticpath": "dist",
-        "cname": "felipe-lara.com",
-        "commit": "Website Auto Deploy",
-        "noprompt": false
-    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "preinstall": "npx npm-force-resolutions",
@@ -26,7 +20,7 @@
         "build-dev": "parcel build ./src/index.html --no-optimize --public-url ./",
         "prebuild": "shx rm -rf dist/*",
         "build": "parcel build ./src/index.html --public-url ./",
-        "push-gh-pages": "push-dir --dir=dist --branch=gh-pages-live-5 --cleanup --verbose",
+        "push-gh-pages": "push-dir --dir=dist --branch=gh-pages-website --cleanup --verbose",
         "clean-source": "rimraf README.md src webroot package.json",
         "predeploy": "parcel build ./src/index.html --public-url ./",
         "deploy": "gh-pages -d dist"
