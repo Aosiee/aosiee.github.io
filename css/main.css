@@ -549,7 +549,7 @@ html {
 }
 
 .hover-select-image {
-    opacity: 50%;
+    opacity: 0.5;
 }
 
 .to-top-button button:active,
