@@ -51,3 +51,18 @@ function clearNavButtons(selectedButton) {
         active_buttons[b].classList.remove('projects-button-active');
     }
 }
+
+function forceAutoPlay() {
+
+    var heroVideos = document.getElementsByClassName("home-hero-video");
+
+    for (let i = 0; i < heroVideos.length; i++) {
+        if (heroVideos[i].paused) {
+            heroVideos[i].play();
+            console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
+            forceAutoPlay();
+        } else {
+            console.log("Hero Video %d, Already Playing Continuing", i);
+        }
+    }
+}
