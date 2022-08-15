@@ -7,10 +7,12 @@
     "license": "MIT",
     "dependencies": {
         "@dogstudio/highway": "^2.2.1",
+        "cssnano": "^5.1.13",
         "gsap": "^3.10.4",
         "imagesloaded": "^5.0.0",
         "jquery": "^3.6.0",
-        "parcel": "^2.5.0",
+        "parcel": "^2.0.0-nightly.1159",
+        "postcss": "^8.4.16",
         "yarn": "^1.22.18"
     },
     "scripts": {
@@ -30,8 +32,6 @@
         "@parcel/transformer-sass": "^2.5.0",
         "gh-pages": "^4.0.0",
         "gh-pages-deploy": "^0.1.1",
-        "parcel-bundler": "^1.12.5",
-        "parcel-plugin-robot": "^1.0.0",
         "posthtml-doctype": "^1.1.1",
         "posthtml-include": "^1.7.3",
         "shx": "^0.3.2"
