@@ -10,6 +10,7 @@
         "cssnano": "^5.1.13",
         "gsap": "^3.10.4",
         "imagesloaded": "^5.0.0",
+        "isotope-layout": "^3.0.6",
         "jquery": "^3.6.0",
         "parcel": "^2.0.0-nightly.1159",
         "postcss": "^8.4.16",

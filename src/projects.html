@@ -110,11 +110,160 @@
                 </div>
 
             </section>
-        </div>
-    </div>
 
-    <!-- Footer Include -->
-    <include src="./assets/dynamics/footer.html"></include>
+            <section>
+
+                <style>
+                    * {
+                        box-sizing: border-box;
+                    }
+                    
+                    body {
+                        font-family: sans-serif;
+                    }
+                    /* ---- isotope ---- */
+                    
+                    .grid {
+                        background: #EEE;
+                        max-width: 1200px;
+                    }
+                    /* clear fix */
+                    
+                    .grid:after {
+                        content: '';
+                        display: block;
+                        clear: both;
+                    }
+                    /* ui group */
+                    
+                    .ui-group {
+                        display: inline-block;
+                        margin-right: 20px;
+                    }
+                    
+                    .ui-group h3 {
+                        display: inline-block;
+                        margin-right: 0.2em;
+                        font-size: 16px;
+                    }
+                    
+                    .ui-group .button-group {
+                        display: inline-block;
+                        margin-right: 20px;
+                    }
+                    /* color-shape */
+                    
+                    .color-shape {
+                        width: 70px;
+                        height: 70px;
+                        margin: 5px;
+                        float: left;
+                    }
+                    
+                    .color-shape.round {
+                        border-radius: 35px;
+                    }
+                    
+                    .color-shape.big.round {
+                        border-radius: 75px;
+                    }
+                    
+                    .color-shape.red {
+                        background: red;
+                    }
+                    
+                    .color-shape.blue {
+                        background: blue;
+                    }
+                    
+                    .color-shape.yellow {
+                        background: yellow;
+                    }
+                    
+                    .color-shape.wide,
+                    .color-shape.big {
+                        width: 150px;
+                    }
+                    
+                    .color-shape.tall,
+                    .color-shape.big {
+                        height: 150px;
+                    }
+                </style>
+
+                <div class="container image-container" style="max-width: 100%; min-height: 95vh;">
+
+                    <h1>Isotope - combination filters with selects</h1>
+
+                    <div class="filters">
+
+                        <div class="ui-group">
+                            <h3>Color</h3>
+                            <select class="filter-select" value-group="color">
+      <option value="">any</option>
+      <option value=".red">red</option>
+      <option value=".blue">blue</option>
+      <option value=".yellow">yellow</option>
+    </select>
+                        </div>
+
+                        <div class="ui-group">
+                            <h3>Size</h3>
+                            <select class="filter-select" value-group="size">
+      <option value="">any</option>
+      <option value=".small">small</option>
+      <option value=".wide">wide</option>
+      <option value=".big">big</option>
+      <option value=".tall">tall</option>
+    </select>
+                        </div>
+
+                        <div class="ui-group">
+                            <h3>Shape</h3>
+                            <select class="filter-select" value-group="shape">
+      <option value="">any</option>
+      <option value=".round">round</option>
+      <option value=".square">square</option>
+    </select>
+                        </div>
+
+                    </div>
+
+                    <div class="dynamic-grid">
+                        <div class="color-shape small round red"></div>
+                        <div class="color-shape small round blue"></div>
+                        <div class="color-shape small round yellow"></div>
+                        <div class="color-shape small square red"></div>
+                        <div class="color-shape small square blue"></div>
+                        <div class="color-shape small square yellow"></div>
+                        <div class="color-shape wide round red"></div>
+                        <div class="color-shape wide round blue"></div>
+                        <div class="color-shape wide round yellow"></div>
+                        <div class="color-shape wide square red"></div>
+                        <div class="color-shape wide square blue"></div>
+                        <div class="color-shape wide square yellow"></div>
+                        <div class="color-shape big round red"></div>
+                        <div class="color-shape big round blue"></div>
+                        <div class="color-shape big round yellow"></div>
+                        <div class="color-shape big square red"></div>
+                        <div class="color-shape big square blue"></div>
+                        <div class="color-shape big square yellow"></div>
+                        <div class="color-shape tall round red"></div>
+                        <div class="color-shape tall round blue"></div>
+                        <div class="color-shape tall round yellow"></div>
+                        <div class="color-shape tall square red"></div>
+                        <div class="color-shape tall square blue"></div>
+                        <div class="color-shape tall square yellow"></div>
+                    </div>
+
+
+            </section>
+
+            </div>
+        </div>
+
+        <!-- Footer Include -->
+        <include src="./assets/dynamics/footer.html"></include>
 
 </body>
 

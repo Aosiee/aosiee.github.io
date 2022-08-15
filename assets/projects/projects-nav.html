@@ -8,9 +8,9 @@
             </div>
         </div>
         <!-- Button Row -->
-        <div class="row justify-content-center" style="text-align: center; margin: 0 0 25px; ">
-            <div class="col-4" style="width: 33%;">
-                <button class="projects-button" onclick="showOnlyTag(this, 'professional')">
+        <div class="row justify-content-center" data-filter-group="type" style="text-align: center; margin: 0 0 25px; ">
+            <div class="col-4 button-group" style="width: 33%;">
+                <button class="projects-button" data-filter=".professional" onclick="showOnlyTag(this, 'professional')">
                     <div class="d-none d-sm-block">
                         <h6>Professional Projects</h6>
                     </div>
@@ -21,7 +21,7 @@
                 </button>
             </div>
             <div class="col-4" style="width: 33%;">
-                <button class="projects-button" onclick="showOnlyTag(this, 'coding-adventure')">
+                <button class="projects-button" data-filter=".coding-adventure" onclick="showOnlyTag(this, 'coding-adventure')">
                     <div class="d-none d-sm-block">
                         <h6>Coding Adventures</h6>
                     </div>
@@ -32,7 +32,7 @@
                 </button>
             </div>
             <div class="col-4" style="width: 33%;">
-                <button class="projects-button" onclick="showOnlyTag(this, 'game-jam')">
+                <button class="projects-button" data-filter=".game-jam" onclick="showOnlyTag(this, 'game-jam')">
                     <div class="d-none d-sm-block">
                         <h6>Game Jams</h6>
                     </div>
