@@ -102,6 +102,7 @@ html {
 .hover-select {
     overflow: hidden;
     transition: 0.5s ease-out;
+    opacity: 50%;
 }
 
 .hover-select:hover {
@@ -545,6 +546,10 @@ html {
 .to-top-button button {
     background-color: transparent;
     border: 0;
+}
+
+.hover-select-image {
+    opacity: 50%;
 }
 
 .to-top-button button:active,
