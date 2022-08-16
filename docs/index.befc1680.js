@@ -1,0 +1,2 @@
+function showOnlyTag(e,o="default"){}function clearNavButtons(e){for(var o=document.getElementsByClassName("projects-button-active"),t=0;t<o.length;t++)o[t].classList.add("projects-button"),o[t].classList.remove("projects-button-active")}function forceAutoPlay(){var e=document.getElementsByClassName("home-hero-video");for(let o=0;o<e.length;o++)e[o].paused?(e[o].play(),console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping",o),forceAutoPlay()):console.log("Hero Video %d, Already Playing Continuing",o)}
+//# sourceMappingURL=index.befc1680.js.map
