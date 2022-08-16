@@ -21,7 +21,11 @@ imgLoad.on('progress', function(instance, image) {
 
 // init Isotope
 var $grid = $('.dynamic-grid').isotope({
-    itemSelector: '.grid-item'
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    masonry: {
+        columnWidth: '.grid-sizer'
+    }
 });
 
 // store filter for each group
