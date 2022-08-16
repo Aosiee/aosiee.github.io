@@ -16,181 +16,176 @@ class Fade extends Highway.Transition {
         // Run ImagesLoad & Init Isotope  ////
         //////////////////////////////////////
 
-        let container = document.querySelector('.image-container');
-        let imgLoad = imagesLoaded(container);
+        // let container = document.querySelector('.image-container');
+        // let imgLoad = imagesLoaded(container);
 
-        imgLoad.on('progress', function(instance, image) {
-            var result;
+        // imgLoad.on('progress', function(instance, image) {
+        //     var result;
 
-            if (image.img.classList.contains('half-opacity')) {
-                result = image.isLoaded ? 'loaded-half-opacity' : 'broken';
-                image.img.classList.add(result);
-            }
-            if (image.img.classList.contains('half-opacity-third')) {
-                result = image.isLoaded ? 'loaded-half-opacity-third' : 'broken';
-                image.img.classList.add(result);
-            } else {
-                result = image.isLoaded ? 'loaded' : 'broken';
-                image.img.classList.add(result);
-            }
-            // console.log("Image Loaded with " + result)
-        });
+        //     if (image.img.classList.contains('half-opacity')) {
+        //         result = image.isLoaded ? 'loaded-half-opacity' : 'broken';
+        //         image.img.classList.add(result);
+        //     }
+        //     if (image.img.classList.contains('half-opacity-third')) {
+        //         result = image.isLoaded ? 'loaded-half-opacity-third' : 'broken';
+        //         image.img.classList.add(result);
+        //     } else {
+        //         result = image.isLoaded ? 'loaded' : 'broken';
+        //         image.img.classList.add(result);
+        //     }
+        //     // console.log("Image Loaded with " + result)
+        // });
 
-        // init Isotope
-        var $grid = $('.dynamic-grid').isotope({
-            itemSelector: '.grid-item',
-            percentPosition: true,
-            masonry: {
-                columnWidth: '.grid-sizer'
-            }
-        });
+        // // init Isotope
+        // var $grid = $('.dynamic-grid').isotope({
+        //     itemSelector: '.grid-item',
+        //     percentPosition: true,
+        //     masonry: {
+        //         columnWidth: '.grid-sizer'
+        //     }
+        // });
 
-        // store filter for each group
-        var filters = {};
+        // // store filter for each group
+        // var filters = {};
 
-        $('.filters').on('change', function(event) {
-            var $select = $(event.target);
-            // get group key
-            var filterGroup = $select.attr('value-group');
-            // set filter for group
-            filters[filterGroup] = event.target.value;
-            // combine filters
-            var filterValue = concatValues(filters);
-            // set filter for Isotope
-            $grid.isotope({ filter: filterValue });
-        });
+        // $('.filters').on('change', function(event) {
+        //     var $select = $(event.target);
+        //     // get group key
+        //     var filterGroup = $select.attr('value-group');
+        //     // set filter for group
+        //     filters[filterGroup] = event.target.value;
+        //     // combine filters
+        //     var filterValue = concatValues(filters);
+        //     // set filter for Isotope
+        //     $grid.isotope({ filter: filterValue });
+        // });
 
-        // flatten object by concatting values
-        function concatValues(obj) {
-            var value = '';
-            for (var prop in obj) {
-                value += obj[prop];
-            }
-            return value;
-        }
+        // // flatten object by concatting values
+        // function concatValues(obj) {
+        //     var value = '';
+        //     for (var prop in obj) {
+        //         value += obj[prop];
+        //     }
+        //     return value;
+        // }
 
 
-        // layout Isotope after each image loads
-        $grid.imagesLoaded().progress(function() {
-            $grid.isotope('layout');
-        });
+        // // layout Isotope after each image loads
+        // $grid.imagesLoaded().progress(function() {
+        //     $grid.isotope('layout');
+        // });
 
-        // filter functions
-        var filterFns = {
-            // show if number is greater than 50
-            numberGreaterThan50: function() {
-                var number = $(this).find('.number').text();
-                return parseInt(number, 10) > 50;
-            },
-            // show if name ends with -ium
-            ium: function() {
-                var name = $(this).find('.name').text();
-                return name.match(/ium$/);
-            }
-        };
+        // // filter functions
+        // var filterFns = {
+        //     // show if number is greater than 50
+        //     numberGreaterThan50: function() {
+        //         var number = $(this).find('.number').text();
+        //         return parseInt(number, 10) > 50;
+        //     },
+        //     // show if name ends with -ium
+        //     ium: function() {
+        //         var name = $(this).find('.name').text();
+        //         return name.match(/ium$/);
+        //     }
+        // };
 
-        // bind filter button click
-        $('#filters').on('click', 'button', function() {
-            var filterValue = $(this).attr('data-filter');
-            // use filterFn if matches value
-            filterValue = filterFns[filterValue] || filterValue;
-            $grid.isotope({ filter: filterValue });
-        });
+        // // bind filter button click
+        // $('#filters').on('click', 'button', function() {
+        //     var filterValue = $(this).attr('data-filter');
+        //     // use filterFn if matches value
+        //     filterValue = filterFns[filterValue] || filterValue;
+        //     $grid.isotope({ filter: filterValue });
+        // });
 
-        // bind sort button click
-        $('#sorts').on('click', 'button', function() {
-            var sortByValue = $(this).attr('data-sort-by');
-            $grid.isotope({ sortBy: sortByValue });
-        });
+        // // bind sort button click
+        // $('#sorts').on('click', 'button', function() {
+        //     var sortByValue = $(this).attr('data-sort-by');
+        //     $grid.isotope({ sortBy: sortByValue });
+        // });
 
-        // change is-checked class on buttons
-        $('.button-group').each(function(i, buttonGroup) {
-            var $buttonGroup = $(buttonGroup);
-            $buttonGroup.on('click', 'button', function() {
-                $buttonGroup.find('.is-checked').removeClass('is-checked');
-                $(this).addClass('is-checked');
-            });
-        });
+        // // change is-checked class on buttons
+        // $('.button-group').each(function(i, buttonGroup) {
+        //     var $buttonGroup = $(buttonGroup);
+        //     $buttonGroup.on('click', 'button', function() {
+        //         $buttonGroup.find('.is-checked').removeClass('is-checked');
+        //         $(this).addClass('is-checked');
+        //     });
+        // });
 
-        //////////////////////////////////////
-        // Run Magic Maths ///////////////////
-        //////////////////////////////////////
-        function getNumberOfDays(start, end) {
-            const date1 = new Date(start);
-            const date2 = new Date(end);
-            const oneDay = 1000 * 60 * 60 * 24;
-            const diffInTime = date2.getTime() - date1.getTime();
-            const diffInDays = Math.round(diffInTime / oneDay);
-            return diffInDays;
-        }
+        // //////////////////////////////////////
+        // // Run Magic Maths ///////////////////
+        // //////////////////////////////////////
+        // function getNumberOfDays(start, end) {
+        //     const date1 = new Date(start);
+        //     const date2 = new Date(end);
+        //     const oneDay = 1000 * 60 * 60 * 24;
+        //     const diffInTime = date2.getTime() - date1.getTime();
+        //     const diffInDays = Math.round(diffInTime / oneDay);
+        //     return diffInDays;
+        // }
 
-        function getFormattedTimeSince(start) {
-            let formattedTime = "#";
-            var months = Math.ceil(getNumberOfDays(start, Date.now()) / 30);
-            var years = Math.trunc(months / 12);
-            let remainderMonths = years * 12;
-            let remainingMonths = months - remainderMonths;
-            if (months >= 12) {
-                formattedTime = years + " yr " + remainingMonths + " mos";
-            } else {
-                formattedTime = months + ' mos';
-            }
-            return formattedTime;
-        }
+        // function getFormattedTimeSince(start) {
+        //     let formattedTime = "#";
+        //     var months = Math.ceil(getNumberOfDays(start, Date.now()) / 30);
+        //     var years = Math.trunc(months / 12);
+        //     let remainderMonths = years * 12;
+        //     let remainingMonths = months - remainderMonths;
+        //     if (months >= 12) {
+        //         formattedTime = years + " yr " + remainingMonths + " mos";
+        //     } else {
+        //         formattedTime = months + ' mos';
+        //     }
+        //     return formattedTime;
+        // }
 
-        ///////////////////////////////////////////////
-        // AutoPlay for Hero Videos ///////////////////
-        ///////////////////////////////////////////////
-        var heroVideos = document.getElementsByClassName("home-hero-video");
+        // ///////////////////////////////////////////////
+        // // AutoPlay for Hero Videos ///////////////////
+        // ///////////////////////////////////////////////
+        // var heroVideos = document.getElementsByClassName("home-hero-video");
 
-        for (let i = 0; i < heroVideos.length; i++) {
-            if (heroVideos[i].paused) {
-                heroVideos[i].play();
-                console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
+        // for (let i = 0; i < heroVideos.length; i++) {
+        //     if (heroVideos[i].paused) {
+        //         heroVideos[i].play();
+        //         console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
 
-                var heroVideos = document.getElementsByClassName("home-hero-video");
+        //         var heroVideos = document.getElementsByClassName("home-hero-video");
 
-                // Copied from projects-loader.js
-                for (let i = 0; i < heroVideos.length; i++) {
-                    if (heroVideos[i].paused) {
-                        heroVideos[i].play();
-                        console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
-                        forceAutoPlay();
-                    } else {
-                        console.log("Hero Video %d, Already Playing Continuing", i);
-                    }
-                }
-            } else {
-                console.log("Hero Video %d, Already Playing Continuing", i);
-            }
-        }
+        //         // Copied from projects-loader.js
+        //         for (let i = 0; i < heroVideos.length; i++) {
+        //             if (heroVideos[i].paused) {
+        //                 heroVideos[i].play();
+        //                 console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
+        //                 forceAutoPlay();
+        //             } else {
+        //                 console.log("Hero Video %d, Already Playing Continuing", i);
+        //             }
+        //         }
+        //     } else {
+        //         console.log("Hero Video %d, Already Playing Continuing", i);
+        //     }
+        // }
 
-        ///////////////////////////////////////////////
-        // Math for About Page ////////////////////////
-        ///////////////////////////////////////////////
+        // ///////////////////////////////////////////////
+        // // Math for About Page ////////////////////////
+        // ///////////////////////////////////////////////
 
-        // Brass Token Auto Month Calc
-        var brassToken = document.getElementById('BrassToken');
-        if (brassToken && !brassToken.firstChild) {
-            brassToken.appendChild(document.createTextNode(getFormattedTimeSince('8/30/2021')));
-        }
+        // // Brass Token Auto Month Calc
+        // var brassToken = document.getElementById('BrassToken');
+        // if (brassToken && !brassToken.firstChild) {
+        //     brassToken.appendChild(document.createTextNode(getFormattedTimeSince('8/30/2021')));
+        // }
 
-        //VFS-Ambassador Auto Month Calc
-        var vfsAmbassador = document.getElementById('VFS-Ambassador');
-        if (vfsAmbassador && !vfsAmbassador.firstChild) {
-            vfsAmbassador.appendChild(document.createTextNode(getFormattedTimeSince('2/1/2022')));
-        }
+        // //VFS-Ambassador Auto Month Calc
+        // var vfsAmbassador = document.getElementById('VFS-Ambassador');
+        // if (vfsAmbassador && !vfsAmbassador.firstChild) {
+        //     vfsAmbassador.appendChild(document.createTextNode(getFormattedTimeSince('2/1/2022')));
+        // }
 
         // Animation
         Tween.fromTo(to, 0.5, { opacity: 0 }, {
             opacity: 1,
             onComplete: done
         });
-
-
-
-
-
 
     }
 
