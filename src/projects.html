@@ -24,7 +24,7 @@
                 <!-- Title Include -->
                 <include src="./assets/projects/projects-nav.html"></include>
 
-                <div class="container image-container" style="max-width: 100%; min-height: 95vh;">
+                <!-- <div class="container" style="max-width: 100%; min-height: 95vh;">
 
                     <div class="row">
                         <a class="home-image-parent col-md-4 col-12 col-sm-6 professional" href="../src/the-chant.html">
@@ -32,7 +32,6 @@
                                 <source src="https://static.kochmedia.com/yac_sites/thechant/TheChant-AnimatedKeyart_V12.mp4" type="video/mp4">
                                 <source src="../assets/videos/TheChant-MP4.mp4">
                             </video>
-                            <!-- <img class="home-image " src="../img/project-img/TheChant/the-chant.jpg "> -->
                             <div class="home-video-title d-none d-lg-block">
                                 <h2>The Chant</h2>
                                 <h6>Generalist Programmer</h6>
@@ -66,8 +65,6 @@
                                 <h6>Programmer</h6>
                             </div>
                         </a>
-
-                        <!-- Break -->
 
                         <a class="home-image-parent col-md-4 col-12 col-sm-6 coding-adventure" href="../src/multithreaded-astar.html">
                             <video poster="../img/project-img/CodingAdventures/astar-pathing/PawnStress2-Poster.png" playsinline autoplay loop ame="media" muted class="projects-video" loading="lazy">
@@ -107,7 +104,7 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> -->
 
             </section>
 
@@ -116,6 +113,10 @@
                 <style>
                     * {
                         box-sizing: border-box;
+                    }
+                    
+                    .grid-item {
+                        width: 33.33%;
                     }
                     
                     body {
@@ -200,11 +201,11 @@
                         <div class="ui-group">
                             <h3>Color</h3>
                             <select class="filter-select" value-group="color">
-      <option value="">any</option>
-      <option value=".red">red</option>
-      <option value=".blue">blue</option>
-      <option value=".yellow">yellow</option>
-    </select>
+                                <option value="">any</option>
+                                <option value=".red">red</option>
+                                <option value=".blue">blue</option>
+                                <option value=".yellow">yellow</option>
+                            </select>
                         </div>
 
                         <div class="ui-group">
@@ -229,8 +230,89 @@
 
                     </div>
 
-                    <div class="dynamic-grid">
-                        <div class="color-shape small round red"></div>
+                    <div class="dynamic-grid ">
+
+                        <a class="grid-item home-image-parent col-md-4 col-12 col-sm-6 professional" href="../src/the-chant.html">
+                            <video poster="../assets/videos/TheChant.avifs" playsinline autoplay loop ame="media" muted class="projects-video">
+                                    <source src="https://static.kochmedia.com/yac_sites/thechant/TheChant-AnimatedKeyart_V12.mp4" type="video/mp4">
+                                    <source src="../assets/videos/TheChant-MP4.mp4">
+                                </video>
+                            <!-- <img class="home-image " src="../img/project-img/TheChant/the-chant.jpg "> -->
+                            <div class="home-video-title d-none d-lg-block">
+                                <h2>The Chant</h2>
+                                <h6>Generalist Programmer</h6>
+                            </div>
+                            <div class="mobile-home-image-title d-lg-none">
+                                <h2>The Chant</h2>
+                                <h6>Generalist Programmer</h6>
+                            </div>
+                        </a>
+
+                        <a class="grid-item home-image-parent col-md-4 col-12 col-sm-6 professional" href="../src/shift.html">
+                            <img class="home-image lazyload" src="../img/project-img/Shift/shift-thumbnail.jpg" alt="Shift - Project Thumbnail" loading="lazy">
+                            <div class="home-image-title d-none d-lg-block">
+                                <h2>VFS Final Project - Shift</h2>
+                                <h6>Programmer</h6>
+                            </div>
+                            <div class="mobile-home-image-title d-lg-none">
+                                <h2>VFS Final Project - Shift</h2>
+                                <h6>Programmer</h6>
+                            </div>
+                        </a>
+
+                        <a class="grid-item home-image-parent col-md-4 col-12 col-sm-6 professional" href="../src/qfv-ai.html">
+                            <img class="home-image lazyload" src="../img/project-img/QFV/QFV-Greathall.jpg" alt="QFV A.I Overhaul - Project Thumbnail" loading="lazy">
+                            <div class="home-image-title d-none d-lg-block">
+                                <h2>QFV A.I Overhaul</h2>
+                                <h6>Programmer</h6>
+                            </div>
+                            <div class="mobile-home-image-title d-lg-none">
+                                <h2>QFV A.I Overhaul</h2>
+                                <h6>Programmer</h6>
+                            </div>
+                        </a>
+
+                        <!-- Break -->
+
+                        <a class="grid-item home-image-parent col-md-4 col-12 col-sm-6 coding-adventure" href="../src/multithreaded-astar.html">
+                            <video poster="../img/project-img/CodingAdventures/astar-pathing/PawnStress2-Poster.png" playsinline autoplay loop ame="media" muted class="projects-video" loading="lazy">
+                                <source src="../img/project-img/CodingAdventures/astar-pathing/PawnStressTest2.mp4" alt="Multithreaded A* Pathfinding - Coding Adventure Thumbnail" loading="lazy">
+                            </video>
+                            <div class="home-video-title d-none d-lg-block">
+                                <h2>Multithreaded A* Pathfinding</h2>
+                                <h6>Coding Adventure</h6>
+                            </div>
+                            <div class="mobile-home-image-title d-lg-none">
+                                <h2>Multithreaded A* Pathfinding</h2>
+                                <h6>Coding Adventure</h6>
+                            </div>
+                        </a>
+
+                        <a class="grid-item home-image-parent col-md-4 col-12 col-sm-6 game-jam" href="#projects">
+                            <img class="home-image " src="../img/project-img/TownOne/town-one-high.jpg" alt="Town One - Game Jam Thumbnail" loading="lazy">
+                            <div class="home-image-title d-none d-lg-block ">
+                                <h2>Town One</h2>
+                                <h6>Game Jam</h6>
+                            </div>
+                            <div class="mobile-home-image-title d-lg-none ">
+                                <h2>Town One</h2>
+                                <h6>Game Jam</h6>
+                            </div>
+                        </a>
+
+                        <a class="grid-item home-image-parent col-md-4 col-12 col-sm-6 game-jam" href="#projects">
+                            <img class="home-image " src="../img/project-img/LD48/LD48.jpg" alt="Ludum Dare 48 - Game Jam Thumbnail" loading="lazy">
+                            <div class="home-image-title d-none d-lg-block ">
+                                <h2>Ludum Dare 48</h2>
+                                <h6>Game Jam</h6>
+                            </div>
+                            <div class="mobile-home-image-title d-lg-none ">
+                                <h2>Ludum Dare 48</h2>
+                                <h6>Game Jam</h6>
+                            </div>
+                        </a>
+
+                        <!-- <div class="color-shape small round red"></div>
                         <div class="color-shape small round blue"></div>
                         <div class="color-shape small round yellow"></div>
                         <div class="color-shape small square red"></div>
@@ -253,7 +335,7 @@
                         <div class="color-shape tall round yellow"></div>
                         <div class="color-shape tall square red"></div>
                         <div class="color-shape tall square blue"></div>
-                        <div class="color-shape tall square yellow"></div>
+                        <div class="color-shape tall square yellow"></div> -->
                     </div>
 
 

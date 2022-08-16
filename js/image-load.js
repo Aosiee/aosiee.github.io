@@ -19,11 +19,9 @@ imgLoad.on('progress', function(instance, image) {
 });
 
 
-// external js: isotope.pkgd.js
-
 // init Isotope
 var $grid = $('.dynamic-grid').isotope({
-    itemSelector: '.color-shape'
+    itemSelector: '.grid-item'
 });
 
 // store filter for each group
