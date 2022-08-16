@@ -33,6 +33,9 @@ $grid.imagesLoaded().progress(function() {
     $grid.isotope('layout');
 });
 
+// unbind first
+$('.filters').off();
+
 // bind filter button click
 $('.filters').on('click', 'button', function() {
     var filterValue = $(this).attr('data-filter');

@@ -60,6 +60,12 @@
                 return false;
             }
 
+            // Clear Other Actives
+            const activeButtons = document.getElementsByClassName("projects-button-active");
+            for (let i = 0; i < activeButtons.length; i++) {
+                activeButtons[i].classList.remove('projects-button-active');
+            }
+
             $(button).addClass('projects-button-active');
 
             $grid.isotope({

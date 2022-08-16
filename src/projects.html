@@ -109,48 +109,6 @@
             </section>
 
             <script>
-                function filterItems(button, tag) {
-
-                    if (!$grid.isotope) {
-
-                        console.log('$grid.isotope was invalid');
-                        return;
-                    }
-
-
-                    if (button.classList.contains('projects-button-active')) {
-                        clearNavButtons();
-
-                        $grid.isotope({
-                            // filter element with numbers greater than 50
-                            filter: function() {
-                                // _this_ is the item element. Get text of element's .number
-                                // return true to show, false to hide
-                                return true;
-                            }
-                        })
-
-                        console.log('Returning All Projects to List')
-                        return;
-                    }
-
-                    clearNavButtons(button);
-
-                    // Set 'button' as active
-                    button.classList.add('projects-button-active')
-
-                    $grid.isotope({
-                        // filter element with numbers greater than 50
-                        filter: function() {
-                            // _this_ is the item element. Get text of element's .number
-                            var output = $(this).hasClass(tag);
-                            // return true to show, false to hide
-                            return output;
-                        }
-                    })
-
-                    console.log("Ran Show on Items with '" + tag + "'")
-                }
             </script>
 
             <section>
@@ -237,39 +195,6 @@
                 </style>
 
                 <div class="container image-container" style="max-width: 100%; min-height: 95vh;">
-                    <div class="filters">
-
-                        <div class="ui-group">
-                            <h3>Color</h3>
-                            <select class="filter-select" value-group="color">
-                                <option value="">any</option>
-                                <option value=".red">red</option>
-                                <option value=".blue">blue</option>
-                                <option value=".yellow">yellow</option>
-                            </select>
-                        </div>
-
-                        <div class="ui-group">
-                            <h3>Size</h3>
-                            <select class="filter-select" value-group="size">
-      <option value="">any</option>
-      <option value=".small">small</option>
-      <option value=".wide">wide</option>
-      <option value=".big">big</option>
-      <option value=".tall">tall</option>
-    </select>
-                        </div>
-
-                        <div class="ui-group">
-                            <h3>Shape</h3>
-                            <select class="filter-select" value-group="shape">
-      <option value="">any</option>
-      <option value=".round">round</option>
-      <option value=".square">square</option>
-    </select>
-                        </div>
-
-                    </div>
 
                     <div class="dynamic-grid ">
 
@@ -354,31 +279,6 @@
                                 <h6>Game Jam</h6>
                             </div>
                         </a>
-
-                        <!-- <div class="color-shape small round red"></div>
-                        <div class="color-shape small round blue"></div>
-                        <div class="color-shape small round yellow"></div>
-                        <div class="color-shape small square red"></div>
-                        <div class="color-shape small square blue"></div>
-                        <div class="color-shape small square yellow"></div>
-                        <div class="color-shape wide round red"></div>
-                        <div class="color-shape wide round blue"></div>
-                        <div class="color-shape wide round yellow"></div>
-                        <div class="color-shape wide square red"></div>
-                        <div class="color-shape wide square blue"></div>
-                        <div class="color-shape wide square yellow"></div>
-                        <div class="color-shape big round red"></div>
-                        <div class="color-shape big round blue"></div>
-                        <div class="color-shape big round yellow"></div>
-                        <div class="color-shape big square red"></div>
-                        <div class="color-shape big square blue"></div>
-                        <div class="color-shape big square yellow"></div>
-                        <div class="color-shape tall round red"></div>
-                        <div class="color-shape tall round blue"></div>
-                        <div class="color-shape tall round yellow"></div>
-                        <div class="color-shape tall square red"></div>
-                        <div class="color-shape tall square blue"></div>
-                        <div class="color-shape tall square yellow"></div> -->
                     </div>
 
 

@@ -2,6 +2,7 @@ import Highway from '@dogstudio/highway';
 
 // GSAP Library
 import Tween from 'gsap';
+import { each } from 'jquery';
 
 class Fade extends Highway.Transition {
 
@@ -50,35 +51,37 @@ class Fade extends Highway.Transition {
         // store filter for each group
         var filters = {};
 
-        $('.filters').on('change', function(event) {
-            var $select = $(event.target);
-            // get group key
-            var filterGroup = $select.attr('value-group');
-            // set filter for group
-            filters[filterGroup] = event.target.value;
-            // combine filters
-            var filterValue = concatValues(filters);
-            // set filter for Isotope
-            $grid.isotope({ filter: filterValue });
-
-            console.log(filterValue);
-        });
-
-        // flatten object by concatting values
-        function concatValues(obj) {
-            var value = '';
-            for (var prop in obj) {
-                value += obj[prop];
-            }
-            return value;
-        }
+        // unbind first
+        $('.filters').off();
 
         // bind filter button click
         $('.filters').on('click', 'button', function() {
             var filterValue = $(this).attr('data-filter');
             // use filterFn if matches value
 
-            $grid.isotope({ filter: 'professional' });
+            if (this.classList.contains('projects-button-active')) {
+                this.classList.remove('projects-button-active');
+
+                $grid.isotope({
+                    filter: '*'
+                });
+
+                return false;
+            }
+
+            // Clear Other Actives
+            const activeButtons = document.getElementsByClassName("projects-button-active");
+            for (let i = 0; i < activeButtons.length; i++) {
+                activeButtons[i].classList.remove('projects-button-active');
+            }
+
+            $(this).addClass('projects-button-active');
+
+            $grid.isotope({
+                filter: filterValue
+            });
+            console.log(filterValue);
+
         });
 
         //////////////////////////////////////
@@ -155,12 +158,6 @@ class Fade extends Highway.Transition {
             opacity: 1,
             onComplete: done
         });
-
-
-
-
-
-
     }
 
     out({ from, done }) {
@@ -177,49 +174,6 @@ class Fade extends Highway.Transition {
         // });
     }
 
-}
-
-function filterItems(button, tag) {
-
-    if (!$grid.isotope) {
-
-        console.log('$grid.isotope was invalid');
-        return;
-    }
-
-
-    if (button.classList.contains('projects-button-active')) {
-        clearNavButtons();
-
-        $grid.isotope({
-            // filter element with numbers greater than 50
-            filter: function() {
-                // _this_ is the item element. Get text of element's .number
-                // return true to show, false to hide
-                return true;
-            }
-        })
-
-        console.log('Returning All Projects to List')
-        return;
-    }
-
-    clearNavButtons(button);
-
-    // Set 'button' as active
-    button.classList.add('projects-button-active')
-
-    $grid.isotope({
-        // filter element with numbers greater than 50
-        filter: function() {
-            // _this_ is the item element. Get text of element's .number
-            var output = $(this).hasClass(tag);
-            // return true to show, false to hide
-            return output;
-        }
-    })
-
-    console.log("Ran Show on Items with '" + tag + "'")
 }
 
 // Don`t forget to export your transition
