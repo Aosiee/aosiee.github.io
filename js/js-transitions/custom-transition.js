@@ -13,15 +13,14 @@ class Fade extends Highway.Transition {
         from.remove();
 
         //////////////////////////////////////
-        // Run ImagesLoad  ///////////////////
+        // Run ImagesLoad & Init Isotope  ////
         //////////////////////////////////////
 
-        let containerImages = document.querySelector('.image-container');
-        let imgLoadTransition = imagesLoaded(containerImages);
+        let container = document.querySelector('.image-container');
+        let imgLoad = imagesLoaded(container);
 
-        imgLoadTransition.on('progress', function(instance, image) {
+        imgLoad.on('progress', function(instance, image) {
             var result;
-            var succeeded;
 
             if (image.img.classList.contains('half-opacity')) {
                 result = image.isLoaded ? 'loaded-half-opacity' : 'broken';
@@ -34,8 +33,83 @@ class Fade extends Highway.Transition {
                 result = image.isLoaded ? 'loaded' : 'broken';
                 image.img.classList.add(result);
             }
+            // console.log("Image Loaded with " + result)
+        });
 
-            // console.log("Image Loaded on Transition with " + result)
+        // init Isotope
+        var $grid = $('.dynamic-grid').isotope({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.grid-sizer'
+            }
+        });
+
+        // store filter for each group
+        var filters = {};
+
+        $('.filters').on('change', function(event) {
+            var $select = $(event.target);
+            // get group key
+            var filterGroup = $select.attr('value-group');
+            // set filter for group
+            filters[filterGroup] = event.target.value;
+            // combine filters
+            var filterValue = concatValues(filters);
+            // set filter for Isotope
+            $grid.isotope({ filter: filterValue });
+        });
+
+        // flatten object by concatting values
+        function concatValues(obj) {
+            var value = '';
+            for (var prop in obj) {
+                value += obj[prop];
+            }
+            return value;
+        }
+
+
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().progress(function() {
+            $grid.isotope('layout');
+        });
+
+        // filter functions
+        var filterFns = {
+            // show if number is greater than 50
+            numberGreaterThan50: function() {
+                var number = $(this).find('.number').text();
+                return parseInt(number, 10) > 50;
+            },
+            // show if name ends with -ium
+            ium: function() {
+                var name = $(this).find('.name').text();
+                return name.match(/ium$/);
+            }
+        };
+
+        // bind filter button click
+        $('#filters').on('click', 'button', function() {
+            var filterValue = $(this).attr('data-filter');
+            // use filterFn if matches value
+            filterValue = filterFns[filterValue] || filterValue;
+            $grid.isotope({ filter: filterValue });
+        });
+
+        // bind sort button click
+        $('#sorts').on('click', 'button', function() {
+            var sortByValue = $(this).attr('data-sort-by');
+            $grid.isotope({ sortBy: sortByValue });
+        });
+
+        // change is-checked class on buttons
+        $('.button-group').each(function(i, buttonGroup) {
+            var $buttonGroup = $(buttonGroup);
+            $buttonGroup.on('click', 'button', function() {
+                $buttonGroup.find('.is-checked').removeClass('is-checked');
+                $(this).addClass('is-checked');
+            });
         });
 
         //////////////////////////////////////
@@ -135,6 +209,76 @@ class Fade extends Highway.Transition {
     }
 
 }
+
+H.on('NAVIGATE_END', ({ to }) => {
+    manageScripts(to);
+});
+
+
+function manageScripts(to) {
+    const main = document.querySelector('#main-script');
+    const a = [...to.page.querySelectorAll('script:not([data-no-reload])')];
+    const b = [...document.querySelectorAll('script:not([data-no-reload])')];
+
+    //Compare Scripts
+    for (let i = 0; i < b.length; i++) {
+        const c = b[i];
+
+        for (let j = 0; j < a.length; j++) {
+            const d = a[j];
+        }
+
+        if (c.outerHTML === d.outerHTML) {
+            // Create Shadow Script
+            const script = document.createElement(c.tagName);
+
+            // Loop Over Attributes
+            for (let k = 0; k < c.attributes.length; k++) {
+                // Get Attribute
+                const attr = c.attributes[k];
+
+                // Set Attribute
+                script.setAttribute(attr.nodeName, attr.nodeValue);
+            }
+
+            // Inline Script
+            if (c.innerHTML) {
+                script.innerHTML = c.innerHTML;
+            }
+
+            // Replace
+            c.parentNode.replaceChild(script, c);
+
+            // Clean Arrays
+            b.splice(i, 1);
+            a.splice(j, 1);
+
+            // Exit Loop
+            break;
+        }
+    }
+
+    // Remove Useless
+    for (const script of b) {
+        //Remove
+        script.parentNode.removeChild(script);
+    }
+
+    // Add Scripts
+    for (const script of a) {
+        const loc = script.parentNode.tagName;
+
+        if (loc === 'HEAD') {
+            document.head.appendChild(script);
+        }
+
+        if (loc === 'BODY') {
+            document.body.insertBefore(script, main);
+        }
+    }
+
+}
+
 
 // Don`t forget to export your transition
 export default Fade;

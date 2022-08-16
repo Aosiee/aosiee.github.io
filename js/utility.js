@@ -3,6 +3,9 @@
 /////////////////////////////////////////////////////////
 function showOnlyTag(button, tag = 'default') {
 
+    // Function replaced with filterItems as Isotope has been successfully integrated
+    return;
+
     var projects = document.getElementsByClassName('home-image-parent')
 
     // If Clicking Already Active Nav Button

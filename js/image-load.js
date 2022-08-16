@@ -94,3 +94,46 @@ $('.button-group').each(function(i, buttonGroup) {
         $(this).addClass('is-checked');
     });
 });
+
+function filterItems(button, tag) {
+
+    if (!$grid.isotope) {
+
+        console.log('$grid.isotope was invalid');
+        return;
+    }
+
+
+    if (button.classList.contains('projects-button-active')) {
+        clearNavButtons();
+
+        $grid.isotope({
+            // filter element with numbers greater than 50
+            filter: function() {
+                // _this_ is the item element. Get text of element's .number
+                // return true to show, false to hide
+                return true;
+            }
+        })
+
+        console.log('Returning All Projects to List')
+        return;
+    }
+
+    clearNavButtons(button);
+
+    // Set 'button' as active
+    button.classList.add('projects-button-active')
+
+    $grid.isotope({
+        // filter element with numbers greater than 50
+        filter: function() {
+            // _this_ is the item element. Get text of element's .number
+            var output = $(this).hasClass(tag);
+            // return true to show, false to hide
+            return output;
+        }
+    })
+
+    console.log("Ran Show on Items with '" + tag + "'")
+}
