@@ -16,176 +16,150 @@ class Fade extends Highway.Transition {
         // Run ImagesLoad & Init Isotope  ////
         //////////////////////////////////////
 
-        // let container = document.querySelector('.image-container');
-        // let imgLoad = imagesLoaded(container);
+        let container = document.querySelector('.image-container');
+        let imgLoad = imagesLoaded(container);
 
-        // imgLoad.on('progress', function(instance, image) {
-        //     var result;
+        imgLoad.on('progress', function(instance, image) {
+            var result;
 
-        //     if (image.img.classList.contains('half-opacity')) {
-        //         result = image.isLoaded ? 'loaded-half-opacity' : 'broken';
-        //         image.img.classList.add(result);
-        //     }
-        //     if (image.img.classList.contains('half-opacity-third')) {
-        //         result = image.isLoaded ? 'loaded-half-opacity-third' : 'broken';
-        //         image.img.classList.add(result);
-        //     } else {
-        //         result = image.isLoaded ? 'loaded' : 'broken';
-        //         image.img.classList.add(result);
-        //     }
-        //     // console.log("Image Loaded with " + result)
-        // });
+            $grid.isotope('layout');
 
-        // // init Isotope
-        // var $grid = $('.dynamic-grid').isotope({
-        //     itemSelector: '.grid-item',
-        //     percentPosition: true,
-        //     masonry: {
-        //         columnWidth: '.grid-sizer'
-        //     }
-        // });
+            if (image.img.classList.contains('half-opacity')) {
+                result = image.isLoaded ? 'loaded-half-opacity' : 'broken';
+                image.img.classList.add(result);
+            }
+            if (image.img.classList.contains('half-opacity-third')) {
+                result = image.isLoaded ? 'loaded-half-opacity-third' : 'broken';
+                image.img.classList.add(result);
+            } else {
+                result = image.isLoaded ? 'loaded' : 'broken';
+                image.img.classList.add(result);
+            }
+            // console.log("Image Loaded with " + result)
+        });
 
-        // // store filter for each group
-        // var filters = {};
+        // init Isotope
+        var $grid = $('.dynamic-grid').isotope({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.grid-sizer'
+            }
+        });
 
-        // $('.filters').on('change', function(event) {
-        //     var $select = $(event.target);
-        //     // get group key
-        //     var filterGroup = $select.attr('value-group');
-        //     // set filter for group
-        //     filters[filterGroup] = event.target.value;
-        //     // combine filters
-        //     var filterValue = concatValues(filters);
-        //     // set filter for Isotope
-        //     $grid.isotope({ filter: filterValue });
-        // });
+        // store filter for each group
+        var filters = {};
 
-        // // flatten object by concatting values
-        // function concatValues(obj) {
-        //     var value = '';
-        //     for (var prop in obj) {
-        //         value += obj[prop];
-        //     }
-        //     return value;
-        // }
+        $('.filters').on('change', function(event) {
+            var $select = $(event.target);
+            // get group key
+            var filterGroup = $select.attr('value-group');
+            // set filter for group
+            filters[filterGroup] = event.target.value;
+            // combine filters
+            var filterValue = concatValues(filters);
+            // set filter for Isotope
+            $grid.isotope({ filter: filterValue });
 
+            console.log(filterValue);
+        });
 
-        // // layout Isotope after each image loads
-        // $grid.imagesLoaded().progress(function() {
-        //     $grid.isotope('layout');
-        // });
+        // flatten object by concatting values
+        function concatValues(obj) {
+            var value = '';
+            for (var prop in obj) {
+                value += obj[prop];
+            }
+            return value;
+        }
 
-        // // filter functions
-        // var filterFns = {
-        //     // show if number is greater than 50
-        //     numberGreaterThan50: function() {
-        //         var number = $(this).find('.number').text();
-        //         return parseInt(number, 10) > 50;
-        //     },
-        //     // show if name ends with -ium
-        //     ium: function() {
-        //         var name = $(this).find('.name').text();
-        //         return name.match(/ium$/);
-        //     }
-        // };
+        // bind filter button click
+        $('.filters').on('click', 'button', function() {
+            var filterValue = $(this).attr('data-filter');
+            // use filterFn if matches value
 
-        // // bind filter button click
-        // $('#filters').on('click', 'button', function() {
-        //     var filterValue = $(this).attr('data-filter');
-        //     // use filterFn if matches value
-        //     filterValue = filterFns[filterValue] || filterValue;
-        //     $grid.isotope({ filter: filterValue });
-        // });
+            $grid.isotope({ filter: 'professional' });
+        });
 
-        // // bind sort button click
-        // $('#sorts').on('click', 'button', function() {
-        //     var sortByValue = $(this).attr('data-sort-by');
-        //     $grid.isotope({ sortBy: sortByValue });
-        // });
+        //////////////////////////////////////
+        // Run Magic Maths ///////////////////
+        //////////////////////////////////////
+        function getNumberOfDays(start, end) {
+            const date1 = new Date(start);
+            const date2 = new Date(end);
+            const oneDay = 1000 * 60 * 60 * 24;
+            const diffInTime = date2.getTime() - date1.getTime();
+            const diffInDays = Math.round(diffInTime / oneDay);
+            return diffInDays;
+        }
 
-        // // change is-checked class on buttons
-        // $('.button-group').each(function(i, buttonGroup) {
-        //     var $buttonGroup = $(buttonGroup);
-        //     $buttonGroup.on('click', 'button', function() {
-        //         $buttonGroup.find('.is-checked').removeClass('is-checked');
-        //         $(this).addClass('is-checked');
-        //     });
-        // });
+        function getFormattedTimeSince(start) {
+            let formattedTime = "#";
+            var months = Math.ceil(getNumberOfDays(start, Date.now()) / 30);
+            var years = Math.trunc(months / 12);
+            let remainderMonths = years * 12;
+            let remainingMonths = months - remainderMonths;
+            if (months >= 12) {
+                formattedTime = years + " yr " + remainingMonths + " mos";
+            } else {
+                formattedTime = months + ' mos';
+            }
+            return formattedTime;
+        }
 
-        // //////////////////////////////////////
-        // // Run Magic Maths ///////////////////
-        // //////////////////////////////////////
-        // function getNumberOfDays(start, end) {
-        //     const date1 = new Date(start);
-        //     const date2 = new Date(end);
-        //     const oneDay = 1000 * 60 * 60 * 24;
-        //     const diffInTime = date2.getTime() - date1.getTime();
-        //     const diffInDays = Math.round(diffInTime / oneDay);
-        //     return diffInDays;
-        // }
+        ///////////////////////////////////////////////
+        // AutoPlay for Hero Videos ///////////////////
+        ///////////////////////////////////////////////
+        var heroVideos = document.getElementsByClassName("home-hero-video");
 
-        // function getFormattedTimeSince(start) {
-        //     let formattedTime = "#";
-        //     var months = Math.ceil(getNumberOfDays(start, Date.now()) / 30);
-        //     var years = Math.trunc(months / 12);
-        //     let remainderMonths = years * 12;
-        //     let remainingMonths = months - remainderMonths;
-        //     if (months >= 12) {
-        //         formattedTime = years + " yr " + remainingMonths + " mos";
-        //     } else {
-        //         formattedTime = months + ' mos';
-        //     }
-        //     return formattedTime;
-        // }
+        for (let i = 0; i < heroVideos.length; i++) {
+            if (heroVideos[i].paused) {
+                heroVideos[i].play();
+                console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
 
-        // ///////////////////////////////////////////////
-        // // AutoPlay for Hero Videos ///////////////////
-        // ///////////////////////////////////////////////
-        // var heroVideos = document.getElementsByClassName("home-hero-video");
+                var heroVideos = document.getElementsByClassName("home-hero-video");
 
-        // for (let i = 0; i < heroVideos.length; i++) {
-        //     if (heroVideos[i].paused) {
-        //         heroVideos[i].play();
-        //         console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
+                // Copied from projects-loader.js
+                for (let i = 0; i < heroVideos.length; i++) {
+                    if (heroVideos[i].paused) {
+                        heroVideos[i].play();
+                        console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
+                        forceAutoPlay();
+                    } else {
+                        console.log("Hero Video %d, Already Playing Continuing", i);
+                    }
+                }
+            } else {
+                console.log("Hero Video %d, Already Playing Continuing", i);
+            }
+        }
 
-        //         var heroVideos = document.getElementsByClassName("home-hero-video");
+        ///////////////////////////////////////////////
+        // Math for About Page ////////////////////////
+        ///////////////////////////////////////////////
 
-        //         // Copied from projects-loader.js
-        //         for (let i = 0; i < heroVideos.length; i++) {
-        //             if (heroVideos[i].paused) {
-        //                 heroVideos[i].play();
-        //                 console.log("Hero Video %d, Wasn't Playing, Playing & Re-looping", i);
-        //                 forceAutoPlay();
-        //             } else {
-        //                 console.log("Hero Video %d, Already Playing Continuing", i);
-        //             }
-        //         }
-        //     } else {
-        //         console.log("Hero Video %d, Already Playing Continuing", i);
-        //     }
-        // }
+        // Brass Token Auto Month Calc
+        var brassToken = document.getElementById('BrassToken');
+        if (brassToken && !brassToken.firstChild) {
+            brassToken.appendChild(document.createTextNode(getFormattedTimeSince('8/30/2021')));
+        }
 
-        // ///////////////////////////////////////////////
-        // // Math for About Page ////////////////////////
-        // ///////////////////////////////////////////////
-
-        // // Brass Token Auto Month Calc
-        // var brassToken = document.getElementById('BrassToken');
-        // if (brassToken && !brassToken.firstChild) {
-        //     brassToken.appendChild(document.createTextNode(getFormattedTimeSince('8/30/2021')));
-        // }
-
-        // //VFS-Ambassador Auto Month Calc
-        // var vfsAmbassador = document.getElementById('VFS-Ambassador');
-        // if (vfsAmbassador && !vfsAmbassador.firstChild) {
-        //     vfsAmbassador.appendChild(document.createTextNode(getFormattedTimeSince('2/1/2022')));
-        // }
+        //VFS-Ambassador Auto Month Calc
+        var vfsAmbassador = document.getElementById('VFS-Ambassador');
+        if (vfsAmbassador && !vfsAmbassador.firstChild) {
+            vfsAmbassador.appendChild(document.createTextNode(getFormattedTimeSince('2/1/2022')));
+        }
 
         // Animation
         Tween.fromTo(to, 0.5, { opacity: 0 }, {
             opacity: 1,
             onComplete: done
         });
+
+
+
+
+
 
     }
 
@@ -205,75 +179,48 @@ class Fade extends Highway.Transition {
 
 }
 
-H.on('NAVIGATE_END', ({ to }) => {
-    manageScripts(to);
-});
+function filterItems(button, tag) {
+
+    if (!$grid.isotope) {
+
+        console.log('$grid.isotope was invalid');
+        return;
+    }
 
 
-function manageScripts(to) {
-    const main = document.querySelector('#main-script');
-    const a = [...to.page.querySelectorAll('script:not([data-no-reload])')];
-    const b = [...document.querySelectorAll('script:not([data-no-reload])')];
+    if (button.classList.contains('projects-button-active')) {
+        clearNavButtons();
 
-    //Compare Scripts
-    for (let i = 0; i < b.length; i++) {
-        const c = b[i];
-
-        for (let j = 0; j < a.length; j++) {
-            const d = a[j];
-        }
-
-        if (c.outerHTML === d.outerHTML) {
-            // Create Shadow Script
-            const script = document.createElement(c.tagName);
-
-            // Loop Over Attributes
-            for (let k = 0; k < c.attributes.length; k++) {
-                // Get Attribute
-                const attr = c.attributes[k];
-
-                // Set Attribute
-                script.setAttribute(attr.nodeName, attr.nodeValue);
+        $grid.isotope({
+            // filter element with numbers greater than 50
+            filter: function() {
+                // _this_ is the item element. Get text of element's .number
+                // return true to show, false to hide
+                return true;
             }
+        })
 
-            // Inline Script
-            if (c.innerHTML) {
-                script.innerHTML = c.innerHTML;
-            }
-
-            // Replace
-            c.parentNode.replaceChild(script, c);
-
-            // Clean Arrays
-            b.splice(i, 1);
-            a.splice(j, 1);
-
-            // Exit Loop
-            break;
-        }
+        console.log('Returning All Projects to List')
+        return;
     }
 
-    // Remove Useless
-    for (const script of b) {
-        //Remove
-        script.parentNode.removeChild(script);
-    }
+    clearNavButtons(button);
 
-    // Add Scripts
-    for (const script of a) {
-        const loc = script.parentNode.tagName;
+    // Set 'button' as active
+    button.classList.add('projects-button-active')
 
-        if (loc === 'HEAD') {
-            document.head.appendChild(script);
+    $grid.isotope({
+        // filter element with numbers greater than 50
+        filter: function() {
+            // _this_ is the item element. Get text of element's .number
+            var output = $(this).hasClass(tag);
+            // return true to show, false to hide
+            return output;
         }
+    })
 
-        if (loc === 'BODY') {
-            document.body.insertBefore(script, main);
-        }
-    }
-
+    console.log("Ran Show on Items with '" + tag + "'")
 }
-
 
 // Don`t forget to export your transition
 export default Fade;
