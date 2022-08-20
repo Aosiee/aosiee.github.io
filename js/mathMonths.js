@@ -38,11 +38,19 @@ function getFormattedTimeSince(start) {
 // Brass Token Auto Month Calc
 var brassToken = document.getElementById('BrassToken');
 if (brassToken) {
-    brassToken.appendChild(document.createTextNode(getFormattedTimeSince('8/30/2021')));
+
+    var dateText = document.createTextNode(getFormattedTimeSince('7/30/2021'));
+
+    brassToken.appendChild(dateText);
+    // console.log(text.wholeText);
 }
 
 //VFS-Ambassador Auto Month Calc
 var vfsAmbassador = document.getElementById('VFS-Ambassador');
 if (vfsAmbassador) {
-    vfsAmbassador.appendChild(document.createTextNode(getFormattedTimeSince('2/1/2022')));
+    var dateText = document.createTextNode(getFormattedTimeSince('2/1/2022'));
+
+    vfsAmbassador.appendChild(dateText);
+
+    // console.log(text.wholeText);
 }
