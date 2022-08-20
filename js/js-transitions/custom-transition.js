@@ -143,16 +143,24 @@ class Fade extends Highway.Transition {
 
         // Brass Token Auto Month Calc
         var brassToken = document.getElementById('BrassToken');
-        if (brassToken && !brassToken.firstChild) {
-            brassToken.removeChild(brassToken.firstChild);
-            brassToken.appendChild(document.createTextNode(getFormattedTimeSince('7/30/2021')));
+        if (brassToken) {
+
+            var timeSince = document.createTextNode(getFormattedTimeSince('7/30/2021'))
+
+            brassToken.replaceWith(timeSince);
+
+            console.log(brassToken);
         }
 
         //VFS-Ambassador Auto Month Calc
         var vfsAmbassador = document.getElementById('VFS-Ambassador');
-        if (vfsAmbassador && !vfsAmbassador.firstChild) {
-            vfsAmbassador.removeChild(vfsAmbassador.firstChild);
-            vfsAmbassador.appendChild(document.createTextNode(getFormattedTimeSince('2/1/2022')));
+        if (vfsAmbassador) {
+
+            var timeSince = document.createTextNode(getFormattedTimeSince('2/1/2022'));
+
+            vfsAmbassador.replaceWith(timeSince);
+
+            console.log(vfsAmbassador);
         }
 
         // Animation
