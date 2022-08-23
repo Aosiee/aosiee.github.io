@@ -478,6 +478,7 @@ html {
 
 .about-me-details {
     margin: 0;
+    font-size: clamp(0.25rem, 1rem, calc(3vw));
 }
 
 .about-me-details:hover a {
@@ -490,6 +491,10 @@ html {
     color: black;
     /* vertical-align: middle; */
     text-decoration: underline black;
+}
+
+.about-me-title {
+    font-size: clamp(1rem, 1.5rem, 4vw);
 }
 
 .about-me-logo {
