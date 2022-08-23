@@ -22,20 +22,13 @@
     <div data-router-wrapper>
         <div data-router-view="home">
 
-            <!-- Spacer -->
-            <div class="d-none d-lg-block" style="padding-top: 1.5rem;"></div>
+            <!-- Bootstrap Spacer -->
+            <div class="d-none d-lg-block" style="padding-top: 1rem;"></div>
 
 
             <div style="min-height: 95vh; width: 100vw; padding-top: 1.5rem;">
                 <!-- Top Image / Carousel -->
                 <div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <!-- Indicators -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="home-indicator active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" class="home-indicator" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" class="home-indicator" aria-label="Slide 3"></button>
-                    </div>
-
                     <!-- Carousel Slides -->
                     <div class="carousel-inner">
                         <div class="carousel-item home-carousel active" data-bs-interval="360000">
@@ -60,13 +53,20 @@
 
                     <!-- Left & Right Carousel Buttons -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-                    <img style="height: 30px; color: white !important;" src="../assets/font-awesome/angle-left-solid-white.svg">
+                    <img style="height: 30px; color: white !important;" aria-label="Left Carousel Button" alt="Button to Scroll Carousel to the Left" src="../assets/font-awesome/angle-left-solid-white.svg">
                     <span class="visually-hidden"></span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-                    <img style="height: 30px; color: white !important;" src="../assets/font-awesome/angle-right-solid-white.svg">
+                    <img style="height: 30px; color: white !important;" aria-label="Right Carousel Button" alt="Button to Scroll Carousel to the Right" src="../assets/font-awesome/angle-right-solid-white.svg">
                     <span class="visually-hidden"></span>
                     </button>
+
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="home-indicator active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" class="home-indicator" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" class="home-indicator" aria-label="Slide 3"></button>
+                    </div>
                 </div>
 
                 <!-- Images -->
