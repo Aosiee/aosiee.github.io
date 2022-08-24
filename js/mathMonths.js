@@ -43,7 +43,9 @@ function getFormattedTimeSince(start) {
 var brassToken = document.getElementById('BrassToken');
 if (brassToken) {
 
-    var timeSince = document.createTextNode(getFormattedTimeSince('7/30/2021'))
+    // var timeSince = document.createTextNode(getFormattedTimeSince('7/30/2021'))
+    var timeSince = document.createTextNode(getFormattedTimeSince('8/1/2021'))
+
 
     brassToken.replaceWith(timeSince);
 
