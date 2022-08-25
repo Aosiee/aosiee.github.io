@@ -150,7 +150,7 @@ class Fade extends Highway.Transition {
 
             brassToken.replaceWith(timeSince);
 
-            console.log(brassToken);
+            // console.log(brassToken);
         }
 
         //VFS-Ambassador Auto Month Calc
@@ -161,7 +161,7 @@ class Fade extends Highway.Transition {
 
             vfsAmbassador.replaceWith(timeSince);
 
-            console.log(vfsAmbassador);
+            // console.log(vfsAmbassador);
         }
 
         // Animation

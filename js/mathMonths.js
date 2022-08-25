@@ -49,7 +49,7 @@ if (brassToken) {
 
     brassToken.replaceWith(timeSince);
 
-    console.log(brassToken);
+    // console.log(brassToken);
 }
 
 //VFS-Ambassador Auto Month Calc
@@ -60,5 +60,5 @@ if (vfsAmbassador) {
 
     vfsAmbassador.replaceWith(timeSince);
 
-    console.log(vfsAmbassador);
+    // console.log(vfsAmbassador);
 }
