@@ -35,6 +35,9 @@ if not %pushToGit%==y GOTO end
 :pushGit
 
 echo Here Goes the Git Push >> %outputLog%
+
+
+git add %~dp0\
 git commit -am %gitMessage%
 
 :end
