@@ -2,7 +2,7 @@
 
 ::Get Date Time in Format
 For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
-For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
+For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a-%%b)
 set dateTime="%mydate%-%mytime%"
 
 ::Set Log Output Location
