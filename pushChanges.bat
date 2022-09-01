@@ -1,13 +1,19 @@
 @echo off
 
+::Get Date Time in Format
+For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
+For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
+set dateTime="%mydate%_%mytime%"
+
 ::Set Log Output Location
-set outputLog="outputLog.log"
+echo startText > %~dp0\logs\AutoLog-%dateTime%.log"
+set outputLog="%~dp0\logs\AutoLog.log"
 
 ::Set Where Files Are to Go
 set copySource="%~dp0\dist\"
 set copyTarget="%~dp0\docs\"
 
-set gitMessage="Automated Commit from Bat File %date% + %time%"
+set gitMessage="Automated Commit from Bat File %dateTime%"
 
 echo Prompting For Whether to Push to GIT > %outputLog%
 :again 
@@ -37,8 +43,8 @@ if not %pushToGit%==y GOTO end
 echo Here Goes the Git Push >> %outputLog%
 
 
-git add %~dp0\
-git commit -am %gitMessage%
+git add %~dp0\ >> %outputLog%
+git commit -am %gitMessage% >> %outputLog%
 
 :end
 echo Completed Bat File, Ending >> %outputLog%
