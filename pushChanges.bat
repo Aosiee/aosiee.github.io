@@ -44,9 +44,9 @@ if not %pushToGit%==y GOTO end
 :pushGit
 echo Here Goes the Git Push >> %outputLog%
 
-::Commit Message Add Custom
+::Commit Message Add Custom // Auto Commit from Bat File
 set /p customGitMessage="Add Custom Commit Message: "
-set gitMessage="%customGitMessage% - Automated Commit from Bat File - %dateTime%"
+set gitMessage="%customGitMessage% - A.C.f.B.F - %dateTime%"
 
 ::Safety Pull
 git pull >> %outputLog%
