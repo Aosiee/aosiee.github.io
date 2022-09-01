@@ -12,8 +12,7 @@ For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a-%%b)
 set dateTime="%year%-%month%-%day%-%mytime%"
 
 ::Set Log Output Location
-echo startText > %~dp0\logs\AutoLog-%dateTime%.log"
-set outputLog="%~dp0\logs\AutoLog.log"
+set outputLog="%~dp0\logs\AutoLog-%dateTime%.log"
 
 ::Set Where Files Are to Go
 set copySource="%~dp0\dist\"
