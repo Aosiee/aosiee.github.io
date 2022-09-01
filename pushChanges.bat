@@ -18,8 +18,6 @@ set outputLog="%~dp0\logs\AutoLog-%dateTime%.log"
 set copySource="%~dp0\dist\"
 set copyTarget="%~dp0\docs\"
 
-set gitMessage="Automated Commit from Bat File %dateTime%"
-
 echo Prompting For Whether to Push to GIT > %outputLog%
 :again 
 set /p pushToGit="Push to Git? (y/n) "
@@ -40,12 +38,15 @@ echo Answer was: %pushToGit% >> %outputLog%
 echo Copying Files in Dist to Docs >> %outputLog%
 xcopy /s /h /y %copySource% %copyTarget% >> %outputLog%
 
-
+::If Not Supposed to Commit, Skip to End
 if not %pushToGit%==y GOTO end
 
 :pushGit
-
 echo Here Goes the Git Push >> %outputLog%
+
+::Commit Message Add Custom
+set /p customGitMessage="Add Custom Commit Message: "
+set gitMessage="Automated Commit from Bat File - %customGitMessage% - %dateTime%"
 
 ::Safety Pull
 git pull >> %outputLog%
