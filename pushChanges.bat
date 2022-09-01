@@ -5,7 +5,9 @@ set outputLog="outputLog.log"
 
 ::Set Where Files Are to Go
 set copySource="%~dp0\dist\"
-set copyTarget="%~dp0\docs2\"
+set copyTarget="%~dp0\docs\"
+
+set gitMessage="Automated Commit from Bat File"
 
 echo Prompting For Whether to Push to GIT > %outputLog%
 :again 
@@ -33,7 +35,7 @@ if not %pushToGit%==y GOTO end
 :pushGit
 
 echo Here Goes the Git Push >> %outputLog%
-
+git commit -am %gitMessage%
 
 :end
 echo Completed Bat File, Ending >> %outputLog%
