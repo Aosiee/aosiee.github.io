@@ -1,13 +1,13 @@
 @echo off
 
 ::Get Date Time in Format
-::Get Date Time in Format
 for /f "tokens=2 delims==" %%G in ('wmic os get localdatetime /value') do set datetime=%%G
 set year=%datetime:~0,4%
 set month=%datetime:~4,2%
 set day=%datetime:~6,2%
 
-For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
+::Get Time Hour-Minute
+For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a-%%b)
 
 set dateTime="%year%-%month%-%day%-%mytime%"
 
@@ -51,6 +51,7 @@ echo Here Goes the Git Push >> %outputLog%
 
 git add %~dp0\ >> %outputLog%
 git commit -am %gitMessage% >> %outputLog%
+git push >> %outputLog%
 
 :end
 echo Completed Bat File, Ending >> %outputLog%
