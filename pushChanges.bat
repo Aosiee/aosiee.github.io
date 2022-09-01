@@ -1,9 +1,15 @@
 @echo off
 
 ::Get Date Time in Format
-For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
-For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a-%%b)
-set dateTime="%mydate%-%mytime%"
+::Get Date Time in Format
+for /f "tokens=2 delims==" %%G in ('wmic os get localdatetime /value') do set datetime=%%G
+set year=%datetime:~0,4%
+set month=%datetime:~4,2%
+set day=%datetime:~6,2%
+
+For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a%%b)
+
+set dateTime="%year%-%month%-%day%-%mytime%"
 
 ::Set Log Output Location
 echo startText > %~dp0\logs\AutoLog-%dateTime%.log"
