@@ -46,7 +46,7 @@ echo Here Goes the Git Push >> %outputLog%
 
 ::Commit Message Add Custom
 set /p customGitMessage="Add Custom Commit Message: "
-set gitMessage="Automated Commit from Bat File - %customGitMessage% - %dateTime%"
+set gitMessage="%customGitMessage% - Automated Commit from Bat File - %dateTime%"
 
 ::Safety Pull
 git pull >> %outputLog%
