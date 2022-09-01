@@ -7,7 +7,17 @@ set outputLog="outputLog.log"
 set copySource="%~dp0\dist\"
 set copyTarget="%~dp0\docs\"
 
-set gitMessage="Automated Commit from Bat File"
+::Get Date
+for /f "tokens=1-4 delims=/ " %%i in ("%date%") do (
+    set dow=%%i
+    set month=%%j
+    set day=%%k
+    set year=%%l
+)
+set datestr=%month%_%day%_%year%
+echo datestr is %datestr%
+
+set gitMessage="Automated Commit from Bat File %datestr% + %time%"
 
 echo Prompting For Whether to Push to GIT > %outputLog%
 :again 
