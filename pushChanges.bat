@@ -47,9 +47,16 @@ if not %pushToGit%==y GOTO end
 
 echo Here Goes the Git Push >> %outputLog%
 
+::Safety Pull
+git pull >> %outputLog%
 
+::Add Changes to Directory
 git add %~dp0\ >> %outputLog%
+
+::Commit
 git commit -am %gitMessage% >> %outputLog%
+
+::Push
 git push >> %outputLog%
 
 :end
