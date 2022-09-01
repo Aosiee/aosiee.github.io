@@ -1,0 +1,2 @@
+function e(e){let t="#";var n=Math.ceil(function(e,t){const n=new Date(e),a=new Date(t).getTime()-n.getTime();return Math.round(a/864e5)}(e,Date.now())/30),a=Math.trunc(n/12);return t=n>=12?a+" yr "+(n-12*a)+" mos":n+" mos",t}var t=document.getElementById("BrassToken");if(t){var n=document.createTextNode(e("8/1/2021"));t.replaceWith(n)}var a=document.getElementById("VFS-Ambassador");if(a){n=document.createTextNode(e("2/1/2022"));a.replaceWith(n)}
+//# sourceMappingURL=about-me.af1e2647.js.map

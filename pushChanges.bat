@@ -8,7 +8,6 @@ set day=%datetime:~6,2%
 
 ::Get Time Hour-Minute
 For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a-%%b)
-
 set dateTime="%year%-%month%-%day%-%mytime%"
 
 ::Set Log Output Location
@@ -35,6 +34,10 @@ goto again
 echo Answer was: %pushToGit% >> %outputLog%
 
 :copyFiles
+
+::Fresh Build to dist
+::call "build.bat" %outputLog%
+
 echo Copying Files in Dist to Docs >> %outputLog%
 xcopy /s /h /y %copySource% %copyTarget% >> %outputLog%
 
@@ -44,21 +47,10 @@ if not %pushToGit%==y GOTO end
 :pushGit
 echo Here Goes the Git Push >> %outputLog%
 
-::Commit Message Add Custom // Auto Commit from Bat File
 set /p customGitMessage="Add Custom Commit Message: "
-set gitMessage="%customGitMessage% - A.C.f.B.F - %dateTime%"
 
-::Safety Pull
-git pull >> %outputLog%
-
-::Add Changes to Directory
-git add %~dp0\ >> %outputLog%
-
-::Commit
-git commit -am %gitMessage% >> %outputLog%
-
-::Push
-git push >> %outputLog%
+::Call Generic Commit
+call "commitToGit.bat" %outputLog% %customGitMessage% %dateTime%
 
 :end
 echo Completed Bat File, Ending >> %outputLog%
