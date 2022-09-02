@@ -12,6 +12,8 @@ git pull >> %outputLog%
 ::Add Changes to Directory
 git add %~dp0\ >> %outputLog%
 
+if %gitMessage%=="" set %gitMessage%="Generic Push"
+
 ::Commit
 git commit -am %gitMessage% >> %outputLog%
 
