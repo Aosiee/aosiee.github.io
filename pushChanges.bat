@@ -20,6 +20,8 @@ set outputLog="%~dp0\logs\AutoLog-%dateTime%.log"
 set copySource="%~dp0\dist\"
 set copyTarget="%~dp0\docs\"
 
+echo Running pushChanges.bat
+
 ::--------------------------------------------------------
 ::Whether to Build Fresh
 echo Prompting For Whether to Create a Fresh Build > %outputLog%
@@ -91,6 +93,7 @@ call "build.bat" >> %outputLog%
 if not %copyFiles%==y goto pushGit
 
 echo Copying Files in Dist to Docs >> %outputLog%
+echo Copying Files in Dist to Docs >> %outputLog%
 xcopy /s /h /y %copySource% %copyTarget% >> %outputLog%
 
 ::If Not Supposed to Commit, Skip to End
@@ -103,6 +106,7 @@ if not %pushToGit%==y GOTO end
 echo Here Goes the Git Push >> %outputLog%
 
 ::Call Generic Commit
+echo Commiting to Git...
 call "commitToGit.bat" %dateTime% >> %outputLog%
 
 ::--------------------------------------------------------
