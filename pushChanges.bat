@@ -1,5 +1,6 @@
 @echo off
 
+::--------------------------------------------------------
 ::Get Date Time in Format
 for /f "tokens=2 delims==" %%G in ('wmic os get localdatetime /value') do set datetime=%%G
 set year=%datetime:~0,4%
@@ -17,41 +18,73 @@ set outputLog="%~dp0\logs\AutoLog-%dateTime%.log"
 set copySource="%~dp0\dist\"
 set copyTarget="%~dp0\docs\"
 
-echo Prompting For Whether to Push to GIT > %outputLog%
-:again 
-set /p pushToGit="Push to Git? (y/n) "
+::--------------------------------------------------------
+::Whether to Build Fresh
+echo Prompting For Whether to Create a Fresh Build > %outputLog%
+:againBuild
+set /p freshBuild="Fresh Build? (y/n) "
   
-if %pushToGit%==y (GOTO answerSuccessful)
-if %pushToGit%==n (GOTO answerSuccessful)
+if %freshBuild%==y (GOTO buildAnswerSuccessful)
+if %freshBuild%==n (GOTO buildAnswerSuccessful)
 
-echo Please type Y for Yes or N for No
+echo Please type y for Yes or n for No
 pause
   
 cls
-goto again
+goto againBuild
 
-:answerSuccessful
-echo Answer was: %pushToGit% >> %outputLog%
+:buildAnswerSuccessful
+echo FreshBuild Answer was: %freshBuild% >> %outputLog%
 
-:copyFiles
+::--------------------------------------------------------
+::Whether to Push to Git Prompt
+echo Prompting For Whether to Push to GIT > %outputLog%
+:againGit
+set /p pushToGit="Push to Git? (y/n) "
+  
+if %pushToGit%==y (GOTO gitAnswerSuccessful)
+if %pushToGit%==n (GOTO gitAnswerSuccessful)
+
+echo Please type y for Yes or n for No
+pause
+  
+cls
+goto againGit
+
+:gitAnswerSuccessful
+echo CommitToGit Answer was: %pushToGit% >> %outputLog%
+
+::--------------------------------------------------------
+:freshBuild 
+::--------------------------------------------------------
+::If not supposed to freshBuild skip to copy
+if not %freshBuild%==y goto copyFiles
 
 ::Fresh Build to dist
-::call "build.bat" %outputLog%
+call "build.bat" >> %outputLog%
 
+::--------------------------------------------------------
+:copyFiles
+::--------------------------------------------------------
 echo Copying Files in Dist to Docs >> %outputLog%
 xcopy /s /h /y %copySource% %copyTarget% >> %outputLog%
 
 ::If Not Supposed to Commit, Skip to End
+
+::--------------------------------------------------------
+:pushGit
+::--------------------------------------------------------
 if not %pushToGit%==y GOTO end
 
-:pushGit
 echo Here Goes the Git Push >> %outputLog%
 
-set /p customGitMessage="Add Custom Commit Message: "
-
 ::Call Generic Commit
-call "commitToGit.bat" %outputLog% %customGitMessage% %dateTime%
+call "commitToGit.bat" %outputLog% %dateTime%
 
+::--------------------------------------------------------
 :end
+::--------------------------------------------------------
+
 echo Completed Bat File, Ending >> %outputLog%
+echo Completed Executing Bat File...
 pause

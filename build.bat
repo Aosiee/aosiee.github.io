@@ -1,6 +1,5 @@
 echo off
-set outputLog=%1
 
 echo Starting Yarn Build
-yarn build >> %outputLog%
+yarn build
 echo Yarn Build Completed

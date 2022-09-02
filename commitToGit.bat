@@ -1,7 +1,7 @@
 set outputLog=%1
-set customGitMessage=%2
-set dateTime=%3
+set dateTime=%2
 
+set /p customGitMessage="Add Custom Commit Message: "
 
 ::Commit Message Add Custom // Auto Commit from Bat File
 set gitMessage="%customGitMessage% - A.C.f.B.F - %dateTime%"
