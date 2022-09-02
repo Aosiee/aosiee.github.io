@@ -1,5 +1,4 @@
-set outputLog=%1
-set dateTime=%2
+set dateTime=%1
 
 set /p customGitMessage="Add Custom Commit Message: "
 
@@ -8,10 +7,10 @@ set /p customGitMessage="Add Custom Commit Message: "
 set gitMessage="%customGitMessage% - Automated Commit - %dateTime%"
 ::--------------------------------------------------------
 ::Safety Pull
-git pull >> %outputLog%
+git pull
 ::--------------------------------------------------------
 ::Add Changes to Directory
-git add %~dp0\ >> %outputLog%
+git add %~dp0\
 ::--------------------------------------------------------
 ::If Blank, Skip to Generic Commit, Else Continue
 if [%customGitMessage%] == [] goto genericCommit
@@ -19,7 +18,7 @@ if [%customGitMessage%] == [] goto genericCommit
 
 ::Custom Message Commit
 echo Custom Commit!
-git commit -am %gitMessage% >> %outputLog%
+git commit -am %gitMessage%
 goto push
 
 ::Generic Message if != Custom Message
@@ -27,8 +26,8 @@ goto push
 echo Generic Commit!
 
 set genericGitMessage="Generic Commit - Automated Commit - %dateTime%"
-git commit -am %genericGitMessage% >> %outputLog%
+git commit -am %genericGitMessage%
 goto push
 
 :push
-git push >> %outputLog%
+git push

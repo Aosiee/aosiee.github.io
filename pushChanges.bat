@@ -103,7 +103,7 @@ if not %pushToGit%==y GOTO end
 echo Here Goes the Git Push >> %outputLog%
 
 ::Call Generic Commit
-call "commitToGit.bat" %outputLog% %dateTime%
+call "commitToGit.bat" %dateTime% >> %outputLog%
 
 ::--------------------------------------------------------
 :end
