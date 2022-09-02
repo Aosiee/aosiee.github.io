@@ -4,7 +4,7 @@ set dateTime=%2
 set /p customGitMessage="Add Custom Commit Message: "
 
 ::Commit Message Add Custom // Auto Commit from Bat File
-set gitMessage="%customGitMessage% - A.C.f.B.F - %dateTime%"
+set gitMessage="%customGitMessage% - Automated Commit - %dateTime%"
 
 ::Safety Pull
 git pull >> %outputLog%
