@@ -14,7 +14,7 @@ git pull >> %outputLog%
 git add %~dp0\ >> %outputLog%
 ::--------------------------------------------------------
 ::If Blank, Skip to Generic Commit, Else Continue
-if [%gitMessage%] == [] goto genericCommit
+if [%customGitMessage%] == [] goto genericCommit
 ::--------------------------------------------------------
 
 ::Custom Message Commit
