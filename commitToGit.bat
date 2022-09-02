@@ -24,8 +24,8 @@ goto push
 ::Generic Message if != Custom Message
 :genericCommit
 
-set customGitMessage="Generic Commit"
-git commit -am %gitMessage% >> %outputLog%
+set genericGitMessage="Generic Commit - Automated Commit - %dateTime%"
+git commit -am %genericGitMessage% >> %outputLog%
 goto push
 
 :push
