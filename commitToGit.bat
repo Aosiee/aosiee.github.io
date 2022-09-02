@@ -18,6 +18,7 @@ if [%gitMessage%] == [] goto genericCommit
 ::--------------------------------------------------------
 
 ::Custom Message Commit
+echo Custom Commit!
 git commit -am %gitMessage% >> %outputLog%
 goto push
 
