@@ -7,9 +7,11 @@ set year=%datetime:~0,4%
 set month=%datetime:~4,2%
 set day=%datetime:~6,2%
 
-::Get Time Hour-Minute
-For /f "tokens=1-2 delims=/:" %%a in ("%TIME%") do (set mytime=%%a-%%b)
-set dateTime="%year%-%month%-%day%-%mytime%"
+::Get Time Hour-Minute // Filter Time Responce
+set smallTime=%time: =0%
+set smallTime=%smallTime:.=-%
+set smallTime=%smallTime::=-%
+set dateTime="%year%-%month%-%day%-%smallTime%"
 
 ::Set Log Output Location
 set outputLog="%~dp0\logs\AutoLog-%dateTime%.log"
@@ -35,6 +37,25 @@ goto againBuild
 
 :buildAnswerSuccessful
 echo FreshBuild Answer was: %freshBuild% >> %outputLog%
+
+::--------------------------------------------------------
+::Whether to Copy Files from Dist -> Docs
+echo Prompting For Whether to Copy Files from Dist > %outputLog%
+:againCopy
+set /p copyFiles="Copy Files from Dist -> Docs? (y/n) "
+  
+if %copyFiles%==y (GOTO copyAnswerSuccessful)
+if %copyFiles%==n (GOTO copyAnswerSuccessful)
+
+echo Please type y for Yes or n for No
+pause
+  
+cls
+goto againCopy
+
+:copyAnswerSuccessful
+echo Copy Files Answer was: %copyFiles% >> %outputLog%
+
 
 ::--------------------------------------------------------
 ::Whether to Push to Git Prompt
@@ -66,6 +87,9 @@ call "build.bat" >> %outputLog%
 ::--------------------------------------------------------
 :copyFiles
 ::--------------------------------------------------------
+::Skip if Not to Copy Files
+if not %copyFiles%==y goto pushGit
+
 echo Copying Files in Dist to Docs >> %outputLog%
 xcopy /s /h /y %copySource% %copyTarget% >> %outputLog%
 
