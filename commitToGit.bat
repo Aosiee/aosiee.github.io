@@ -14,7 +14,7 @@ git pull >> %outputLog%
 git add %~dp0\ >> %outputLog%
 ::--------------------------------------------------------
 ::If Blank, Skip to Generic Commit, Else Continue
-if %gitMessage%=="" goto genericCommit
+if [%gitMessage%] == [] goto genericCommit
 ::--------------------------------------------------------
 
 ::Custom Message Commit
@@ -23,6 +23,7 @@ goto push
 
 ::Generic Message if != Custom Message
 :genericCommit
+echo Generic Commit!
 
 set genericGitMessage="Generic Commit - Automated Commit - %dateTime%"
 git commit -am %genericGitMessage% >> %outputLog%
