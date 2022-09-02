@@ -18,8 +18,8 @@ if [%customGitMessage%] == [] goto genericCommit
 
 ::Custom Message Commit
 echo Custom Commit!
-git commit -am %gitMessage%
 goto push
+git commit -am %gitMessage%
 
 ::Generic Message if != Custom Message
 :genericCommit
