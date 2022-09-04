@@ -1,6 +1,6 @@
 set dateTime=%1
 
-set /p customGitMessage="Add Custom Commit Message: "
+set /p customGitMessage="Add Custom Commit Message: " >> CON
 
 ::Param Safety // Error
 if [%dateTime%] == [] goto errorParam
@@ -60,4 +60,5 @@ GOTO :EOF
 ::--------------------------------------------------------
 :errorParam
 echo Failed Running Bat, as no Date Specified
+pause
 GOTO :EOF
