@@ -58,7 +58,6 @@ goto againCopy
 :copyAnswerSuccessful
 echo Copy Files Answer was: %copyFiles% >> %outputLog%
 
-
 ::--------------------------------------------------------
 ::Whether to Push to Git Prompt
 echo Prompting For Whether to Push to GIT > %outputLog%
