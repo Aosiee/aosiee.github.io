@@ -24,7 +24,7 @@ echo Running pushChanges.bat
 
 ::--------------------------------------------------------
 ::Whether to Build Fresh
-echo Prompting For Whether to Create a Fresh Build > %outputLog%
+echo Prompting For Whether to Create a Fresh Build >> %outputLog%
 :againBuild
 set /p freshBuild="Fresh Build? (y/n) "
   
@@ -60,7 +60,7 @@ echo Copy Files Answer was: %copyFiles% >> %outputLog%
 
 ::--------------------------------------------------------
 ::Whether to Push to Git Prompt
-echo Prompting For Whether to Push to GIT > %outputLog%
+echo Prompting For Whether to Push to GIT >> %outputLog%
 :againGit
 set /p pushToGit="Push to Git? (y/n) "
   
@@ -82,8 +82,14 @@ echo CommitToGit Answer was: %pushToGit% >> %outputLog%
 ::If not supposed to freshBuild skip to copy
 if not %freshBuild%==y goto copyFiles
 
+echo Building Fresh Build
+echo Building Fresh Build >> %outputLog%
+
 ::Fresh Build to dist
 call "build.bat" >> %outputLog%
+
+echo Completed Building Fresh Build
+echo Completed Building Fresh Build >> %outputLog%
 
 ::--------------------------------------------------------
 :copyFiles
@@ -91,22 +97,28 @@ call "build.bat" >> %outputLog%
 ::Skip if Not to Copy Files
 if not %copyFiles%==y goto pushGit
 
+echo Copying Files in Dist to Docs
 echo Copying Files in Dist to Docs >> %outputLog%
-echo Copying Files in Dist to Docs >> %outputLog%
+
 xcopy /s /h /y %copySource% %copyTarget% >> %outputLog%
 
-::If Not Supposed to Commit, Skip to End
+echo Completed Copying Files from Dist to Docs
+echo Completed Copying Files from Dist to Docs >> %outputLog%
 
 ::--------------------------------------------------------
 :pushGit
 ::--------------------------------------------------------
+::If Not Supposed to Commit, Skip to End
 if not %pushToGit%==y GOTO end
 
-echo Here Goes the Git Push >> %outputLog%
+echo Commiting to Git...
+echo Commiting to Git... >> %outputLog%
 
 ::Call Generic Commit
-echo Commiting to Git...
 call "commitToGit.bat" %dateTime% >> %outputLog%
+
+echo Completed Commiting to Git...
+echo Completed Commiting to Git... >> %outputLog%
 
 ::--------------------------------------------------------
 :end
