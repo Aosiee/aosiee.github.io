@@ -32,16 +32,6 @@ html {
     text-decoration: none !important;
 }
 
-<<<<<<< HEAD
-a {
-    color: grey !important;
-    text-decoration: none grey;
-}
-
-a:hover {
-    color: black !important;
-}
-
 a.nav-link:hover {
     color: white !important;
 }
@@ -55,8 +45,6 @@ a.navbar-brand:hover {
     transition: 1s;
 }
 
-=======
->>>>>>> 405ad0f6c1dfa8d6062c290ed2672b0f53455d86
 
 /* ////////////////////////////////////////////////////////
 // Scroll Bar
@@ -462,7 +450,6 @@ a.navbar-brand:hover {
     margin-right: 25%;
 }
 
-<<<<<<< HEAD
 .source-link {
     color: grey !important;
     text-decoration: underline grey !important;
@@ -473,8 +460,6 @@ a.navbar-brand:hover {
     text-decoration: underline black !important;
 }
 
-=======
->>>>>>> 405ad0f6c1dfa8d6062c290ed2672b0f53455d86
 .section-image .loaded {
     opacity: 1;
     transition: 1s ease-in-out;

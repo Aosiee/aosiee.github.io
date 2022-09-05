@@ -34,7 +34,7 @@
         "gh-pages": "^4.0.0",
         "gh-pages-deploy": "^0.1.1",
         "posthtml-doctype": "^1.1.1",
-        "posthtml-include": "^1.7.3",
+        "posthtml-include": "^1.7.4",
         "shx": "^0.3.2"
     }
 }

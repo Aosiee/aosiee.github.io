@@ -2436,9 +2436,9 @@ posthtml-expressions@^1.7.1:
     posthtml-parser "^0.10.0"
     posthtml-render "^3.0.0"
 
-posthtml-include@^1.7.3:
+posthtml-include@^1.7.4:
   version "1.7.4"
-  resolved "https://registry.npmjs.org/posthtml-include/-/posthtml-include-1.7.4.tgz"
+  resolved "https://registry.yarnpkg.com/posthtml-include/-/posthtml-include-1.7.4.tgz#45e7abd18395ce5a6e8af9dc5c5390f85cf6171c"
   integrity sha512-GO5QzHiM6/fXq8DxLoLN+jEW4sH/6nuGF9z+NJmP1qi1A3J2zCC7WwXrEwaPL3T8LrH+FL4IedK+mIJHbn5ZEA==
   dependencies:
     posthtml "^0.16.6"

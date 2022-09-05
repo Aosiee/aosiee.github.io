@@ -13,6 +13,12 @@ set smallTime=%smallTime:.=-%
 set smallTime=%smallTime::=-%
 set dateTime="%year%-%month%-%day%-%smallTime%"
 
+if exist %~dp0\logs\ (
+ echo Folder Exists >> CON
+) else (
+ mkdir %~dp0\logs\
+)
+
 ::Set Log Output Location
 set outputLog="%~dp0\logs\AutoLog-%dateTime%.log"
 
@@ -90,10 +96,7 @@ call "build.bat" >> %outputLog%
 
 echo Completed Building Fresh Build
 echo Completed Building Fresh Build >> %outputLog%
-<<<<<<< HEAD
 echo.
-=======
->>>>>>> 405ad0f6c1dfa8d6062c290ed2672b0f53455d86
 
 ::--------------------------------------------------------
 :copyFiles
@@ -108,10 +111,7 @@ xcopy /s /h /y %copySource% %copyTarget% >> %outputLog%
 
 echo Completed Copying Files from Dist to Docs
 echo Completed Copying Files from Dist to Docs >> %outputLog%
-<<<<<<< HEAD
 echo.
-=======
->>>>>>> 405ad0f6c1dfa8d6062c290ed2672b0f53455d86
 
 ::--------------------------------------------------------
 :pushGit
@@ -127,10 +127,7 @@ call "commitToGit.bat" %dateTime% >> %outputLog%
 
 echo Completed Commiting to Git...
 echo Completed Commiting to Git... >> %outputLog%
-<<<<<<< HEAD
 echo.
-=======
->>>>>>> 405ad0f6c1dfa8d6062c290ed2672b0f53455d86
 
 ::--------------------------------------------------------
 :end

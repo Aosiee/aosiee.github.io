@@ -20,6 +20,19 @@ html {
   text-decoration: none !important;
 }
 
+a.nav-link:hover {
+  color: #fff !important;
+}
+
+a.navbar-brand {
+  color: #000 !important;
+}
+
+a.navbar-brand:hover {
+  transition: all 1s;
+  transform: scale(1.05);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -358,6 +371,16 @@ html {
   margin-top: 25px;
   margin-left: 5%;
   margin-right: 25%;
+}
+
+.source-link {
+  color: gray !important;
+  text-decoration: underline gray !important;
+}
+
+.source-link:hover {
+  color: #000 !important;
+  text-decoration: underline #000 !important;
 }
 
 .section-image .loaded {
