@@ -14,9 +14,9 @@ set smallTime=%smallTime::=-%
 set dateTime="%year%-%month%-%day%-%smallTime%"
 
 if exist %~dp0\logs\ (
- echo Log Folder Exists
+ echo Log Folder Exists >> %~dp0\logs\AutoLog-%dateTime%.log
 ) else (
- echo Log Doesn't Exist, Creatin Folder
+ echo Log Folder Doesn't Exist, Creating Folder
  mkdir %~dp0\logs\
 )
 
