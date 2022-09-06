@@ -4,11 +4,10 @@ set forceGeneric=%2
 ::If this script needs to be auto-ran with no user input
 if [%forceGeneric%] == [forceGeneric] goto skipCustomMessagePrompt
 
-echo Add Custom Commit Message: >> CON
-set /p customGitMessage=""
+set /p customGitMessage=Add Custom Commit Message: >> CON
 
-echo Custom Commit Message = %customGitMessage%
-echo Custom Commit Message = %customGitMessage% >> CON 
+echo Custom Commit Message is %customGitMessage%
+echo Custom Commit Message is %customGitMessage% >> CON 
 echo.
 
 :skipCustomMessagePrompt
