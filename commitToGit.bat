@@ -2,7 +2,7 @@ set dateTime=%1
 set forceGeneric=%2
 
 ::If this script needs to be auto-ran with no user input
-if [%forceGeneric%]==[forceGeneric] goto skipCustomMessagePrompt
+if "%forceGeneric%"=="forceGeneric" goto skipCustomMessagePrompt
 
 set customGitMessag=
 set /p customGitMessage=Add Custom Commit Message: >> CON
@@ -14,7 +14,7 @@ echo.
 :skipCustomMessagePrompt
 
 ::Param Safety // Error
-if [%dateTime%]==[] goto errorParam
+if "v%dateTime%"=="v" goto errorParam
 
 ::--------------------------------------------------------
 ::\ Safety Pull \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -60,7 +60,6 @@ echo Added Changes in Directory >> CON
 echo Added Changes in Directory
 echo.
 
-::It's crashing just past here
 ::--------------------------------------------------------
 ::\ Commit Message & Commit \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ::--------------------------------------------------------
