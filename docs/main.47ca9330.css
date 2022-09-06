@@ -20,7 +20,31 @@ html {
   text-decoration: none !important;
 }
 
+.nav-link {
+  transition: all 1s;
+}
+
+.disable-me {
+  pointer-events: none;
+}
+
 a.nav-link:hover {
+  background-color: gray;
+  transition: all 1s;
+  color: #fff !important;
+}
+
+.navbar-collapse a.nav-link:hover {
+  background-color: gray;
+  padding-left: 5px;
+  transition: all .25s;
+  color: #fff !important;
+}
+
+.navbar-expand-lg .navbar-collapse a.nav-link:hover {
+  background-color: gray;
+  padding-left: .5rem;
+  padding-right: .5rem;
   color: #fff !important;
 }
 

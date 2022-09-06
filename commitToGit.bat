@@ -9,20 +9,29 @@ if [%dateTime%] == [] goto errorParam
 ::\ Safety Pull \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ::--------------------------------------------------------
 echo Pulling Changes >> CON
+echo Pulling Changes
+echo.
 git pull
+echo.
+echo Pulled Changes >> CON
+echo Pulled Changes
 echo.
 
 ::--------------------------------------------------------
 ::\ Mark Version \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ::--------------------------------------------------------
 echo Getting Revision Count >> CON
+echo Getting Revision Count
 
+echo.
 git rev-list --count main > %~dp0\git-version.txt
+echo.
 
 ::Get Git Count as a Var
 set /p gitCount=<git-version.txt
 
 echo Set Revision Number >> CON
+echo Set Revision Number
 echo.
 
 ::--------------------------------------------------------
@@ -30,8 +39,14 @@ echo.
 ::--------------------------------------------------------
 ::Add Changes to Directory
 echo Adding Changes in Directory >> CON
+echo Adding Changes in Directory
+
+echo.
 git add %~dp0\
+echo.
+
 echo Added Changes in Directory >> CON
+echo Added Changes in Directory
 echo.
 
 ::--------------------------------------------------------
@@ -42,11 +57,20 @@ if [%customGitMessage%] == [] goto genericCommit
 ::--------------------------------------------------------
 ::Create Custom Git Message // Auto Commit from Bat File
 set gitMessage="%customGitMessage% - Automated Commit - %gitCount% - %dateTime%"
+
+echo Created Custom Commit Message >> CON
+echo Created Custom Commit Message
 ::--------------------------------------------------------
 ::Custom Message Commit
 echo Committing with a Custom Commit! >> CON
+echo Committing with a Custom Commit!
+
+echo.
 git commit -am %gitMessage%
-echo Committed! >> CON
+echo.
+
+echo Completed Custom Commit!
+echo Completed Custom Commit! >> CON
 echo.
 
 ::--------------------------------------------------------
@@ -66,8 +90,14 @@ echo.
 ::--------------------------------------------------------
 :push
 echo Pushing Changes >> CON
+echo Pushing Changes
+
+echo.
 git push
-echo Completed Pushing Changes >> CON
+echo.
+
+echo Pushed Changes >> CON
+echo Pushed Changes 
 echo.
 
 GOTO :EOF
@@ -77,5 +107,6 @@ GOTO :EOF
 ::--------------------------------------------------------
 :errorParam
 echo Failed Running Bat, as no Date Specified
+echo Failed Running Bat, as no Date Specified >> CON
 pause
 GOTO :EOF
