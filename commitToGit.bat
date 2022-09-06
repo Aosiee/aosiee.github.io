@@ -63,7 +63,7 @@ echo.
 ::\ Commit Message & Commit \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ::--------------------------------------------------------
 ::If Blank, Skip to Generic Commit, Else Continue
-::if [%customGitMessage%] == [] goto genericCommit
+if [%customGitMessage%]==[] goto genericCommit
 ::--------------------------------------------------------
 ::Create Custom Git Message // Auto Commit from Bat File
 set gitMessage="%customGitMessage% - Automated Commit - %gitCount% - %dateTime%"
