@@ -1,6 +1,9 @@
 set dateTime=%1
 
-set /p customGitMessage="Add Custom Commit Message: " >> CON
+echo Add Custom Commit Message: >> CON
+set /p customGitMessage
+
+echo Custom Commit Message = %customGitMessage% >> CON 
 
 ::Param Safety // Error
 if [%dateTime%] == [] goto errorParam
