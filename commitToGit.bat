@@ -2,7 +2,7 @@ set dateTime=%1
 set forceGeneric=%2
 
 ::If this script needs to be auto-ran with no user input
-if [forceGeneric] == [forceGeneric] goto skipCustomMessage
+if [%forceGeneric%] == [forceGeneric] goto skipCustomMessage
 
 echo Add Custom Commit Message: >> CON
 set /p customGitMessage=""
