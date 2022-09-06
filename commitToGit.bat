@@ -1,7 +1,7 @@
 set dateTime=%1
 
 echo Add Custom Commit Message: >> CON
-set /p customGitMessage
+set /p customGitMessage = ""
 
 echo Custom Commit Message = %customGitMessage% >> CON 
 
