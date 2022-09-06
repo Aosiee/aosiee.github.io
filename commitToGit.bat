@@ -2,18 +2,19 @@ set dateTime=%1
 set forceGeneric=%2
 
 ::If this script needs to be auto-ran with no user input
-if [%forceGeneric%] == [forceGeneric] goto skipCustomMessagePrompt
+if [%forceGeneric%]==[forceGeneric] goto skipCustomMessagePrompt
 
+set customGitMessag=
 set /p customGitMessage=Add Custom Commit Message: >> CON
 
-echo Custom Commit Message is %customGitMessage%
-echo Custom Commit Message is %customGitMessage% >> CON 
+echo Custom Commit Message is "%customGitMessage%"
+echo Custom Commit Message is "%customGitMessage%" >> CON 
 echo.
 
 :skipCustomMessagePrompt
 
 ::Param Safety // Error
-if [%dateTime%] == [] goto errorParam
+if [%dateTime%]==[] goto errorParam
 
 ::--------------------------------------------------------
 ::\ Safety Pull \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -59,13 +60,18 @@ echo Added Changes in Directory >> CON
 echo Added Changes in Directory
 echo.
 
+::It's crashing just past here
 ::--------------------------------------------------------
 ::\ Commit Message & Commit \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ::--------------------------------------------------------
 ::If Blank, Skip to Generic Commit, Else Continue
-if [%customGitMessage%]==[] goto genericCommit
+if "v%customGitMessage%"=="v" goto genericCommit 
 ::--------------------------------------------------------
 ::Create Custom Git Message // Auto Commit from Bat File
+
+echo Creating Custom Commit Message >> CON
+echo Creating Custom Commit Message
+
 set gitMessage="%customGitMessage% - Automated Commit - %gitCount% - %dateTime%"
 
 echo Created Custom Commit Message >> CON
