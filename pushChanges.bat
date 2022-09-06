@@ -124,7 +124,7 @@ echo Commiting to Git...
 echo Commiting to Git... >> %outputLog%
 
 ::Call Generic Commit
-call "commitToGit.bat" %dateTime% >> %outputLog%
+call "commitToGit.bat" %dateTime% noForceGeneric >> %outputLog%
 
 echo Completed Commiting to Git...
 echo Completed Commiting to Git... >> %outputLog%

@@ -1,4 +1,8 @@
 set dateTime=%1
+set forceGeneric=%2
+
+::If this script needs to be auto-ran with no user input
+if [forceGeneric] == [forceGeneric] goto skipCustomMessage
 
 echo Add Custom Commit Message: >> CON
 set /p customGitMessage=""
@@ -6,6 +10,8 @@ set /p customGitMessage=""
 echo Custom Commit Message = %customGitMessage% >> CON
 echo Custom Commit Message = %customGitMessage% >> CON 
 echo.
+
+:skipCustomMessage
 
 ::Param Safety // Error
 if [%dateTime%] == [] goto errorParam
@@ -66,7 +72,6 @@ set gitMessage="%customGitMessage% - Automated Commit - %gitCount% - %dateTime%"
 echo Created Custom Commit Message >> CON
 echo Created Custom Commit Message
 
-pause
 ::--------------------------------------------------------
 ::Custom Message Commit
 echo Committing with a Custom Commit! >> CON
@@ -86,7 +91,6 @@ goto push
 :genericCommit
 echo Generic Commit! >> CON
 echo Generic Commit!
-pause
 ::--------------------------------------------------------
 ::Set Generic Commit Message
 echo Committing with a Generic Commit! >> CON
@@ -94,7 +98,7 @@ echo Committing with a Generic Commit!
 
 set genericGitMessage="Generic Commit - Automated Commit - %gitCount% - %dateTime%"
 git commit -am %genericGitMessage%
-echo Committed! >> CON
+echo Generic Committed! >> CON
 echo.
 
 goto push
