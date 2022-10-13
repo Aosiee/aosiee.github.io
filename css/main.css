@@ -326,8 +326,10 @@ a.navbar-brand:hover {
 }
 
 .home-indicator {
-    height: 15px !important;
-    width: 15px !important;
+    height: 1.5vw !important;
+    width: 1.5vw !important;
+    max-width: 12px;
+    max-height: 12px;
     border: black solid 1px !important;
     border-radius: 50%;
 }
