@@ -4599,7 +4599,7 @@ fieldset:disabled .btn {
 
 .navbar-toggler:focus {
     text-decoration: none;
-    outline: black solid !important;
+    /* outline: black solid !important; */
 }
 
 .navbar-toggler-icon {
@@ -11366,12 +11366,13 @@ body {
 #mainNav .navbar-toggler {
     font-size: 80%;
     padding: 0.75rem;
-    color: black;
+    /* color: black; */
     /* border: 1px solid black; */
 }
 
-#mainNav .navbar-toggler:focus {
-    outline: none;
+#mainNav .navbar-toggler:hover {
+    outline: black solid !important;
+    transition: .05s;
 }
 
 #mainNav .navbar-brand {
