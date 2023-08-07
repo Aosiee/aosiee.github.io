@@ -513,6 +513,10 @@ a.navbar-brand:hover {
     margin: 0% 8%;
 }
 
+.project-progress {
+    padding: 1px 0px 3px 0px;
+}
+
 .projects-side-image {
     width: 125%;
     top: 5%;
@@ -536,7 +540,7 @@ a.navbar-brand:hover {
 
 .projects-side-image-2.loaded-half-opacity {
     /* left: 25vw !important; */
-    left: 60dvw;
+    left: 55%;
     transition: 1s ease-out;
 }
 
