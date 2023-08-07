@@ -62,3 +62,14 @@ if (vfsAmbassador) {
 
     // console.log(vfsAmbassador);
 }
+
+//VFS-ConnectInstructor Auto Month Calc
+var vfsAmbassador = document.getElementById('VFS-ConnectInstructor');
+if (vfsAmbassador) {
+
+    var timeSince = document.createTextNode(getFormattedTimeSince('7/1/2023'));
+
+    vfsAmbassador.replaceWith(timeSince);
+
+    // console.log(vfsAmbassador);
+}

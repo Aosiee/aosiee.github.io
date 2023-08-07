@@ -6,7 +6,7 @@ import { each } from 'jquery';
 
 class Fade extends Highway.Transition {
 
-    in ({ from, to, done }) {
+    in({ from, to, done }) {
         // Reset Scroll
         window.scrollTo(0, 0);
 
@@ -20,7 +20,7 @@ class Fade extends Highway.Transition {
         let container = document.querySelector('.image-container');
         let imgLoad = imagesLoaded(container);
 
-        imgLoad.on('progress', function(instance, image) {
+        imgLoad.on('progress', function (instance, image) {
             var result;
 
             $grid.isotope('layout');
@@ -55,7 +55,7 @@ class Fade extends Highway.Transition {
         $('.filters').off();
 
         // bind filter button click
-        $('.filters').on('click', 'button', function() {
+        $('.filters').on('click', 'button', function () {
             var filterValue = $(this).attr('data-filter');
             // use filterFn if matches value
 
@@ -158,6 +158,17 @@ class Fade extends Highway.Transition {
         if (vfsAmbassador) {
 
             var timeSince = document.createTextNode(getFormattedTimeSince('2/1/2022'));
+
+            vfsAmbassador.replaceWith(timeSince);
+
+            // console.log(vfsAmbassador);
+        }
+
+        //VFS-ConnectInstructor Auto Month Calc
+        var vfsAmbassador = document.getElementById('VFS-ConnectInstructor');
+        if (vfsAmbassador) {
+
+            var timeSince = document.createTextNode(getFormattedTimeSince('7/1/2023'));
 
             vfsAmbassador.replaceWith(timeSince);
 
