@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	import { readable, writable } from 'svelte/store';
 
 	// Example lists of resources to load
@@ -186,7 +187,7 @@
 	<div class="preloader-container">
 		<img
 			class="preloader-logo"
-			src="/assets/images/logos/logo-black-2.svg"
+			src="{base + '/assets/images/logos/logo-black-2.svg'}"
 			alt="Logo On Preloader"
 		/>
 	</div>

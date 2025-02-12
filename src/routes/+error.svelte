@@ -1,6 +1,7 @@
 <script>
 	// @ts-nocheck
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	console.log($page.error.message);
 </script>
@@ -11,12 +12,12 @@
 		<div class="container d-lg-block d-none" style="height: 90%">
 			<div class="row h-100 text-center">
 				<div class="col-7">
-					<img class="error-image" src="/assets/images/headers/404.png" alt="404 Error Icon" />
+					<img class="error-image" src="{base + '/assets/images/headers/404.png'}" alt="404 Error Icon" />
 				</div>
 				<div class="error-message col-5">
 					<h1>404</h1>
 					<p>This page is either missing or under construction...</p>
-					<a href="/">Return Home</a>
+					<a href="{base}/">Return Home</a>
 				</div>
 			</div>
 		</div>
@@ -25,13 +26,13 @@
 		<div class="container h-100 d-lg-none d-block" style="">
 			<div class="row h-100 text-center" style="align-content: center;">
 				<div class="col-12" style="height: 50%; margin-bottom: 1rem;">
-					<img class="error-image" src="/assets/images/headers/404.png" alt="404 Error Icon" />
+					<img class="error-image" src="{base + '/assets/images/headers/404.png'}" alt="404 Error Icon" />
 				</div>
 				<hr />
 				<div class="error-message-vertical col-12">
 					<h1>404</h1>
 					<p>This page is either missing or under construction...</p>
-					<a href="/">Return Home</a>
+					<a href="{base}/">Return Home</a>
 				</div>
 			</div>
 		</div>

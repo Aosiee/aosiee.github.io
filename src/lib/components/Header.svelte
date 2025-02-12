@@ -77,8 +77,8 @@
 </script>
 
 <header>
-	<link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-	<link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+	<link href={base + '/assets/fontawesome/css/fontawesome.css'} rel="stylesheet" />
+	<link href={base + '/assets/fontawesome/css/brands.css'} rel="stylesheet" />
 
 	<!-- SVG's -->
 	<svg class="w-0 h-0 absolute pointer-events-none" data-v-585b909e="">
@@ -365,12 +365,14 @@
 		}
 	</style>
 
+	<div id="top"></div>
+
 	<!-- Mobile Navbar -->
 	<div class="header-background mobile d-sm-none">
 		<div class="row">
 			<div class="col">
 				<a class="navbar-brand" href="{base}/">
-					<img src="/assets/images/logos/logo-black-2.svg" alt="Home" />
+					<img src={base + '/assets/images/logos/logo-black-2.svg'} alt="Home" />
 				</a>
 			</div>
 			<div class="col" style="text-align: right; margin-right: 1rem;">
@@ -397,17 +399,20 @@
 		<hr />
 
 		<ul style="display: inline;">
-			<li aria-current={$page.url.pathname === ({base}+'/') ? 'page' : undefined} class="mobile-nav-link">
+			<li
+				aria-current={$page.url.pathname === { base } + '/' ? 'page' : undefined}
+				class="mobile-nav-link"
+			>
 				<a href="{base}/" data-sveltekit-noscroll>Home</a>
 			</li>
 			<li
-				aria-current={$page.url.pathname === ({base}+'/about') ? 'page' : undefined}
+				aria-current={$page.url.pathname === { base } + '/about' ? 'page' : undefined}
 				class="mobile-nav-link"
 			>
 				<a href="{base}/about" data-sveltekit-noscroll>About</a>
 			</li>
 			<li
-				aria-current={$page.url.pathname === ({base}+'/projects') ? 'page' : undefined}
+				aria-current={$page.url.pathname === { base } + '/projects' ? 'page' : undefined}
 				class="mobile-nav-link"
 			>
 				<a href="{base}/projects" data-sveltekit-noscroll>Projects</a>
@@ -420,20 +425,20 @@
 	<div class="header-background d-none d-sm-block">
 		<div class="desktop-navbar">
 			<div id="nav-block-left">
-				<a href="/">
-					<img src="/assets/images/logos/logo-black-2.svg" alt="Home" />
+				<a href="{base}/">
+					<img src={base + '/assets/images/logos/logo-black-2.svg'} alt="Home" />
 				</a>
 			</div>
 
 			<nav id="nav-block-right">
 				<ul id="page-nav">
-					<li aria-current={$page.url.pathname === ({base}+'/') ? 'page' : undefined}>
+					<li aria-current={$page.url.pathname === { base } + '/' ? 'page' : undefined}>
 						<a href="{base}/">Home</a>
 					</li>
-					<li aria-current={$page.url.pathname === ({base}+'/about') ? 'page' : undefined}>
+					<li aria-current={$page.url.pathname === { base } + '/about' ? 'page' : undefined}>
 						<a href="{base}/about">About</a>
 					</li>
-					<li aria-current={$page.url.pathname === ({base}+'/projects') ? 'page' : undefined}>
+					<li aria-current={$page.url.pathname === { base } + '/projects' ? 'page' : undefined}>
 						<a href="{base}/projects">Projects</a>
 					</li>
 				</ul>

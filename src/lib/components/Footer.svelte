@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	const currentYear = new Date().getFullYear();
 </script>
 
@@ -6,7 +8,7 @@
 	<div class="footer-background">
 		<div class="footer-logo">
 			<a href="#top">
-				<img src="/assets/images/logos/logo-white-2.svg" alt="Back To Top" />
+				<img src="{base + '/assets/images/logos/logo-white-2.svg'}" alt="Back To Top" />
 			</a>
 		</div>
 		<p>© 2019 - {currentYear} All Rights Reserved • Felipe Lara</p>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import CenterBackground from '$lib/components/CenterBackground.svelte';
 	import Hero_Grid from '$lib/components/HeroGrid.svelte';
 </script>
@@ -10,7 +11,7 @@
 
 <div class="about-header">
 	<img
-		src="/assets/images/headers/AboutMeHeader.jpg"
+		src="{base + '/assets/images/headers/AboutMeHeader.jpg'}"
 		alt="About Me Decorative Background"
 		loading="lazy"
 	/>

@@ -89,7 +89,7 @@
 	let professionalItems: GridItemData[] = [
 		{
 			title: 'Kinshft',
-			page: '/projects',
+			page: '/projects/professional-project/kinshft',
 			src: '/assets/images/headers/Kinshift_NoLogo_2.jpg',
 			logo: '/assets/images/headers/Kinshift_Logo.png',
 			platforms: [
@@ -109,14 +109,14 @@
 		},
 		{
 			title: 'Unannounced Project',
-			page: '/projects',
+			page: '/projects/professional-project/unannounced-project',
 			src: '/assets/images/headers/UnannouncedProject.png',
 			logo: '',
 			platforms: []
 		},
 		{
 			title: 'The Chant DLC',
-			page: '/projects',
+			page: '/projects/professional-project/the-chant-dlc',
 			src: '/assets/images/headers/TheChantDLCHeader-NoLogo.jpg',
 			logo: '/assets/images/headers/TheChantDLCHeader_Logo.png',
 			platforms: [
@@ -136,7 +136,7 @@
 		},
 		{
 			title: 'The Chant',
-			page: '/projects',
+			page: '/projects/professional-project/the-chant',
 			src: '/assets/images/headers/TheChantHeader_NoLogo.jpg',
 			logo: '/assets/images/headers/TheChantHeader_Logo.png',
 			platforms: [
@@ -156,7 +156,7 @@
 		},
 		{
 			title: 'Shift - VFS Final Project',
-			page: '/projects',
+			page: '/projects/professional-project/shift---vfs-final-project',
 			src: '/assets/images/headers/ShiftHeader.jpg',
 			logo: '',
 			platforms: []
@@ -166,14 +166,14 @@
 	let codingItems: GridItemData[] = [
 		{
 			title: 'Procedural Voxel Generation',
-			page: '/projects',
+			page: '/projects/coding-adventure/procedural-voxel-generation',
 			src: '/assets/images/headers/voxel-generation_header-2.jpg',
 			logo: '',
 			platforms: []
 		},
 		{
 			title: 'Multithreaded A.I Navigation',
-			page: '/projects',
+			page: '/projects/coding-adventure/multithreaded-a.i-navigation',
 			src: '/assets/images/headers/AIOverviewHeader.jpg',
 			logo: '',
 			platforms: []
@@ -183,14 +183,14 @@
 	let gameJamItems: GridItemData[] = [
 		{
 			title: 'Poppet',
-			page: '/projects',
+			page: '/projects/game-jam/poppet',
 			src: '/assets/images/headers/Poppet_Header.jpg',
 			logo: '/assets/images/headers/Poppet.png',
 			platforms: []
 		},
 		{
 			title: 'Get A Grip',
-			page: '/projects',
+			page: '/projects/game-jam/get-a-grip',
 			src: '/assets/images/headers/GAG_Header2.png',
 			logo: '/assets/images/headers/GAG_Logo.png',
 			platforms: []
@@ -296,23 +296,23 @@
 							<div class="card-body">
 								<a
 									class="card-logo-link"
-									href={base + '/projects/' + category.categoryClass + '/' + removeSpaces(item.title)}
+									href={base + item.page}
 									data-sveltekit-noscroll
 								>
 									{#if item.logo}
 										<div class="card-logo">
-											<img src={item.logo} alt={item.title + ' Logo'} class="h-100" />
+											<img src={base + item.logo} alt={item.title + ' Logo'} class="h-100" />
 										</div>
 									{/if}
 
 									<div class="card-image">
-										<img src={item.src} class="w-100 h-100" alt={item.title} loading="lazy" />
+										<img src={base + item.src} class="w-100 h-100" alt={item.title} loading="lazy" />
 									</div>
 								</a>
 								<div class="card-text-block">
 									<a
 										class="card-text-link"
-										href={base + '/projects/' + category.categoryClass + '/' + removeSpaces(item.title)}
+										href={base + item.page}
 										data-sveltekit-noscroll
 									>
 										<!-- <h2 class="card-text tight-text uppercase" style="font-size: 1.375rem">{item.title}</h2> -->

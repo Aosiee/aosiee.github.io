@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import CenterBackground from '$lib/components/CenterBackground.svelte';
 
 	let experienceItems = [
@@ -132,7 +133,7 @@
 
 <div class="about-header">
 	<img
-		src="/assets/images/headers/AboutMeHeader.jpg"
+		src="{base + '/assets/images/headers/AboutMeHeader.jpg'}"
 		alt="About Me Decorative Background"
 		loading="lazy"
 	/>
@@ -145,7 +146,7 @@
 			<div class="about-me-image-box">
 				<img
 					class="about-me-image"
-					src="/assets/images/headers/self-image-2.jpg"
+					src="{base + '/assets/images/headers/self-image-2.jpg'}"
 					alt="Portfolio Head Shot"
 					loading="lazy"
 				/>
@@ -174,12 +175,12 @@
 					<div class="left">
 						{#if experience.companySite != ''}
 							<a href={experience.companySite} target="_blank">
-								<img src={experience.logo} alt={experience.company + ' Logo'} loading="lazy" />
+								<img src={base + experience.logo} alt={experience.company + ' Logo'} loading="lazy" />
 							</a>
 						{:else}
 							<!-- svelte-ignore a11y-missing-attribute -->
 							<div class="no-link">
-								<img src={experience.logo} alt={experience.company + ' Logo'} loading="lazy" />
+								<img src={base + experience.logo} alt={experience.company + ' Logo'} loading="lazy" />
 							</div>
 						{/if}
 					</div>
@@ -207,7 +208,7 @@
 				<div class="rowItem">
 					<div class="left">
 						<a href={education.educationSite}>
-							<img src={education.logo} alt={education.company + ' Logo'} loading="lazy" />
+							<img src={base + education.logo} alt={education.company + ' Logo'} loading="lazy" />
 						</a>
 					</div>
 					<div class="right">

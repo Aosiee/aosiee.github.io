@@ -6,6 +6,7 @@
 	let loading = false;
 	let error = null;
 
+	import { base } from '$app/paths';
 	import CenterBackground from '$lib/components/CenterBackground.svelte';
 
 	console.log('Project =');
@@ -32,7 +33,7 @@
 <div class="project-header">
 	{#if project && project.art.background}
 		<img
-			src={project.art.background}
+			src={base + project.art.background}
 			alt="{project.title} Decorative Background"
 			loading="lazy"
 			style="object-position: {project.art.background_position};"
@@ -41,8 +42,7 @@
 
 	{#if project && project.art.background && project.art.logo}
 		<div class="project-logo">
-
-			<img src={project.art.logo} alt="{project.title} Decorative Logo" loading="lazy" />
+			<img src={base + project.art.logo} alt="{project.title} Decorative Logo" loading="lazy" />
 		</div>
 	{/if}
 </div>
@@ -57,7 +57,7 @@
 		{:else if project}
 			<div class="project-page">
 				{#if project && !project.art.logo}
-					<h1>{project.title}</h1>	
+					<h1>{project.title}</h1>
 				{/if}
 
 				{#if project.page_data.headerBlock}
@@ -74,7 +74,7 @@
 								<iframe
 									width="540"
 									height="304"
-									src={block.heroVideo + '?rel=0&modestbranding=1&showinfo=0&color=white'}
+									src={base + block.heroVideo + '?rel=0&modestbranding=1&showinfo=0&color=white'}
 									title={block.title + ' ' + project.title + ' Video'}
 									frameborder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -95,7 +95,7 @@
 										<p>{@html descriptor.text}</p>
 									{/if}
 									{#if descriptor.type === 'img'}
-										<img src={descriptor.link} alt={descriptor.text} />
+										<img src={base + descriptor.link} alt={descriptor.text} />
 										<p>{@html descriptor.text}</p>
 									{/if}
 								</div>

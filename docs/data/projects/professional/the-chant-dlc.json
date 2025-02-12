@@ -1,0 +1,121 @@
+{
+    "title": "The Chant - The Gloom Below",
+	"art": {
+		"background": "/assets/images/headers/TheChantDLCHeader-NoLogo.jpg",
+		"background_position": "0% 10%",
+		"logo": "/assets/images/headers/TheChantDLCHeader_Logo.png"
+	},
+	"page_data": {
+		"headerBlock":
+		{
+			"company": "Brass Token",
+			"title": "Generalist Programmer",
+			"duration": "February 2023 - August 2023"
+		},
+		"projectBlocks": [
+			{
+				"heroVideo": "https://www.youtube.com/embed/u9h8j_wSLnI?si=H45kZnYwDheS8WkZ"
+			},
+			{
+				"blockTitle": "Summary",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},        
+			{
+				"blockTitle": "Accomplishments",
+				"list": [
+					{
+						"nav": "core-loop-prototyping",
+						"text": "Core Game Loop Prototyping"
+					},
+					{
+						"nav": "telemetry",
+						"text": "Created, Setup, & Owned Telemetry Systems"
+					},
+					{
+						"nav": "ui",
+						"text": "Main U.I Tech for Title"
+					},
+					{
+						"nav": "memreports",
+						"text": "Automated Memory Report and Analytics System"
+					},
+					{
+						"nav": "jenkins+build",
+						"text": "Owned and Maintained Jenkins & Build Machines"
+					}
+				]
+			},        
+			{
+				"nav": "core-loop-prototyping",
+				"blockTitle": "Core Game Loop Prototyping",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},        
+			{
+				"nav": "telemetry",
+				"blockTitle": "Created, Setup, & Owned Telemetry Systems",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},        
+			{
+				"nav": "ui",
+				"blockTitle": "Main U.I Tech for Title",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},        
+			{
+				"nav": "memreports",
+				"blockTitle": "Automated Memory Report and Analytics System",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},        
+			{
+				"nav": "jenkins+build",
+				"blockTitle": "Owned and Maintained Jenkins & Build Machines",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			}
+		]
+	},
+	"links": {
+		"platforms": [
+			{
+				"platform": "steam",
+				"link": "https://store.steampowered.com/app/2190430/The_Chant__The_Gloom_Below/"
+			},
+			{
+				"platform": "playstation",
+				"link": "https://store.playstation.com/en-us/product/UP6714-PPSA03619_00-THEGLOOMBELOW000"
+			},
+			{
+				"platform": "xbox",
+				"link": "https://www.xbox.com/en-CA/games/store/the-chant-the-gloom-below/9NRBKCHLNKX6/0010"
+			}
+		]
+	}
+}
