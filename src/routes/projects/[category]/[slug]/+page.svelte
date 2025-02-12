@@ -8,9 +8,6 @@
 
 	import { base } from '$app/paths';
 	import CenterBackground from '$lib/components/CenterBackground.svelte';
-
-	console.log('Project =');
-	console.log(project);
 </script>
 
 <svelte:head>

@@ -5,12 +5,11 @@ import { base } from '$app/paths';
 import { redirect } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
 
-export async function load({ params }) {
+export async function load({ params, fetch }) {
   const slug = params.slug;
   const category = params.category;
 
   try {
-    // fetchPostData(category, slug);
     const file = await fetch(`/data/projects/${category}/${slug}.json`);
 
     if (!file.ok) {
