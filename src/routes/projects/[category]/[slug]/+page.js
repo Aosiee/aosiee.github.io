@@ -1,5 +1,7 @@
 export const prerender = true
 
+import { base } from '$app/paths';
+
 import { redirect } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
 
@@ -8,30 +10,19 @@ export async function load({ params }) {
   const category = params.category;
 
   try {
-    const project = await fetchPostData(category, slug);
+    // fetchPostData(category, slug);
+    const file = await fetch(`/data/projects/${category}/${slug}.json`);
+
+    if (!file.ok) {
+      throw redirect(307, base + '/404');
+    }
+
+    const project = await file.json();
     return {
       project  // Return the post in an object
     };
   } catch (error) {
-    // Redirect to 404 if not found
-    return {
-      status: 307,
-      redirect: '/404'
-    };
-  }
-}
-
-  
-// Helper function to fetch post data
-/**
- * @param {any} category
- * @param {any} slug
- */
-async function fetchPostData(category, slug) {
-  const response = await fetch(`/data/projects/${category}/${slug}.json`);
-  if (!response.ok) {
-    throw new Error('Post not found');
-  }
-
-  return await response.json();
+    console.error('Error fetching project:', error);
+    throw redirect(307, base + '/404'); // Ensures proper redirection
+  };
 }
