@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    <clipPath id="nav-active" clipPathUnits="objectBoundingBox">
+        <path transform="scale(0.0212 0.095)" d="m0 1.75 1.478 7.999s16.895-.75 21.963 0c5.069.75 19.429-.25 20.908-.5 1.478-.25 1.9-8.749 1.9-8.749L0 1.75Z"></path>
+    </clipPath>
+</svg>

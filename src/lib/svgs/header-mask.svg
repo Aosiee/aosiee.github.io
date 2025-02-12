@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    <clipPath id="header-mask" clipPathUnits="objectBoundingBox">
+        <path transform="scale(0.000532 0.0114)" d="M0 0v79.265l83.325 6.339 147.824-6.669 81.66 2.724 135.279 3.4 127.256.62 189.909-4.145 180.09 4.019 52.43.173 118.84-5.289 76.59 2.173 247.69-5.57 236.36 9.259 204.46-6.436V0H0Z"></path>
+    </clipPath>
+</svg>
