@@ -1,0 +1,164 @@
+{
+    "title": "The Chant",
+	"art": {
+		"background": "/assets/images/headers/TheChantHeader_NoLogo.jpg",
+		"background_position": "top",
+		"logo": "/assets/images/headers/TheChantHeader_Logo.png"
+	},
+	"page_data": {
+		"headerBlock":
+			{
+				"company": "Brass Token",
+				"title": "Generalist Programmer",
+				"duration": "Aug 2021 - December 2022"
+			},
+		"projectBlocks": [
+			{
+				"heroVideo": "https://www.youtube.com/embed/fn953CkOzH0?si=Uwv1chqOIgzPSq7Z"
+			},
+			{
+				"blockTitle": "Summary",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},        
+			{
+				"blockTitle": "Accomplishments",
+				"list": [
+					{
+						"nav": "optimization",
+						"text": "Optimization for PC, Playstation, & Xbox"
+					},
+					{
+						"nav": "platform-integration",
+						"text": "Steam, Playstation Network, & Xbox Live OSS Integration"
+					},
+					{
+						"nav": "gameplay-programming",
+						"text": "Gameplay Programming"
+					},
+					{
+						"nav": "tools",
+						"text": "Created 16 Tools to Speed Up Pipelines"
+					},
+					{
+						"nav": "playfab",
+						"text": "PlayFab Integration & Telemetry"
+					},
+					{
+						"nav": "cinematics",
+						"text": "Main Cinematics Support & Cinematic Tech for 37 Cinematics"
+					},
+					{
+						"nav": "testing",
+						"text": "Automated Testing / Profiling"
+					},
+					{
+						"nav": "ui",
+						"text": "Main U.I Tech for Title"
+					}						
+				]
+			},        
+			{
+				"nav": "optimization",
+				"blockTitle": "Optimization for PC, Playstation, & Xbox",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},        
+			{
+				"nav": "platform-integration",
+				"blockTitle": "Steam, Playstation Network, & Xbox Live OSS Integration",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			},        
+			{
+				"nav": "gameplay-programming",
+				"blockTitle": "Gameplay Programming",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			},        
+			{
+				"nav": "tools",
+				"blockTitle": "Created 16 Tools to Speed Up Pipelines",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			},        
+			{
+				"nav": "playfab",
+				"blockTitle": "PlayFab Integration & Telemetry",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			},        
+			{
+				"nav": "cinematics",
+				"blockTitle": "Main Cinematics Support & Cinematic Tech for 37 Cinematics",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			},        
+			{
+				"nav": "testing",
+				"blockTitle": "Automated Testing / Profiling",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			},        
+			{
+				"nav": "ui",
+				"blockTitle": "Main U.I Tech for Title",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			}
+		]
+	},
+	"links": {
+		"platforms": [
+			{
+				"platform": "steam",
+				"link": "https://store.steampowered.com/app/1577250/The_Chant/"
+			},
+			{
+				"platform": "playstation",
+				"link": "https://store.playstation.com/en-us/concept/10002823"
+			},
+			{
+				"platform": "xbox",
+				"link": "https://www.xbox.com/en-CA/games/store/the-chant/9NX008DVW20T"
+			}
+		]
+	}
+
+}

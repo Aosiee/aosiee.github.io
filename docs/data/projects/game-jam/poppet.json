@@ -1,0 +1,88 @@
+{
+    "title": "Poppet",
+	"art": {
+		"background": "/assets/images/headers/Poppet_Header.jpg",
+		"background_position": "top",
+		"logo": "/assets/images/headers/Poppet.png"
+	},
+	"page_data": {
+		"headerBlock":
+		{
+			"company": "Ludum Dare 56 - Game Jam | Godot |",
+			"title": "Team Size 4 | Programmer",
+			"duration": "Oct 2024"
+		},
+		"projectBlocks": [
+			{
+				"blockTitle": "Summary",
+				"description": [
+					{
+						"type": "text",
+						"text": "Use a combination of investigative tools and deduction skills to identify the nature of malevolent spirits possessing Poppets before the entities become too powerful to control."
+					}
+				]
+			},        
+			{
+				"blockTitle": "Accomplishments",
+				"list": [
+					{
+						"nav": "new-engine",
+						"text": "New Engine"
+					},
+					{
+						"nav": "emergent-gameplay",
+						"text": "Emergent Gameplay"
+					},
+					{
+						"nav": "pixel-shader",
+						"text": "Stylized Pixel Shader"
+					},
+					{
+						"nav": "sole-programmer",
+						"text": "Sole Programmer"
+					}					
+				]
+			},        
+			{
+				"nav": "new-engine",
+				"blockTitle": "New Engine",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},        
+			{
+				"nav": "emergent-gameplay",
+				"blockTitle": "Emergent Gameplay",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			},        
+			{
+				"nav": "pixel-shader",
+				"blockTitle": "Custom Pixel Shader",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			},        
+			{
+				"nav": "sole-programmer",
+				"blockTitle": "Sole Programmer",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]			
+			}
+		]
+	}
+}

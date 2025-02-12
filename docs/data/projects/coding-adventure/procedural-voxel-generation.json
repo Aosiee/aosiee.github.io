@@ -1,0 +1,143 @@
+{
+    "title": "Procedural Voxel Generation",
+	"art": {
+		"background": "/assets/images/headers/voxel-generation_header-2.jpg",
+		"background_position": "60% 40%",
+		"logo": ""
+	},
+	"page_data": {
+		"headerBlock":
+			{
+				"company": "Coding Adventure",
+				"duration": "Duration ~1 Week"
+			},
+		"projectBlocks": [
+			{
+				"heroGif": "/assets/images/gifs/cubic-generation-octree.gif"
+			},
+			{
+				"blockTitle": "Summary",
+				"description": [
+					{
+						"type": "text",
+						"text": "The idea for this micro-project was born out of a desire to do something procedural. I had been finaling our current project at Brass Token and that meant that it had been quite a while since I last had the opportunity to make a system or to stretch my legs creatively. Therefore, after contemplating whether or not to do this project for a few days, I jumped the gun and started on the project an afternoon after work."
+					}
+				]
+			},        
+			{
+				"blockTitle": "Breakdown",
+				"list": [
+					{
+						"nav": "why-cubic",
+						"text": "Why 'Cubic Generation'?"
+					},
+					{
+						"nav": "foundations",
+						"text": "Laying the Foundation"
+					},
+					{
+						"nav": "optimization",
+						"text": "Optimizing Generation & Filtering Requests"
+					},
+					{
+						"nav": "greedy-meshing",
+						"text": "Greedy Meshing"
+					},
+					{
+						"nav": "conclusion",
+						"text": "Conclusion"
+					}					
+				]
+			},        
+			{
+				"nav": "why-cubic",
+				"blockTitle": "Why 'Cubic Generation'?",
+				"description": [
+					{
+						"type": "img",
+						"link": "/assets/images/project-images/coding-adventures/cubic-generation/CubicGeneration-vs-ChunkGeneration.jpg",
+						"text": "Chunk Generation vs. Cubic Generation"
+					},
+					{
+						"type": "text",
+						"text": "Originally this project started as Chunk generation, similar to how Minecraft has its world generation, although it quickly pivoted as Cubic Chunk generation innately provided the ability to scale the generation infinitely on the vertical axis and not only on the horizontal axis. Which in turn felt like a more creative thing to tackle."
+					}
+				]
+			},        
+			{
+				"nav": "foundations",
+				"blockTitle": "Laying the Foundation",
+				"description": [
+					{
+						"type": "img",
+						"link": "/assets/images/project-images/coding-adventures/cubic-generation/cubic-generation-world-debug.gif",
+						"text": "Basic Terrain Generation from a Debug World Loader (Chunk Requests not Prioritized by Distance)"
+					},
+					{
+						"type": "text",
+						"text": "Before completely jumping headfirst into programming I wanted to figure out how I was going to lay things out. In order to do that I created a 'World Loader' component which would report it's Parent's position to a 'Cubic World' which would handle the requests."
+					},
+					{
+						"type": "text",
+						"text": "With that layed out, it would make my life much easier both debugging and expanding the system, as all-in-all it's a very straightforward."
+					}
+				]			
+			},        
+			{
+				"nav": "optimization",
+				"blockTitle": "Optimizing Generation & Filtering Requests",
+				"description": [
+					{
+						"type": "img",
+						"link": "/assets/images/project-images/coding-adventures/cubic-generation/cubic-generation-player-priority.gif",
+						"text": "Filtered Terrain Generation from a Debug World Loader (Chunk Requests Prioritized by Distance)"
+					},
+					{
+						"type": "text",
+						"text": "In order to make the world generation useable for more than a pretty fill .gif, I had to add a priorities to how the Chunks generate. In traditional 2D chunk generation, it's quite simple to prioritize the generation by distance but with Cubic generation, the number of chunks to potentially generate increased by a whole order of magnitude, therefore I had to prioritize the chunks with weights."
+					},
+					{
+						"type": "text",
+						"text": "The weights in question preferring the horizontal chunks by 2-1 over the vertical chunks, prioritizing the directly navigable terrain over the potentially navigable height."
+					}
+				]			
+			},        
+			{
+				"nav": "greedy-meshing",
+				"blockTitle": "Greedy Meshing",
+				"description": [
+					{
+						"type": "text",
+						"text": "As Cubes by their nature have 6 faces, if all the Chunks are being generated out of cubes, it quickly gets out of hand and specially so in Cubic Chunk generation, as the new axis of potential faces can bring many computers to their knee's (at large enough scale)."
+					},
+					{
+						"type": "text",
+						"text": "That's where Greedy Meshing comes into play. When a specific chunk is dirty, we can iterate through the potential layers of faces and 'greedily' consume the smaller faces and incorporate them into a larger face, quickly and relatively efficently simplifying what could be in a 16 x 16 x 16 chunk into potentially one big cube"
+					},
+					{
+						"type": "text",
+						"text": "The scale of the optimization is dependant on the complexity of the Chunk it's simplifying as the more detail will increase the overall clusters of optimized faces"
+					},
+					{
+						"type": "text",
+						"text": "Best Possible Scenario: (16 x 16 x 16) * (6 Faces) = 25,576 Faces -> (1 x 1 x 1) * (6 Faces) = 6 Faces"
+					}
+				]			
+			},        
+			{
+				"nav": "conclusion",
+				"blockTitle": "Conclusion",
+				"description": [
+					{
+						"type": "text",
+						"text": "All-in-all, this project was a rather fun to dive into. I did learn quite a number of things in regards to planning for future expandability of systems as I did have to re-write a good number of functions in order to genericize them. Specially when I added Greedy Meshing to the mesh generation I had to rework a large section of the 'Cubic World' to accomodate how it optimizes the cubes"
+					},
+					{
+						"type": "text",
+						"text": "That being said, I wish I had captured more footage, since the time-span of the project was so small, by the time I had remembered to capture footage, the Coding Adventure was already nearing completion."
+					}
+				]			
+			}
+		]
+	}
+}
