@@ -71,21 +71,20 @@
 				<div class="carousel-center">
 					<div class="carousel-background-image">
 						<img
-							data-flickity-lazyload={item.src}
+							data-flickity-lazyload={base + item.src}
 							style="object-position: {item.position};"
 							alt={item.title + ' Background Image'}
 						/>
 					</div>
 
 					<div class="carousel-logo-holder">
-						<h1>{base}</h1>
 						<a href={base + item.page} data-sveltekit-noscroll>
-							<img data-flickity-lazyload={item.logo} class="d-block w-100" alt={item.title} />
+							<img data-flickity-lazyload={base + item.logo} class="d-block w-100" alt={item.title} />
 						</a>
 					</div>
 				</div>
 			{:else}
-				<img data-flickity-lazyload={item.src} class="d-block w-100" alt={item.title} />
+				<img data-flickity-lazyload={base + item.src} class="d-block w-100" alt={item.title} />
 			{/if}
 		</div>
 	{/each}

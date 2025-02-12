@@ -39,7 +39,7 @@
 				const img = new Image();
 				img.onload = () => resolve();
 				img.onerror = (error) => reject();
-				img.src = url;
+				img.src = base + url;
 
 				// Check if the image is immediately available (from cache) or has failed
 				if (img.complete && img.naturalWidth === 0) {
@@ -60,7 +60,7 @@
 		return new Promise((resolve, reject) => {
 			const script = document.createElement('script');
 			script.type = 'text/javascript';
-			script.src = url;
+			script.src = base + url;
 
 			// Set up onload and onerror before appending
 			script.onload = () => {
@@ -89,7 +89,7 @@
 				link.onload = () => resolve();
 				link.onerror = (error) => reject();
 				link.rel = 'stylesheet';
-				link.href = url;
+				link.href = base + url;
 
 				// Safety check: only append if href is set and there's no immediate error
 				if (link.href) {
