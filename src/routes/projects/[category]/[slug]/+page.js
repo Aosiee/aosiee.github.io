@@ -4,10 +4,11 @@ import { redirect } from '@sveltejs/kit';
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {
-  const { slug } = params;
+  const slug = params.slug;
+  const category = params.category;
 
   try {
-    const project = await fetchPostData(slug);
+    const project = await fetchPostData(category, slug);
     return {
       project  // Return the post in an object
     };
@@ -23,11 +24,11 @@ export async function load({ params }) {
   
 // Helper function to fetch post data
 /**
+ * @param {any} category
  * @param {any} slug
  */
-async function fetchPostData(slug) {
-  const response = await fetch(`/data/projects/game-jam/${slug}.json`);
-
+async function fetchPostData(category, slug) {
+  const response = await fetch(`/data/projects/${category}/${slug}.json`);
   if (!response.ok) {
     throw new Error('Post not found');
   }
