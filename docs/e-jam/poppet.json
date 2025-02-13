@@ -2,7 +2,7 @@
     "title": "Poppet",
 	"art": {
 		"background": "/assets/images/headers/Poppet_Header.jpg",
-		"background_position": "top",
+		"background_position": "62% 38%",
 		"logo": "/assets/images/headers/Poppet.png"
 	},
 	"page_data": {
