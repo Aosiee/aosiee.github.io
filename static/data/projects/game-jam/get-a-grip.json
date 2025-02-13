@@ -1,20 +1,56 @@
 {
-    "title": "Get A Grip",
+	"title": "Get A Grip",
 	"art": {
 		"background": "/assets/images/headers/GAG_Header2.png",
 		"background_position": "35% 65%",
 		"logo": "/assets/images/headers/GAG_Logo.png"
 	},
 	"page_data": {
-		"headerBlock":
-			{
-				"company": "GMTK - Game Jam | Unreal Engine 5 |",
-				"title": "Team Size 5 | Programmer",
-				"duration": "Aug 2024"
-			},
+		"headerBlock": {
+			"company": "GMTK - Game Jam | Unreal Engine 5 |",
+			"title": "Team Size 5 | Programmer",
+			"duration": "Aug 2024"
+		},
 		"projectBlocks": [
 			{
-				"heroVideo": "https://www.youtube.com/embed/HlCSyVX66rg?si=nSrIOds912GT-xQs"
+				"projectCarousel": [
+					{
+						"title": "Gameplay Video",
+						"position": "top",
+						"src": "https://www.youtube.com/embed/HlCSyVX66rg?si=nSrIOds912GT-xQs",
+						"type": "youtube"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/headers/GAG_Header2.png",
+						"type": "image"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/gmtk-2024/screenshot1.png",
+						"type": "image"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/gmtk-2024/screenshot2.png",
+						"type": "image"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/gmtk-2024/screenshot3.png",
+						"type": "image"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/gmtk-2024/headImage.jpg",
+						"type": "image"
+					}
+				]
 			},
 			{
 				"blockTitle": "Summary",
@@ -24,7 +60,7 @@
 						"text": "GET A GRIP is a physics-based climbing game where players take on the role of a once-advanced robot, now damaged and stranded in a colossal robot graveyard. With limited functionality, scale the treacherous mountain of scrap through the use of interchangeable arms found scattered across the metallic wasteland. Reach the peak or rust forever."
 					}
 				]
-			},        
+			},
 			{
 				"blockTitle": "Accomplishments",
 				"list": [
@@ -43,9 +79,9 @@
 					{
 						"nav": "sole-programmer",
 						"text": "Sole Programmer"
-					}					
+					}
 				]
-			},        
+			},
 			{
 				"nav": "physics-gameplay",
 				"blockTitle": "Physics Based Gameplay",
@@ -55,7 +91,7 @@
 						"text": "Under Construction..."
 					}
 				]
-			},        
+			},
 			{
 				"nav": "interchangeable-hands",
 				"blockTitle": "Interchangeable Hands",
@@ -64,8 +100,8 @@
 						"type": "text",
 						"text": "Under Construction..."
 					}
-				]			
-			},        
+				]
+			},
 			{
 				"nav": "cel-shader",
 				"blockTitle": "Stylized Cel-Shader",
@@ -74,8 +110,8 @@
 						"type": "text",
 						"text": "Under Construction..."
 					}
-				]			
-			},        
+				]
+			},
 			{
 				"nav": "sole-programmer",
 				"blockTitle": "Sole Programmer",
@@ -84,7 +120,7 @@
 						"type": "text",
 						"text": "Under Construction..."
 					}
-				]			
+				]
 			}
 		]
 	}

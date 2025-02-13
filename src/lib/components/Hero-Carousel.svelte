@@ -1,6 +1,7 @@
 <script type="text/javascript" lang="ts">
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import { flickityStore } from '$lib/stores/flickityStore';
 
 	let flickityInstance: any = null;
 
@@ -46,17 +47,51 @@
 
 	onMount(() => {
 		// Load Flickity JS after the component is mounted
-		if (typeof window !== 'undefined') {
-			const carouselElement = document.querySelector('.carousel') as HTMLElement;
+		flickityStore.update((store) => {
+			if (store.instance) {
+				console.log('Flickity already initialized, recreating instance.');
+				flickityInstance = store.instance;
+				flickityInstance.destroy();
 
-			// Initialize Flickity after it's loaded
-			flickityInstance = new window.Flickity(carouselElement, {
-				wrapAround: true,
-				autoPlay: 18000,
-				pageDots: true,
-				lazyLoad: 1
-			});
-		}
+				console.log('Initializing new Flickity instance, Count = ' + (store.count + 1).toString());
+
+				setTimeout(() => {
+					const carouselElement = document.querySelector('.carousel') as HTMLElement;
+					flickityInstance = new window.Flickity(carouselElement, {
+						wrapAround: true,
+						autoPlay: 18000,
+						pageDots: true,
+						lazyLoad: 1
+					});
+				}, 750); // Small delay to ensure correct mounting
+			} else {
+				console.log('Initializing new Flickity instance, Count = ' + (store.count + 1).toString());
+				const carouselElement = document.querySelector('.carousel') as HTMLElement;
+				flickityInstance = new window.Flickity(carouselElement, {
+					wrapAround: true,
+					autoPlay: 18000,
+					pageDots: true,
+					lazyLoad: 1
+				});
+			}
+
+			return { instance: flickityInstance, count: store.count + 1 }; // Increase count
+		});
+	});
+
+	onDestroy(() => {
+		flickityStore.update((store) => {
+			const newCount = store.count - 1;
+			if (newCount <= 0 && store.instance === flickityInstance && flickityInstance !== null) {
+				console.log('Destroying Flickity (no more components using it).');
+				flickityInstance.destroy();
+				return { instance: null, count: 0 }; // Fully clear store
+			} else if (newCount <= 0) {
+				console.log("Instances below 0, resetting store");
+				return { instance: null, count: 0 }; // Fully clear store
+			}
+			return { instance: store.instance, count: newCount }; // Just decrease count
+		});
 	});
 </script>
 
@@ -79,7 +114,11 @@
 
 					<div class="carousel-logo-holder">
 						<a href={base + item.page} data-sveltekit-noscroll>
-							<img data-flickity-lazyload={base + item.logo} class="d-block w-100" alt={item.title} />
+							<img
+								data-flickity-lazyload={base + item.logo}
+								class="d-block w-100"
+								alt={item.title}
+							/>
 						</a>
 					</div>
 				</div>

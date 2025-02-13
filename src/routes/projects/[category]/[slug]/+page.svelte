@@ -7,6 +7,7 @@
 	let error = null;
 
 	import { base } from '$app/paths';
+	import Carousel from '$lib/components/Carousel.svelte';
 	import CenterBackground from '$lib/components/CenterBackground.svelte';
 </script>
 
@@ -33,7 +34,8 @@
 			src={base + project.art.background}
 			alt="{project.title} Decorative Background With Max Width"
 			loading="lazy"
-			style="object-position: {project.art.background_position}; max-width: {project.art.maxWidth}; position-area: center; border-radius: 15%; object-fit: contain;"
+			style="object-position: {project.art.background_position}; max-width: {project.art
+				.maxWidth}; position-area: center; border-radius: 15%; object-fit: contain;"
 		/>
 	{:else if project && project.art.background}
 		<img
@@ -72,12 +74,16 @@
 
 				{#each project.page_data.projectBlocks as block, index}
 					<div {...block.nav ? { id: block.nav } : {}}>
-						{#if block.heroVideo}
+						{#if block.projectCarousel}
+							<Carousel items={block.projectCarousel} />
+						{/if}
+
+						{#if block.projectVideo}
 							<div class="media-sizing">
 								<iframe
 									width="540"
 									height="304"
-									src={base + block.heroVideo + '?rel=0&modestbranding=1&showinfo=0&color=white'}
+									src={base + block.projectVideo + '?rel=0&modestbranding=1&showinfo=0&color=white'}
 									title={block.title + ' ' + project.title + ' Video'}
 									frameborder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -88,11 +94,11 @@
 							</div>
 						{/if}
 
-						{#if block.heroGif}
+						{#if block.projectGif}
 							<div style="width: 504px; height: 304px" class="media-sizing">
 								<img
 									style="object-fit: cover; width: 100%; height: 100%;"
-									src={base + block.heroGif}
+									src={base + block.projectGif}
 									alt="{project.title} Hero Gif"
 									loading="lazy"
 								/>

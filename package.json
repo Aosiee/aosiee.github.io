@@ -36,6 +36,7 @@
 	"dependencies": {
 		"flickity": "^3.0.0",
 		"flickity-fade": "^2.0.0",
+		"flickity-fullscreen": "^2.0.0",
 		"jquery": "^3.7.1",
 		"slick-carousel": "^1.8.1"
 	}

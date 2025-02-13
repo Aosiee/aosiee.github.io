@@ -17,6 +17,7 @@ export async function load({ params, fetch }) {
     }
 
     const project = await file.json();
+    console.log(project);
     return {
       project  // Return the post in an object
     };

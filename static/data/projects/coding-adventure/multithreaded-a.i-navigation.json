@@ -14,7 +14,7 @@
 		},
 		"projectBlocks": [
 			{
-				"heroGif": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest3.gif"
+				"projectGif": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest3.gif"
 			},
 			{
 				"blockTitle": "Summary",

@@ -1,62 +1,70 @@
 <script type="text/javascript" lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { base } from '$app/paths';
+	import { flickityStore } from '$lib/stores/flickityStore';
 
 	let flickityInstance: any = null;
 
 	const unusedClass = 'carousel-item-start';
 
-	let items = [
-		{
-			title: 'The Chant',
-			page: '/projects/professional-project/the-chant',
-			position: 'top',
-			src: '/assets/images/headers/TheChantHeader_NoLogo.jpg',
-			logo: '/assets/images/headers/TheChantHeader_Logo.png'
-		},
-		{
-			title: 'The Chant DLC',
-			page: '/projects/professional-project/the-chant-dlc',
-			position: 'left top',
-			src: '/assets/images/headers/TheChantDLCHeader-NoLogo.jpg',
-			logo: '/assets/images/headers/TheChantDLCHeader_Logo.png'
-		},
-		{
-			title: 'Kinshft',
-			page: '/projects/professional-project/kinshft',
-			position: 'top',
-			src: '/assets/images/headers/Kinshift_NoLogo_2.jpg',
-			logo: '/assets/images/headers/Kinshift_Logo.png'
-		},
-		{
-			title: 'Poppet',
-			page: '/projects/game-jam/poppet',
-			position: '80% 50%',
-			src: '/assets/images/headers/Poppet_Header.jpg',
-			logo: '/assets/images/headers/Poppet.png'
-		},
-		{
-			title: 'Get A Grip',
-			page: '/projects/game-jam/get-a-grip',
-			position: '50% 25%',
-			src: '/assets/images/headers/GAG_Header2.png',
-			logo: '/assets/images/headers/GAG_Logo.png'
-		}
-	];
+	export let items: itemData[] = [];
+	console.log('Items');
+	console.log(items);
+
+	type itemData = {
+		title: string;
+		position: string;
+		src: string;
+		type: string;
+	};
 
 	onMount(() => {
 		// Load Flickity JS after the component is mounted
-		if (typeof window !== 'undefined') {
-			const carouselElement = document.querySelector('.carousel') as HTMLElement;
+		flickityStore.update((store) => {
+			if (store.instance) {
+				console.log('Flickity already initialized, recreating instance.');
+				flickityInstance = store.instance;
+				flickityInstance.destroy();
 
-			// Initialize Flickity after it's loaded
-			flickityInstance = new window.Flickity(carouselElement, {
-				wrapAround: true,
-				autoPlay: 18000,
-				pageDots: true,
-				lazyLoad: 1
-			});
-		}
+				console.log('Initializing new Flickity instance, Count = ' + (store.count + 1).toString());
+
+				setTimeout(() => {
+					const carouselElement = document.querySelector('.carousel') as HTMLElement;
+					flickityInstance = new window.Flickity(carouselElement, {
+						wrapAround: true,
+						autoPlay: false,
+						pageDots: true,
+						lazyLoad: 1,
+					});
+				}, 750); // Small delay to ensure correct mounting
+			} else {
+				console.log('Initializing new Flickity instance, Count = ' + (store.count + 1).toString());
+				const carouselElement = document.querySelector('.carousel') as HTMLElement;
+				flickityInstance = new window.Flickity(carouselElement, {
+					wrapAround: true,
+					autoPlay: false,
+					pageDots: true,
+					lazyLoad: 1,
+				});
+			}
+
+			return { instance: flickityInstance, count: store.count + 1 }; // Increase count
+		});
+	});
+
+	onDestroy(() => {
+		flickityStore.update((store) => {
+			const newCount = store.count - 1;
+			if (newCount <= 0 && store.instance === flickityInstance && flickityInstance !== null) {
+				console.log('Destroying Flickity (no more components using it).');
+				flickityInstance.destroy();
+				return { instance: null, count: 0 }; // Fully clear store
+			} else if (newCount <= 0) {
+				console.log('Instances below 0, resetting store');
+				return { instance: null, count: 0 }; // Fully clear store
+			}
+			return { instance: store.instance, count: newCount }; // Just decrease count
+		});
 	});
 </script>
 
@@ -67,32 +75,36 @@
 <div class="carousel">
 	{#each items as item}
 		<div class="carousel-cell">
-			{#if item.logo}
-				<div class="carousel-center">
-					<div class="carousel-background-image">
-						<img
-							data-flickity-lazyload={base + item.src}
-							style="object-position: {item.position};"
-							alt={item.title + ' Background Image'}
-						/>
-					</div>
-
-					<div class="carousel-logo-holder">
-						<a href={base + item.page} data-sveltekit-noscroll>
-							<img data-flickity-lazyload={base + item.logo} class="d-block w-100" alt={item.title} />
-						</a>
-					</div>
-				</div>
-			{:else}
+			{#if item.type === 'image'}
 				<img data-flickity-lazyload={base + item.src} class="d-block w-100" alt={item.title} />
+			{:else if item.type === 'video'}
+				<!-- svelte-ignore a11y-media-has-caption -->
+				<video class="carousel-video" controls>
+					<source src={base + item.src} type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			{:else if item.type === 'youtube'}
+				<iframe
+					width="100%"
+					height="100%"
+					src={base + item.src + '?rel=0&modestbranding=1&showinfo=0&color=white'}
+					title={item.title + ' Project Video'}
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+					loading="lazy"
+				></iframe>
 			{/if}
 		</div>
 	{/each}
 </div>
 
+<none style="display: none;" class="carousel is-fullscreen"><none class="carousel-cell" /></none>
+
 <style>
 	.carousel {
-		background-color: black;
+		background-color: var(--main-bg-colour);
 		width: 100%;
 	}
 
@@ -100,99 +112,50 @@
 		width: 100%; /* 100% of container width */
 		height: 100%;
 		margin-right: 10px; /* optional, if you want space between cells */
-	}
-
-	.carousel-center {
-		height: 100%;
-		width: 100%;
-
-		background-position: 50% 0% !important;
-
-		z-index: -10;
 
 		display: flex;
-		align-content: center;
+		align-items: center;
 		justify-content: center;
-		flex-wrap: wrap;
 	}
 
-	.carousel-background-image {
+	.carousel-cell iframe {
+		height: 100%;
 		width: 100%;
-		height: 100%;
-		position: absolute;
-	}
-
-	.carousel-background-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.carousel-logo-holder {
-		height: 35%;
-		object-fit: contain;
-		transition: 0.25s ease-out;
-		z-index: 1;
-	}
-
-	.carousel-logo-holder a {
-		display: flex;
-		height: 100%;
-	}
-
-	.carousel-logo-holder a img {
-		height: 100%;
-	}
-
-	.carousel-logo-holder:hover {
-		scale: 1.05;
-		transition: 0.25s;
 	}
 
 	/* Set a default height for the div */
 	.carousel {
-		height: 45vh; /* Default height */
+		height: 50vh; /* Default height */
 	}
 
 	/* Use media queries to change the height based on Bootstrap breakpoints */
 	@media (max-width: 575.98px) {
 		/* For screens up to 575.98px wide (extra small devices) */
 		.carousel {
-			height: 60vh;
-		}
-		.carousel-logo-holder {
-			max-height: 35vw;
+			height: 25vh;
 		}
 	}
 
 	@media (min-width: 576px) and (max-width: 767.98px) {
 		/* For screens between 576px and 767.98px wide (small devices) */
 		.carousel {
-			height: 80vh;
-		}
-		.carousel-logo-holder {
-			max-height: 40vw;
+			height: 30vh;
 		}
 	}
 
-	@media (min-width: 768px) and (max-width: 991.98px) {
-		/* For screens between 768px and 991.98px wide (medium devices) */
-		.carousel {
-			height: 70vh;
-		}
+	.carousel.is-fullscreen {
+		height: 100vh !important;
+		z-index: 9999999 !important;
 	}
 
-	@media (min-width: 992px) and (max-width: 1199.98px) {
-		/* For screens between 992px and 1199.98px wide (large devices) */
-		.carousel {
-			height: 90vh;
-		}
+	.carousel.is-fullscreen .carousel-cell {
+		height: 100vh !important;
+		z-index: 9999998 !important;
 	}
 
-	@media (min-width: 1200px) {
-		/* For screens 1200px and wider (extra large devices) */
-		.carousel {
-			height: 85vh;
-		}
+	.carousel.is-fullscreen .carousel-cell img {
+		height: 100vh !important;
+		z-index: 9999997 !important;
+		background-color: black;
 	}
 </style>

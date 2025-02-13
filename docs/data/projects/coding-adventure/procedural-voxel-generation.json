@@ -13,7 +13,7 @@
 			},
 		"projectBlocks": [
 			{
-				"heroGif": "/assets/images/gifs/cubic-generation-octree.gif"
+				"projectGif": "/assets/images/gifs/cubic-generation-octree.gif"
 			},
 			{
 				"blockTitle": "Summary",
