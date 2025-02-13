@@ -1,10 +1,9 @@
 {
 	"title": "Multithreaded A.I Navigation",
 	"art": {
-		"background": "/assets/images/headers/404.png",
-		"background_position": "75% 25%",
-		"logo": "",
-		"maxWidth": "800px"
+		"background": "/assets/images/headers/AboutMeHeader.jpg",
+		"background_position": "50% 50%",
+		"logo": ""
 	},
 	"page_data": {
 		"headerBlock": {

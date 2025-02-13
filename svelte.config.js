@@ -14,7 +14,11 @@ const config = {
 		// vite: {
 		// 	include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep']
 		// },
-		adapter: adapter(),
+		adapter: adapter({
+			pages: 'docs', // Sets output directory to docs
+			assets: 'docs', // Ensure static assets also go to 'docs'
+			fallback: null
+		}),
 		paths: {
             base: process.env.NODE_ENV === 'production' ? '/aosiee.github.io' : '',
         }

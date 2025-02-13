@@ -35,7 +35,7 @@
 			alt="{project.title} Decorative Background With Max Width"
 			loading="lazy"
 			style="object-position: {project.art.background_position}; max-width: {project.art
-				.maxWidth}; position-area: center; border-radius: 15%; object-fit: contain;"
+				.maxWidth}; border-radius: 15%; object-fit: contain;"
 		/>
 	{:else if project && project.art.background}
 		<img
@@ -193,6 +193,9 @@
 		width: 100%;
 		height: 100%;
 		display: flex;
+
+		justify-content: center;
+		place-items: center;
 	}
 
 	.project-header .project-logo img {
@@ -200,7 +203,6 @@
 		height: 55%;
 		object-fit: contain;
 		position: absolute;
-		place-self: anchor-center;
 	}
 
 	.content-area {
