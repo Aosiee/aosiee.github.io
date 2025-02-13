@@ -87,7 +87,7 @@
 				<iframe
 					width="100%"
 					height="100%"
-					src={base + item.src + '?rel=0&modestbranding=1&showinfo=0&color=white'}
+					src={item.src + '?rel=0&modestbranding=1&showinfo=0&color=white'}
 					title={item.title + ' Project Video'}
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -1,0 +1,144 @@
+{
+	"title": "Multithreaded A.I Navigation",
+	"art": {
+		"background": "/assets/images/headers/404.png",
+		"background_position": "75% 25%",
+		"logo": "",
+		"maxWidth": "800px"
+	},
+	"page_data": {
+		"headerBlock": {
+			"company": "Brass Token",
+			"title": "Generalist Programmer",
+			"duration": "Aug 2021 - December 2022"
+		},
+		"projectBlocks": [
+			{
+				"projectGif": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest3.gif"
+			},
+			{
+				"blockTitle": "Summary",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},
+			{
+				"blockTitle": "Breakdown",
+				"list": [
+					{
+						"nav": "basics",
+						"text": "The Basics"
+					},
+					{
+						"nav": "foundations",
+						"text": "Laying the Foundation"
+					},
+					{
+						"nav": "ai-running",
+						"text": "A.I Running Around"
+					},
+					{
+						"nav": "grid-and-optimizations",
+						"text": "Grid Collisions & Optimizations"
+					},
+					{
+						"nav": "adding-layers",
+						"text": "Adding Layers"
+					},
+					{
+						"nav": "conclusion",
+						"text": "Conclusion"
+					}
+				]
+			},
+			{
+				"nav": "basics",
+				"blockTitle": "The Basics",
+				"description": [
+					{
+						"type": "img",
+						"link": "/assets/images/project-images/coding-adventures/astar-pathing/creatingGrid.gif",
+						"text": "Base Grid Generation"
+					},
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},
+			{
+				"nav": "foundations",
+				"blockTitle": "Laying the Foundation",
+				"description": [
+					{
+						"type": "img",
+						"link": "/assets/images/project-images/coding-adventures/astar-pathing/GridWorldPos.gif",
+						"text": "Base Functions Created"
+					},
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},
+			{
+				"nav": "ai-running",
+				"blockTitle": "A.I Running Around",
+				"description": [
+					{
+						"type": "img",
+						"link": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest2.gif",
+						"text": "First Stress Test"
+					},
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},
+			{
+				"nav": "grid-and-optimizations",
+				"blockTitle": "Grid Collisions & Optimizations",
+				"description": [
+					{
+						"type": "img",
+						"link": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest3.gif",
+						"text": "First Stress Test"
+					},
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},
+			{
+				"nav": "adding-layers",
+				"blockTitle": "Adding Layers",
+				"description": [
+					{
+						"type": "img",
+						"link": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest4.gif",
+						"text": "First Stress Test"
+					},
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			},
+			{
+				"nav": "conclusion",
+				"blockTitle": "Conclusion",
+				"description": [
+					{
+						"type": "text",
+						"text": "Under Construction..."
+					}
+				]
+			}
+		]
+	}
+}

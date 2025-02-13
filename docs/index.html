@@ -15,6 +15,9 @@
 	<!-- Flickity JS Include -->
 	<script src="./assets/scripts/flickity.pkgd.min.js"></script>
 
+	<!-- Flickity Fullscreen JS Include -->
+	<script src="./assets/scripts/fullscreen.js"></script>
+	
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="./favicon.png" />
@@ -24,25 +27,31 @@
 		<link href="./_app/immutable/assets/2.BToaJFRh.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/CenterBackground.BzeMq24k.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/HeroGrid.Bls6urOl.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.Cj3_kCMn.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.C2mreSVx.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.BywFIo-i.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/paths.XCfrlfZg.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.JYgoAXyr.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.DFZCXEuw.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.zsbiYJOS.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.CZbEmTHN.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/each.CfOVBL5j.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.Ch3cDmPd.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/CenterBackground.DfMhseZ4.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/HeroGrid.DyNXsxBd.js"><title>Felipe Lara - Home</title><!-- HEAD_svelte-1fw8gaw_START --><meta name="description" content="Portfolio - Home"><!-- HEAD_svelte-1fw8gaw_END -->
-
+		<link rel="modulepreload" href="./_app/immutable/entry/start.c_9XTlkq.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.DsnoXKSS.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.BxG4l-Kg.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.Bc26Qwdq.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.DMXKRXpi.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/control.CYgJF_JY.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.CXl2uP_y.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.Bguv5mHG.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.DiaxLhhz.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/stores.tr32VQcl.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/each.BK7m2KA8.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.D-O93xw7.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/flickityStore.DDpyEmNG.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CenterBackground.3eHZggKH.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/HeroGrid.myhZhM-D.js"><title>Felipe Lara - Home</title><!-- HEAD_svelte-1fw8gaw_START --><meta name="description" content="Portfolio - Home"><!-- HEAD_svelte-1fw8gaw_END -->
+		
 		<!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 		
 		<!-- Flickity CSS -->
 		<link rel="stylesheet" href="./assets/styles/flickity.css" />
-
+		
+		<!-- Flickity Fullscreen CSS -->
+		<link rel="stylesheet" href="./assets/styles/fullscreen.css">
+		
 		<!-- Website CSS -->
 		<link rel="stylesheet" href="./assets/styles/styles.css" />
 
@@ -265,7 +274,7 @@
 			
 			<script>
 				{
-					__sveltekit_1d2i1x9 = {
+					__sveltekit_17584l3 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						assets: "/aosiee.github.io"
 					};
@@ -275,8 +284,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.Cj3_kCMn.js"),
-						import("./_app/immutable/entry/app.JYgoAXyr.js")
+						import("./_app/immutable/entry/start.c_9XTlkq.js"),
+						import("./_app/immutable/entry/app.CXl2uP_y.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],

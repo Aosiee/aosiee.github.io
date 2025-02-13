@@ -83,7 +83,7 @@
 								<iframe
 									width="540"
 									height="304"
-									src={base + block.projectVideo + '?rel=0&modestbranding=1&showinfo=0&color=white'}
+									src={block.projectVideo + '?rel=0&modestbranding=1&showinfo=0&color=white'}
 									title={block.title + ' ' + project.title + ' Video'}
 									frameborder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
