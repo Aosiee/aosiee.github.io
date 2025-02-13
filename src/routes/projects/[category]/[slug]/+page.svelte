@@ -95,11 +95,11 @@
 						{/if}
 
 						{#if block.projectGif}
-							<div style="width: 504px; height: 304px" class="media-sizing">
+							<div class="media-sizing">
 								<img
-									style="object-fit: cover; width: 100%; height: 100%;"
+									style="width: 540px; height: 304px"
 									src={base + block.projectGif}
-									alt="{project.title} Hero Gif"
+									alt="{project.title} Project Gif"
 									loading="lazy"
 								/>
 							</div>
@@ -172,6 +172,11 @@
 		height: auto;
 	}
 
+	/* .media-sizing img {
+		min-height: 304px;
+		height: auto;
+	} */
+
 	.project-header {
 		height: 40vh;
 		position: relative;
@@ -184,12 +189,18 @@
 		position: absolute;
 	}
 
+	.project-logo {
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+
 	.project-header .project-logo img {
 		width: 55%;
 		height: 55%;
 		object-fit: contain;
 		position: absolute;
-		position-area: center;
+		place-self: anchor-center;
 	}
 
 	.content-area {
@@ -203,7 +214,7 @@
 		/* For screens up to 575.98px wide (extra small devices) */
 		.media-sizing {
 			width: 100%;
-			height: 0;
+			height: 150px;
 
 			padding-bottom: 56.25%;
 		}
