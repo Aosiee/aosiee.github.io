@@ -2,9 +2,12 @@
 	import { blur } from 'svelte/transition';
 	import { Motion } from 'svelte-motion';
 
+	import { cubicInOut, cubicIn, cubicOut } from 'svelte/easing';
+
 	export let key: string;
 
 	let playAnimation = false;
+	let whiteout = false;
 	const loggingEnabled = false;
 
 	let xCount = Array();
@@ -25,6 +28,19 @@
 	// Function to set the CSS variable dynamically
 	function setBlockSize(blockSize: number) {
 		document.documentElement.style.setProperty('--block-size', `${blockSize}px`);
+	}
+
+	function showWhiteout(show: boolean) {
+		const whiteOut = document.getElementById('transitionWhiteout');
+		if (whiteOut) {
+			if (show) {
+				whiteOut.style.display = 'block';
+			} else {
+				whiteOut.style.display = 'none';
+			}
+			return;
+		}
+		console.error('Failed To Find Whiteout For Show/Hide!');
 	}
 
 	function calculateBlockSize() {
@@ -50,8 +66,33 @@
 			);
 		}
 
-		delays = [...Array(totalCount)].map(() => Math.random()); // Random delay between 0 and 1 seconds
-		shuffleArray(delays);
+		// delays = [...Array(totalCount)].map(() => Math.random()); // Random delay between 0 and 1 seconds
+		// shuffleArray(delays);
+
+		const maxDelay = 10; // Maximum delay at the slowest point
+
+		// Generate delays with easing (bottom to top)
+		delays = new Array(totalCount).fill(0).map((_, index) => {
+			// Calculate row and column index
+			const iX = Math.floor(index / yCount.length); // Row (vertical movement)
+			const iY = index % yCount.length; // Column (horizontal variation)
+
+			// Normalize indices for easing (convert to 0–1 range)
+			const normalizedX = iX / (xCount.length - 1); // Bottom (0) to top (1)
+			const normalizedY = iY / (yCount.length - 1); // Left (0) to right (1)
+
+			// Apply cubic easing to the row delay (vertical movement)
+			const delayFactorX = cubicInOut(normalizedX);
+
+			// Apply a smaller easing to horizontal variation
+			const delayFactorY = cubicInOut(normalizedY) * 0.3; // Small effect on Y
+
+			// Combine both factors and scale to max delay
+			const randomFactor = (Math.random() - 0.5) * 0.1; // Small random variation
+			return (delayFactorX + delayFactorY + randomFactor) * maxDelay;
+		});
+
+		console.log(delays);
 
 		if (blockSize > 0) {
 			setBlockSize(blockSize);
@@ -97,14 +138,34 @@
 	// Event handlers to control animation state
 	function startAnimation() {
 		setTimeout(() => {
-			console.log('Scrolled');
+			showWhiteout(true);
+		}, animationDuration * 0.99);
+
+		setTimeout(() => {
+			console.debug('Pixel Transition, Scrolled To Top');
 			window.scrollTo({ top: 0, behavior: 'instant' });
-		}, animationDuration);
+
+			setTimeout(() => {
+				showWhiteout(false);
+				setTimeout(() => {
+					playAnimation = false;
+				}, 100);
+			}, 100);
+		}, animationDuration * 1.1);
 		playAnimation = true;
 	}
 
+	// function startAnimation() {
+	// 	setTimeout(() => {
+	// 		console.debug('Pixel Transition, Scrolled To Top');
+	// 		window.scrollTo({ top: 0, behavior: 'instant' });
+	// 		playAnimation = false;
+	// 	}, animationDuration * 1);
+	// 	playAnimation = true;
+	// }
+
 	function endAnimation() {
-		playAnimation = false;
+		// playAnimation = false;
 	}
 </script>
 
@@ -140,6 +201,8 @@
 	>
 		<slot />
 	</div>
+
+	<div id="transitionWhiteout" style="var(--main-bg-colour)"></div>
 {/key}
 
 <!-- <svelte:window on:resize={() => location.reload()} /> -->
@@ -176,5 +239,16 @@
 		z-index: 99;
 		position: relative;
 		background-color: var(--main-bg-colour);
+	}
+
+	#transitionWhiteout {
+		height: 100vh;
+		width: 100vw;
+		position: fixed;
+		overflow: hidden;
+		z-index: 99;
+		background-color: var(--main-bg-colour);
+
+		display: none;
 	}
 </style>

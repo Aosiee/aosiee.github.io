@@ -49,11 +49,10 @@
 		// Load Flickity JS after the component is mounted
 		flickityStore.update((store) => {
 			if (store.instance) {
-				console.log('Flickity already initialized, recreating instance.');
+				console.debug('Flickity Already Initialized! Recreating Instance w/ Delay.');
 				flickityInstance = store.instance;
 				flickityInstance.destroy();
-
-				console.log('Initializing new Flickity instance, Count = ' + (store.count + 1).toString());
+				console.debug('Flickity Instance Destroyed!');
 
 				setTimeout(() => {
 					const carouselElement = document.querySelector('.carousel') as HTMLElement;
@@ -62,10 +61,11 @@
 						autoPlay: 18000,
 						pageDots: true,
 						lazyLoad: 1
+						
 					});
 				}, 750); // Small delay to ensure correct mounting
 			} else {
-				console.log('Initializing new Flickity instance, Count = ' + (store.count + 1).toString());
+				console.debug('Detected No Flickity Instance, Initializing New Flickity Instance');
 				const carouselElement = document.querySelector('.carousel') as HTMLElement;
 				flickityInstance = new window.Flickity(carouselElement, {
 					wrapAround: true,
@@ -75,6 +75,7 @@
 				});
 			}
 
+			console.debug('Initialized New Flickity Instance, Current Reference Count = ' + (store.count + 1).toString());
 			return { instance: flickityInstance, count: store.count + 1 }; // Increase count
 		});
 	});
@@ -83,13 +84,14 @@
 		flickityStore.update((store) => {
 			const newCount = store.count - 1;
 			if (newCount <= 0 && store.instance === flickityInstance && flickityInstance !== null) {
-				console.log('Destroying Flickity (no more components using it).');
+				console.debug('Destroying Flickity Referencee, Flickity Has No More References, Destroying.');
 				flickityInstance.destroy();
 				return { instance: null, count: 0 }; // Fully clear store
 			} else if (newCount <= 0) {
-				console.log("Instances below 0, resetting store");
 				return { instance: null, count: 0 }; // Fully clear store
 			}
+
+			console.debug('Destroying Flickity Referencee, New Reference Count = ' + newCount);
 			return { instance: store.instance, count: newCount }; // Just decrease count
 		});
 	});

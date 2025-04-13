@@ -64,7 +64,7 @@
 
 			// Set up onload and onerror before appending
 			script.onload = () => {
-				console.log(`Script loaded successfully: ${url}`);
+				// console.log(`Script loaded successfully: ${url}`);
 				resolve();
 			};
 			script.onerror = (error) => {
@@ -111,53 +111,59 @@
 
 		// Load Stylesheets
 		if (stylesToLoad.length > 0) {
-			console.log('-= Loading Stylesheets - Total: ' + stylesToLoad.length + ' =-');
+			console.debug('Preloading', stylesToLoad.length, 'Stylesheets');
 			for (const style of stylesToLoad) {
 				try {
 					await loadStylesheet(style);
 					loadedStylesheets++;
-					console.log('Loaded Stylesheet: (' + loadedStylesheets + '/' + stylesToLoad.length + ')');
+					console.debug('Loaded Stylesheet: (' + loadedStylesheets + '/' + stylesToLoad.length + ')');
 				} catch (error) {
 					console.error('Failed To Load Stylesheet:', style, error);
 				}
 				loadedTotalResources++;
 				progress.set(loadedTotalResources / totalResources);
 			}
+
+			console.debug('Completed Preloading', loadedStylesheets + '/' + stylesToLoad.length, 'Stylesheets');
 		}
 
 		// Load Images
 		if (imagesToLoad.length > 0) {
-			console.log('-= Loading Images - Total: ' + imagesToLoad.length + ' =-');
+			console.debug('Preloading', imagesToLoad.length, 'Images');
 			for (const image of imagesToLoad) {
 				try {
 					await loadImage(image);
 					loadedImages++;
-					console.log('Loaded Image: (' + loadedImages + '/' + imagesToLoad.length + ')');
+					console.debug('Loaded Image: (' + loadedImages + '/' + imagesToLoad.length + ')');
 				} catch (error) {
 					console.error('Failed To Load Image:', image, error);
 				}
 				loadedTotalResources++;
 				progress.set(loadedTotalResources / totalResources);
 			}
+
+			console.debug('Completed Preloading', loadedImages + '/' + imagesToLoad.length, 'Images');
 		}
 
 		// Load Scripts
 		if (scriptsToLoad.length > 0) {
-			console.log('Loading Scripts - Total: ' + scriptsToLoad.length);
+			console.debug('Preloading', scriptsToLoad.length, 'Scripts');
 			for (const script of scriptsToLoad) {
 				try {
 					await loadScript(script);
 					loadedScripts++;
-					console.log('Loaded Script: (' + loadedScripts + '/' + scriptsToLoad.length + ')');
+					console.debug('Loaded Script: (' + loadedScripts + '/' + scriptsToLoad.length + ')');
 				} catch (error) {
 					console.error('Failed To Load Script:', script, error);
 				}
 				loadedTotalResources++;
 				progress.set(loadedTotalResources / totalResources);
 			}
+
+			console.debug('Completed Preloading', loadedScripts + '/' + scriptsToLoad.length, 'Scripts');
 		}
 
-		console.log('-= Finished Preloading Assets =-');
+		console.log('Completed Preloading', loadedTotalResources + '/' + totalResources, 'Total Assets');
 	}
 
 	onMount(() => {

@@ -4,7 +4,7 @@
 	import { base } from '$app/paths';
 
 	function openNav() {
-		const sideNav = document.getElementById('mySidenav');
+		const sideNav = document.getElementById('mobileNav');
 		const sideNavBlocker = document.getElementById('sideBarBlocker');
 
 		if (sideNav && sideNavBlocker) {
@@ -25,7 +25,7 @@
 	}
 
 	function closeNav() {
-		const sideNav = document.getElementById('mySidenav');
+		const sideNav = document.getElementById('mobileNav');
 		const sideNavBlocker = document.getElementById('sideBarBlocker');
 
 		if (sideNav && sideNavBlocker) {
@@ -391,7 +391,7 @@
 		on:click={closeNav}
 	></button>
 
-	<div id="mySidenav" class="sidenav">
+	<div id="mobileNav" class="sidenav">
 		<button class="nav-button" on:click={closeNav}>
 			<div class="closebtn">&times;</div>
 		</button>
@@ -563,5 +563,13 @@
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;
+	}
+
+	#mobileNav li a {
+		font-size: 2.5rem;
+	}
+
+	#mobileNav .closebtn {
+		font-size: 3.5rem;
 	}
 </style>
