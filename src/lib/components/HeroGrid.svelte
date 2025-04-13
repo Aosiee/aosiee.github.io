@@ -4,7 +4,7 @@
 
 	export let showSelector = false;
 	export let separateCategories = false;
-	export let showPlatforms = false;
+	export let showPlatforms = true;
 
 	let isotope: any = null;
 	let activeFilter: string | null = null;
@@ -182,6 +182,13 @@
 
 	let gameJamItems: GridItemData[] = [
 		{
+			title: 'Hello Darkness',
+			page: '/projects/game-jam/hello-darkness',
+			src: '/assets/images/headers/HD_Main.png',
+			logo: '/assets/images/headers/HD_Logo.png',
+			platforms: []
+		},	
+		{
 			title: 'Poppet',
 			page: '/projects/game-jam/poppet',
 			src: '/assets/images/headers/Poppet_Header.jpg',
@@ -285,7 +292,7 @@
 
 						<div class="col-12 grid-item grid-title">
 							<!-- <div style="height: 25px;"></div> -->
-							<hr class="grid-hr">
+							<hr class="grid-hr" />
 							<div style="height: 30px;"></div>
 						</div>
 					{/if}
@@ -294,11 +301,7 @@
 						<div class="col-sm-12 col-md-6 col-lg-4 card grid-item {category.categoryClass}">
 							<!-- <div class="card"> -->
 							<div class="card-body">
-								<a
-									class="card-logo-link"
-									href={base + item.page}
-									data-sveltekit-noscroll
-								>
+								<a class="card-logo-link" href={base + item.page} data-sveltekit-noscroll>
 									{#if item.logo}
 										<div class="card-logo">
 											<img src={base + item.logo} alt={item.title + ' Logo'} class="h-100" />
@@ -306,15 +309,16 @@
 									{/if}
 
 									<div class="card-image">
-										<img src={base + item.src} class="w-100 h-100" alt={item.title} loading="lazy" />
+										<img
+											src={base + item.src}
+											class="w-100 h-100"
+											alt={item.title}
+											loading="lazy"
+										/>
 									</div>
 								</a>
 								<div class="card-text-block">
-									<a
-										class="card-text-link"
-										href={base + item.page}
-										data-sveltekit-noscroll
-									>
+									<a class="card-text-link" href={base + item.page} data-sveltekit-noscroll>
 										<!-- <h2 class="card-text tight-text uppercase" style="font-size: 1.375rem">{item.title}</h2> -->
 										<h2 class="card-text uppercase" style="font-size: 1.375rem">{item.title}</h2>
 									</a>
