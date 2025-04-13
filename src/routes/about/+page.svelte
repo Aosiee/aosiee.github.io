@@ -48,7 +48,7 @@
 			title: 'VFS Ambassador',
 			logo: '/assets/images/logos/company/vfs_logo.svg',
 			start: 'Feb 2022',
-			end: 'Current',
+			end: 'Jan 2025',
 			description:
 				'Supporting "<a href="https://vfs.edu/programs/online/game-design-workshops" target="_blank">Intro to Unreal Workshop</a>", <br> "<a href="https://vfs.edu/programs/online/unity#adv" target="_blank">Advanced Unity Workshop</a>", & "<a href="https://vfs.edu/programs/online/game-design-certificate#lighting" target="_blank">Lighting Masterclass</a>"'
 		}
@@ -62,7 +62,7 @@
 			logo: '/assets/images/logos/company/vfs_logo.svg',
 			start: '2020',
 			end: '2021',
-			description: 'Game Design Diploma',
+			description: '<a>Game Design Diploma</a>',
 			subDescription: 'Honour Roll'
 		}
 	];
