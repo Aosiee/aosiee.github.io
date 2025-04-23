@@ -234,7 +234,7 @@
 			</div>
 
 			<div class="category-title">
-				<h3>About Me</h3>
+				<h2>About Me</h2>
 			</div>
 
 			<div class="text-block">
@@ -249,7 +249,7 @@
 			<hr />
 
 			<div class="category-title">
-				<h3>Programming Experience</h3>
+				<h2>Programming Experience</h2>
 			</div>
 			<br />
 			{#each gameExperienceItems as experience}
@@ -361,7 +361,7 @@
 			<hr />
 
 			<div class="category-title">
-				<h4>Teaching Experience</h4>
+				<h2>Teaching Experience</h2>
 			</div>
 			<br />
 			{#each eduExperienceItems as experience}
@@ -471,7 +471,7 @@
 			<hr />
 
 			<div class="category-title">
-				<h4>Education</h4>
+				<h2>Education</h2>
 			</div>
 			<br />
 			{#each educationItems as education}
@@ -556,8 +556,8 @@
 </div>
 
 <style>
-	.category-title {
-		font-size: 1.5rem;
+	.category-title * {
+		font-size: 1.75rem;
 	}
 
 	.rowItem {
