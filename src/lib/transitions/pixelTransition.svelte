@@ -205,8 +205,6 @@
 	<div id="transitionWhiteout" style="var(--main-bg-colour)"></div>
 {/key}
 
-<!-- <svelte:window on:resize={() => location.reload()} /> -->
-
 <style>
 	:root {
 		--block-size: 0px; /* This will be dynamically updated */
