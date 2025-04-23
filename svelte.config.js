@@ -1,8 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-const basePath = process.env.VITE_BASE_PATH || '';
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
@@ -19,10 +17,12 @@ const config = {
 		adapter: adapter({
 			pages: 'docs', // Sets output directory to docs
 			assets: 'docs', // Ensure static assets also go to 'docs'
-			fallback: null
+			fallback: 'index.html',
+			precompress: false,
+			strict: true
 		}),
 		paths: {
-            base: basePath,
+            base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
         }
 	}
 };
