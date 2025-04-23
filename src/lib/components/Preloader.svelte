@@ -168,6 +168,7 @@
 
 	onMount(() => {
 		// document.body.classList.add('no-scroll'); // Add class to hide scrollbar
+		console.log("Preloader Mounted")
 		loadResources().then(() => {
 			// All resources loaded
 			progress.set(1); // Set progress to 100%
