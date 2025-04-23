@@ -296,40 +296,4 @@
 			display: none;
 		}
 	}
-
-	/* Use media queries to change the height based on Bootstrap breakpoints */
-	@media (max-width: 575.98px) {
-		/* For screens up to 575.98px wide (extra small devices) */
-		.preloader-container {
-			width: 100%;
-		}
-	}
-
-	@media (min-width: 576px) and (max-width: 767.98px) {
-		/* For screens between 576px and 767.98px wide (small devices) */
-		.preloader-container {
-			width: 100%;
-		}
-	}
-
-	@media (min-width: 768px) and (max-width: 991.98px) {
-		/* For screens between 768px and 991.98px wide (medium devices) */
-		.preloader-container {
-			width: 75%;
-		}
-	}
-
-	@media (min-width: 992px) and (max-width: 1199.98px) {
-		/* For screens between 992px and 1199.98px wide (large devices) */
-		.preloader-container {
-			width: 50%;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		/* For screens 1200px and wider (extra large devices) */
-		.preloader-container {
-			width: 35%;
-		}
-	}
 </style>
