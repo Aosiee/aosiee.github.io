@@ -199,7 +199,7 @@
 	@media (max-width: 575.98px) {
 		/* For screens up to 575.98px wide (extra small devices) */
 		.carousel {
-			height: 60vh;
+			height: 80vh;
 		}
 		.carousel-logo-holder {
 			max-height: 35vw;
@@ -209,7 +209,7 @@
 	@media (min-width: 576px) and (max-width: 767.98px) {
 		/* For screens between 576px and 767.98px wide (small devices) */
 		.carousel {
-			height: 80vh;
+			height: 75vh;
 		}
 		.carousel-logo-holder {
 			max-height: 40vw;
