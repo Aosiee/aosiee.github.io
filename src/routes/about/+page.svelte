@@ -239,7 +239,7 @@
 
 			<div class="text-block">
 				<p style="line-height: 1.5">
-					At my core, I’m a builder of meaningful experiences. From the first time I saw a game
+					At my core, I aspire to build meaningful experiences. From the first time I saw a game
 					spark a smile, I knew I wanted to craft worlds that resonate. Programming gives me the
 					tools to turn imagination into reality — and I’m always looking for new challenges that
 					push my skills further, fuel personal growth, and let me create something that leaves a
