@@ -9,18 +9,18 @@
 
 	let items = [
 		{
-			title: 'The Chant',
-			page: '/projects/professional-project/the-chant',
-			position: 'top',
-			src: '/assets/images/headers/TheChantHeader_NoLogo.jpg',
-			logo: '/assets/images/headers/TheChantHeader_Logo.png'
-		},
-		{
 			title: 'The Chant DLC',
 			page: '/projects/professional-project/the-chant-dlc',
 			position: 'left top',
 			src: '/assets/images/headers/TheChantDLCHeader-NoLogo.jpg',
 			logo: '/assets/images/headers/TheChantDLCHeader_Logo.png'
+		},
+		{
+			title: 'The Chant',
+			page: '/projects/professional-project/the-chant',
+			position: 'top',
+			src: '/assets/images/headers/TheChantHeader_NoLogo.jpg',
+			logo: '/assets/images/headers/TheChantHeader_Logo.png'
 		},
 		{
 			title: 'Kinshft',
@@ -61,7 +61,6 @@
 						autoPlay: 18000,
 						pageDots: true,
 						lazyLoad: 1
-						
 					});
 				}, 750); // Small delay to ensure correct mounting
 			} else {
@@ -75,7 +74,10 @@
 				});
 			}
 
-			console.debug('Initialized New Flickity Instance, Current Reference Count = ' + (store.count + 1).toString());
+			console.debug(
+				'Initialized New Flickity Instance, Current Reference Count = ' +
+					(store.count + 1).toString()
+			);
 			return { instance: flickityInstance, count: store.count + 1 }; // Increase count
 		});
 	});
@@ -84,7 +86,9 @@
 		flickityStore.update((store) => {
 			const newCount = store.count - 1;
 			if (newCount <= 0 && store.instance === flickityInstance && flickityInstance !== null) {
-				console.debug('Destroying Flickity Referencee, Flickity Has No More References, Destroying.');
+				console.debug(
+					'Destroying Flickity Referencee, Flickity Has No More References, Destroying.'
+				);
 				flickityInstance.destroy();
 				return { instance: null, count: 0 }; // Fully clear store
 			} else if (newCount <= 0) {

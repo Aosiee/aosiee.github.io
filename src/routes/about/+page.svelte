@@ -239,10 +239,11 @@
 
 			<div class="text-block">
 				<p style="line-height: 1.5">
-					I've always wanted to make things that made people happy. Video games ended up being a
-					great passion of mine which allowed me to make people smile. I'm always looking for
-					opportunities in programming where I can use my skill set, grow & develop, and reach my
-					best potential.
+					At my core, I’m a builder of meaningful experiences. From the first time I saw a game
+					spark a smile, I knew I wanted to craft worlds that resonate. Programming gives me the
+					tools to turn imagination into reality — and I’m always looking for new challenges that
+					push my skills further, fuel personal growth, and let me create something that leaves a
+					lasting impact.
 				</p>
 			</div>
 

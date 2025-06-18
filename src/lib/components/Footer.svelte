@@ -8,7 +8,7 @@
 	<div class="footer-background">
 		<div class="footer-logo">
 			<a href="#top">
-				<img src="{base + '/assets/images/logos/logo-white-2.svg'}" alt="Back To Top" />
+				<img src="{base + '/assets/images/logos/logo-white-3.svg'}" alt="Back To Top" />
 			</a>
 		</div>
 		<p>© 2019 - {currentYear} All Rights Reserved • Felipe Lara</p>
@@ -23,14 +23,15 @@
 		text-align: center;
 
 		width: 100%;
-		height: fit-content;
+		height: var(--section-mask-3-height);
+		/* height: fit-content; */
 
-		-webkit-clip-path: url(#footer-mask);
-		clip-path: url(#footer-mask);
+		-webkit-clip-path: url(#section-mask-3);
+		clip-path: url(#section-mask-3);
 	}
 
 	.footer-background p {
-		color: white;
+		color: var(--main-bg-colour);
 		transition: 1s;
 	}
 

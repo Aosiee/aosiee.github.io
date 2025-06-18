@@ -194,7 +194,7 @@
 	<div class="preloader-container">
 		<img
 			class="preloader-logo"
-			src="{base + '/assets/images/logos/logo-black-2.svg'}"
+			src="{base + '/assets/images/logos/logo-black-3.svg'}"
 			alt="Logo On Preloader"
 		/>
 	</div>

@@ -8,6 +8,13 @@
 }
 
 @font-face {
+	font-display: swap;
+	font-family: 'IceCreamMan';
+	font-style: normal;
+	src: url(../fonts/ice_cream_man.woff) format('woff2');
+}
+
+@font-face {
 	font-family: 'Montserrat';
 	font-weight: 500;
 	font-style: normal;
@@ -51,6 +58,8 @@
 	--highlight-theme: red;
 	/* --primary-theme: #ff3e00; */
 	/* --secondary-theme: #4075a6; */
+
+	--section-mask-3-height: 200px;
 
 	--colour-text: rgba(30, 40, 48, 1);
 	--half-colour-text: rgb(30, 40, 48, 0.5);

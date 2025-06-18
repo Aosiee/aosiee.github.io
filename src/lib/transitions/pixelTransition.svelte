@@ -92,7 +92,9 @@
 			return (delayFactorX + delayFactorY + randomFactor) * maxDelay;
 		});
 
-		console.log(delays);
+		if (loggingEnabled) {
+			console.debug(delays);
+		}
 
 		if (blockSize > 0) {
 			setBlockSize(blockSize);
@@ -188,7 +190,7 @@
 		{/each}
 	</div>
 
-	<!-- Trigger animation on intro start/end immediately -->\
+	<!-- Trigger animation on intro start/end immediately -->
 	<div
 		in:blur={{ duration: animationDuration / 2, delay: 350 }}
 		out:blur={{ duration: animationDuration / 2 }}
@@ -214,6 +216,7 @@
 		display: flex;
 		flex-direction: column;
 
+		top: 0;
 		height: 100vh;
 		width: 100vw;
 		position: fixed;

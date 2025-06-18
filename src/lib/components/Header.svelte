@@ -131,6 +131,12 @@
 				data-v-585b909e=""
 			></path>
 		</clipPath>
+		<clipPath id="section-mask-3" clipPathUnits="objectBoundingBox">
+			<path
+				transform="scale(0.000525 0.003)"
+				d="M1920.237 385.12V54.71L1827.017 44.38l-327.6 11.69-270.35-19.37-404.14 20.58L279.75 0 0 15.45V385.12H1920.237Z"
+			/>
+		</clipPath>
 		<clipPath id="game-card-mask" clipPathUnits="objectBoundingBox" data-v-585b909e="">
 			<path
 				transform="scale(0.00204 0.0036)"
@@ -159,11 +165,26 @@
 
 			align-content: center;
 
-			-webkit-clip-path: url(#header-mask);
-			clip-path: url(#header-mask);
+			/* -webkit-clip-path: url(#header-mask);
+			clip-path: url(#header-mask); */
+
+			/* background-color: red; */
+			-webkit-clip-path: url(#section-mask-3);
+			clip-path: url(#section-mask-3);
+
+			transform: rotate(180deg);
+		}
+
+		.header-background div {
+			transform: rotate(180deg);
+		}
+
+		.header-background div .col{
+			transform: rotate(0deg);
 		}
 
 		.header-background.mobile {
+			transform: rotate(180deg);
 			position: fixed;
 		}
 
@@ -204,6 +225,7 @@
 			padding-left: 3rem;
 			height: 100%;
 
+			transform: rotate(0deg);
 			position: absolute;
 		}
 
@@ -426,7 +448,7 @@
 		<div class="desktop-navbar">
 			<div id="nav-block-left">
 				<a href="{base}/">
-					<img src={base + '/assets/images/logos/logo-black-2.svg'} alt="Home" />
+					<img src={base + '/assets/images/logos/logo-black-3.svg'} alt="Home" />
 				</a>
 			</div>
 
@@ -471,6 +493,7 @@
 
 		position: absolute;
 		right: 0;
+		top: 0;
 		z-index: 100;
 		width: 100vw;
 	}

@@ -10,11 +10,14 @@
 	#background-container {
 		width: 100%;
 		height: 0;
+		overflow-x: hidden;
 	}
 
 	#center-background {
 		width: 100%;
-		height: 40%;
+		height: var(--section-mask-3-height);
+
+		/* min-width: 1200px; */
 
 		position: absolute;
 		overflow-x: hidden;
@@ -22,19 +25,9 @@
 		right: 0;
 
 		transform: translateY(-4rem);
-
 		background-color: var(--main-bg-colour);
-		/* background-image: url(/assets/images/gifs/cityscape.gif); */
-		/* background-color: aqua; */
 
-		/* width: 100%;
-		height: 50px;
-		border: 1px black;	
-		background-color: var(--main-bg-colour);
-		transform: scale(1, 7.5) translate(0, 15px);
-		z-index: 5; */
-
-		-webkit-clip-path: url(#section-mask-1);
-		clip-path: url(#section-mask-1);
+		-webkit-clip-path: url(#section-mask-3);
+		clip-path: url(#section-mask-3);
 	}
 </style>
