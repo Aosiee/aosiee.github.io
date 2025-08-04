@@ -124,7 +124,11 @@
 						{#if block.list}
 							<ul>
 								{#each block.list as listItem, index}
-									<li><a href={'#' + listItem.nav}>{listItem.text}</a></li>
+									{#if listItem.nav != null}
+										<li><a href={'#' + listItem.nav}>{listItem.text}</a></li>
+									{:else}
+										<li>{listItem.text}</li>
+									{/if}
 								{/each}
 							</ul>
 						{/if}
@@ -134,6 +138,10 @@
 				{/each}
 			</div>
 		{/if}
+
+		<div class="project-page">
+			<b />
+		</div>
 
 		<!-- TODO -->
 		<!-- <div style="height: 10rem; background-color: red; text-align: center; margin: 4rem;;">

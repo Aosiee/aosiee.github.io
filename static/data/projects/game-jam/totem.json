@@ -1,0 +1,79 @@
+{
+    "title": "Hello Darkness",
+	"art": {
+		"background": "/assets/images/headers/totem.jpg",
+		"background_position": "62% 38%",
+		"logo": "/assets/images/headers/totem_logo_full.png"
+	},
+	"page_data": {
+		"headerBlock":
+		{
+			"company": "GMTK 2025 - Game Jam | Godot",
+			"title": "Team Size 5 | Programmer",
+			"duration": "August 2025"
+		},
+		"projectBlocks": [
+			{
+				"projectCarousel": [
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/totem/main_screen.jpg",
+						"type": "image"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/totem/normal_moon.jpg",
+						"type": "image"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/totem/blood_moon.jpg",
+						"type": "image"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/totem/close_up.jpg",
+						"type": "image"
+					},
+					{
+						"title": "Gameplay Screenshot",
+						"position": "top",
+						"src": "/assets/images/project-images/totem/inside.jpg",
+						"type": "image"
+					}
+				]
+			},
+			{
+				"blockTitle": "Summary",
+				"description": [
+					{
+						"type": "text",
+						"text": "Spot what doesn't belong. Objects will subtly change in the carnival when you're not looking. Mechanical functions might not operate correctly. New friends may pay you a visit. Be sure to check all your surroundings before making a submission."
+					},
+					{
+						"type": "text",
+						"text": "Press the <b>green button</b> to approve when all is in order, or slam the <b>red button</b> to report when something is wrong. Choose correctly to survive the night; choose wrong, and the carnival claims you."
+					}
+				]
+			},
+			{
+				"blockTitle": "Accomplishments",
+				"list": [
+					{
+						"text": "Core Gameplay"
+					},
+					{
+						"text": "Timetrial Time Tracker"
+					},
+					{
+						"text": "Fully Scriptable Anomoly System"
+					}		
+				]
+			}
+		]
+	}
+}

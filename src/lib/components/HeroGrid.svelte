@@ -182,6 +182,13 @@
 
 	let gameJamItems: GridItemData[] = [
 		{
+			title: 'Totem',
+			page: '/projects/game-jam/totem',
+			src: '/assets/images/headers/totem.jpg',
+			logo: '/assets/images/headers/totem_logo_full.png',
+			platforms: []
+		},	
+		{
 			title: 'Hello Darkness',
 			page: '/projects/game-jam/hello-darkness',
 			src: '/assets/images/headers/HD_Main.png',

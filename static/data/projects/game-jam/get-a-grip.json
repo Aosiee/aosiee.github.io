@@ -7,7 +7,7 @@
 	},
 	"page_data": {
 		"headerBlock": {
-			"company": "GMTK - Game Jam | Unreal Engine 5 |",
+			"company": "GMTK 2024 - Game Jam | Unreal Engine 5",
 			"title": "Team Size 5 | Programmer",
 			"duration": "Aug 2024"
 		},
@@ -65,60 +65,16 @@
 				"blockTitle": "Accomplishments",
 				"list": [
 					{
-						"nav": "physics-gameplay",
 						"text": "Physics Based Gameplay"
 					},
 					{
-						"nav": "interchangeable-hands",
 						"text": "Interchangeable Hands"
 					},
 					{
-						"nav": "cel-shader",
 						"text": "Stylized Cel-Shader"
 					},
 					{
-						"nav": "sole-programmer",
 						"text": "Sole Programmer"
-					}
-				]
-			},
-			{
-				"nav": "physics-gameplay",
-				"blockTitle": "Physics Based Gameplay",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
-					}
-				]
-			},
-			{
-				"nav": "interchangeable-hands",
-				"blockTitle": "Interchangeable Hands",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
-					}
-				]
-			},
-			{
-				"nav": "cel-shader",
-				"blockTitle": "Stylized Cel-Shader",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
-					}
-				]
-			},
-			{
-				"nav": "sole-programmer",
-				"blockTitle": "Sole Programmer",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
 					}
 				]
 			}
