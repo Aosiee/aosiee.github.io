@@ -3,6 +3,8 @@
 	import { base } from '$app/paths';
 	import { flickityStore } from '$lib/stores/flickityStore';
 
+	export let useBigDots: boolean = false;
+
 	let flickityInstance: any = null;
 
 	const unusedClass = 'carousel-item-start';
@@ -105,7 +107,7 @@
 	<div class="carousel-item-start carousel-item-end"></div>
 </div>
 
-<div class="carousel">
+<div class="carousel" class:bigDots={useBigDots}>
 	{#each items as item}
 		<div class="carousel-cell">
 			{#if item.logo}

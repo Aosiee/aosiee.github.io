@@ -67,7 +67,7 @@
 				{/if}
 
 				{#if project.page_data.headerBlock}
-					<h2>
+					<h2 style="text-wrap: balance;">
 						{project.page_data.headerBlock.company} | {project.page_data.headerBlock.duration}
 					</h2>
 				{/if}

@@ -3,7 +3,7 @@
 	"art": {
 		"background": "/assets/images/headers/totem.jpg",
 		"background_position": "62% 38%",
-		"logo": "/assets/images/headers/totem_logo_full.png"
+		"logo": "/assets/images/headers/totem_logo.png"
 	},
 	"page_data": {
 		"headerBlock":
@@ -18,7 +18,7 @@
 					{
 						"title": "Gameplay Screenshot",
 						"position": "top",
-						"src": "/assets/images/project-images/totem/main_screen.jpg",
+						"src": "/assets/images/project-images/totem/inside.jpg",
 						"type": "image"
 					},
 					{
@@ -42,7 +42,7 @@
 					{
 						"title": "Gameplay Screenshot",
 						"position": "top",
-						"src": "/assets/images/project-images/totem/inside.jpg",
+						"src": "/assets/images/project-images/totem/main_screen.jpg",
 						"type": "image"
 					}
 				]

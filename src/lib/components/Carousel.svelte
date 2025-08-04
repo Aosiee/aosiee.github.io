@@ -117,6 +117,12 @@
 		justify-content: center;
 	}
 
+	.carousel-cell img {
+		width: 100%; /* 100% of container width */
+		height: 100%;
+		object-fit: cover;
+	}
+
 	.carousel-cell iframe {
 		height: 100%;
 		width: 100%;
@@ -124,7 +130,7 @@
 
 	/* Set a default height for the div */
 	.carousel {
-		height: 50vh; /* Default height */
+		height: 45vh; /* Default height */
 	}
 
 	/* Use media queries to change the height based on Bootstrap breakpoints */

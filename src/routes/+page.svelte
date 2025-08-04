@@ -161,7 +161,7 @@
 </svg>
 
 <section style="justify-content: flex-start;">
-	<Hero_Carousel />
+	<Hero_Carousel useBigDots={true}/>
 	<CenterBackground zIndex={1} />
 
 	<Hero_Grid showSelector={false} showPlatforms={true} separateCategories={true} />
