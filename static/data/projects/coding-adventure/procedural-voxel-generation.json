@@ -1,7 +1,7 @@
 {
     "title": "Procedural Voxel Generation",
 	"art": {
-		"background": "/assets/images/headers/voxel-generation_header-2.jpg",
+		"background": "/assets/images/coding-adventures/cubic-generation/voxel-generation_header-2.jpg",
 		"background_position": "60% 40%",
 		"logo": ""
 	},
@@ -13,7 +13,7 @@
 			},
 		"projectBlocks": [
 			{
-				"projectGif": "/assets/images/gifs/cubic-generation-octree.gif"
+				"projectGif": "/assets/images/coding-adventures/cubic-generation/cubic-generation-octree.gif"
 			},
 			{
 				"blockTitle": "Summary",
@@ -55,7 +55,7 @@
 				"description": [
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/coding-adventures/cubic-generation/CubicGeneration-vs-ChunkGeneration.jpg",
+						"link": "/assets/images/coding-adventures/cubic-generation/CubicGeneration-vs-ChunkGeneration.jpg",
 						"text": "Chunk Generation vs. Cubic Generation"
 					},
 					{
@@ -70,7 +70,7 @@
 				"description": [
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/coding-adventures/cubic-generation/cubic-generation-world-debug.gif",
+						"link": "/assets/images/coding-adventures/cubic-generation/cubic-generation-world-debug.gif",
 						"text": "Basic Terrain Generation from a Debug World Loader (Chunk Requests not Prioritized by Distance)"
 					},
 					{
@@ -89,7 +89,7 @@
 				"description": [
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/coding-adventures/cubic-generation/cubic-generation-player-priority.gif",
+						"link": "/assets/images/coding-adventures/cubic-generation/cubic-generation-player-priority.gif",
 						"text": "Filtered Terrain Generation from a Debug World Loader (Chunk Requests Prioritized by Distance)"
 					},
 					{

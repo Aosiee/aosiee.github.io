@@ -4,14 +4,32 @@
 
 	let gameExperienceItems = [
 		{
+			company: 'Cold Iron Studios',
+			companySite: 'https://coldironstudios.com',
+			title: '<div>Software Engineer - Build & Systems</div>',
+			sub: 'at Cold Iron Studios',
+			location: 'Vancouver, Canada',
+			logo: '/assets/images/logos/company/coldiron.jpg',
+			logoStyle: 'border: 2.5px black solid; border-radius: 7.5px', // filter: grayscale(1);
+			start: 'Aug 25 2025',
+			end: 'Present',
+			projects: [
+				{
+					desc: 'Working on <b>unannounced project</b>',
+					list: []
+				}
+			]
+		},
+		{
 			company: 'What If? Games',
 			companySite: 'https://www.whatifgames.net/',
 			title: '<div>Generalist Programmer</div>',
 			sub: 'at What If? Games',
 			location: 'North Vancouver, Canada',
 			logo: '/assets/images/logos/company/whatifgames_logo.svg',
+			logoStyle: '',
 			start: 'Sep 3 2024',
-			end: 'Present',
+			end: 'Aug 1 2025',
 			projects: [
 				{
 					desc: 'Working on "<a class="font-bolder" href="https://store.steampowered.com/app/3370960/KINSHFT/" target="_blank">Kinshift</a>"',
@@ -37,6 +55,7 @@
 		// 	companySite: '',
 		// 	title: '<div>Founder & Programmer</div> <div>At Tiny Entertainment</div>',
 		// 	logo: '/assets/images/logos/company/brass_token_icon.svg',
+		//	logoStyle: '',
 		// 	start: 'March 31 2023',
 		// 	end: 'Current',
 		// 	description: 'Working on two <b>unannounced projects</b>'
@@ -48,6 +67,7 @@
 			sub: 'at Brass Token',
 			location: 'Vancouver, Canada',
 			logo: '/assets/images/logos/company/brass_token_icon.svg',
+			logoStyle: 'scale: 1.1',
 			start: 'Aug 31 2021',
 			end: 'Nov 1 2023',
 			projects: [
@@ -104,6 +124,7 @@
 			sub: 'At Vancouver Film School',
 			location: 'Vancouver, Canada',
 			logo: '/assets/images/logos/company/vfs_logo.svg',
+			logoStyle: 'height: 85px; width: 85px; object-fit: contain;',
 			start: 'July 1 2023',
 			end: 'Present',
 			description: '',
@@ -120,6 +141,7 @@
 			sub: 'At Vancouver Film School',
 			location: 'Vancouver, Canada',
 			logo: '/assets/images/logos/company/vfs_logo.svg',
+			logoStyle: 'height: 85px; width: 85px; object-fit: contain;',
 			start: 'Feb 2022',
 			end: 'Jan 2025',
 			description: '',
@@ -140,6 +162,7 @@
 			sub: 'From Vancouver Film School',
 			location: 'Vancouver, Canada',
 			logo: '/assets/images/logos/company/vfs_logo.svg',
+			logoStyle: 'height: 85px; width: 85px; object-fit: contain;',
 			start: '2020',
 			end: '2021',
 			description: '<a>Honour Roll</a>',
@@ -211,13 +234,13 @@
 	/>
 </svelte:head>
 
-<div class="about-header">
-	<img
-		src={base + '/assets/images/headers/AboutMeHeader.jpg'}
-		alt="About Me Decorative Background"
-		loading="lazy"
-	/>
-</div>
+<div
+	class="about-header"
+	style={'background-image: url(' +
+		base +
+		'/assets/images/misc/gifs/cityscape.gif' +
+		'); filter: grayscale(1); background-position: right; background-repeat: repeat-x; background-size: calc(3.16 * 22vh);'}
+/>
 
 <div style="background-color: var(--main-bg-colour);">
 	<CenterBackground />
@@ -227,7 +250,7 @@
 			<div class="about-me-image-box">
 				<img
 					class="about-me-image"
-					src={base + '/assets/images/headers/self-image-2.jpg'}
+					src={base + '/assets/images/misc/about-me/self-image-2.jpg'}
 					alt="Portfolio Head Shot"
 					loading="lazy"
 				/>
@@ -240,7 +263,7 @@
 			<div class="text-block">
 				<p style="line-height: 1.5">
 					At my core, I aspire to build meaningful experiences. From the first time I saw a game
-					spark a smile, I knew I wanted to craft worlds that resonate. Programming gives me the
+					spark a smile, I knew I wanted to craft worlds that resonatedeee. Programming gives me the
 					tools to turn imagination into reality — and I’m always looking for new challenges that
 					push my skills further, fuel personal growth, and let me create something that leaves a
 					lasting impact.
@@ -266,6 +289,7 @@
 									target="_blank"
 								>
 									<img
+										style={experience.logoStyle}
 										src={base + experience.logo}
 										alt={experience.company + ' Logo'}
 										loading="lazy"
@@ -275,6 +299,7 @@
 								<!-- svelte-ignore a11y-missing-attribute -->
 								<div class="no-link">
 									<img
+										style={experience.logoStyle}
 										src={base + experience.logo}
 										alt={experience.company + ' Logo'}
 										loading="lazy"
@@ -297,16 +322,18 @@
 									{removeDateFromString(experience.start)} - {removeDateFromString(experience.end)}
 								</h6>
 							</div>
-							{#each experience.projects as project}
-								<p class="about-me-item">
-									{@html project.desc}
-								</p>
-								<ul>
-									{#each project.list as listItem}
-										<li class="about-me-item">{@html listItem}</li>
-									{/each}
-								</ul>
-							{/each}
+							{#if experience.projects}
+								{#each experience.projects as project}
+									<p class="about-me-item">
+										{@html project.desc}
+									</p>
+									<ul>
+										{#each project.list as listItem}
+											<li class="about-me-item">{@html listItem}</li>
+										{/each}
+									</ul>
+								{/each}
+							{/if}
 						</div>
 					</div>
 
@@ -316,6 +343,7 @@
 							{#if experience.companySite != ''}
 								<a style="height: fit-content;" href={experience.companySite} target="_blank">
 									<img
+										style={experience.logoStyle}
 										src={base + experience.logo}
 										alt={experience.company + ' Logo'}
 										loading="lazy"
@@ -325,6 +353,7 @@
 								<!-- svelte-ignore a11y-missing-attribute -->
 								<div class="no-link">
 									<img
+										style={experience.logoStyle}
 										src={base + experience.logo}
 										alt={experience.company + ' Logo'}
 										loading="lazy"
@@ -344,16 +373,18 @@
 									{removeDateFromString(experience.start)} - {removeDateFromString(experience.end)}
 								</h6>
 							</div>
-							{#each experience.projects as project}
-								<p class="about-me-item no-margin">
-									{@html project.desc}
-								</p>
-								<ul>
-									{#each project.list as listItem}
-										<li class="about-me-item">{@html listItem}</li>
-									{/each}
-								</ul>
-							{/each}
+							{#if experience.projects}
+								{#each experience.projects as project}
+									<p class="about-me-item no-margin">
+										{@html project.desc}
+									</p>
+									<ul>
+										{#each project.list as listItem}
+											<li class="about-me-item">{@html listItem}</li>
+										{/each}
+									</ul>
+								{/each}
+							{/if}
 						</div>
 					</div>
 				</div>
@@ -381,7 +412,8 @@
 										src={base + experience.logo}
 										alt={experience.company + ' Logo'}
 										loading="lazy"
-										style={`transform: rotate(${-(parseInt(experience.rotateLogo) || 0) * 90}deg);`}
+										style={`transform: rotate(${-(parseInt(experience.rotateLogo) || 0) * 90}deg);` +
+											experience.logoStyle}
 									/>
 								</a>
 							{:else}
@@ -391,7 +423,8 @@
 										src={base + experience.logo}
 										alt={experience.company + ' Logo'}
 										loading="lazy"
-										style={`transform: rotate(${-(parseInt(experience.rotateLogo) || 0) * 90}deg);`}
+										style={`transform: rotate(${-(parseInt(experience.rotateLogo) || 0) * 90}deg);` +
+											experience.logoStyle}
 									/>
 								</div>
 							{/if}
@@ -428,6 +461,7 @@
 							{#if experience.companySite != ''}
 								<a href={experience.companySite} target="_blank">
 									<img
+										style={experience.logoStyle}
 										src={base + experience.logo}
 										alt={experience.company + ' Logo'}
 										loading="lazy"
@@ -437,6 +471,7 @@
 								<!-- svelte-ignore a11y-missing-attribute -->
 								<div class="no-link">
 									<img
+										style={experience.logoStyle}
 										src={base + experience.logo}
 										alt={experience.company + ' Logo'}
 										loading="lazy"
@@ -491,7 +526,8 @@
 										src={base + education.logo}
 										alt={education.company + ' Logo'}
 										loading="lazy"
-										style={`transform: rotate(${-(parseInt(education.rotateLogo) || 0) * 90}deg);`}
+										style={`transform: rotate(${-(parseInt(education.rotateLogo) || 0) * 90}deg);` +
+											education.logoStyle}
 									/>
 								</a>
 							{:else}
@@ -530,7 +566,12 @@
 					<div class="d-sm-flex d-none">
 						<div class="left">
 							<a href={education.educationSite}>
-								<img src={base + education.logo} alt={education.company + ' Logo'} loading="lazy" />
+								<img
+									style={education.logoStyle}
+									src={base + education.logo}
+									alt={education.company + ' Logo'}
+									loading="lazy"
+								/>
 							</a>
 						</div>
 						<div class="right">
@@ -584,7 +625,7 @@
 	.rowItem .left .no-link,
 	.rowItem .left .no-link img {
 		height: 100%;
-		width: 100%;
+		width: 85px;
 		object-fit: contain;
 		transition: 0.3s;
 	}

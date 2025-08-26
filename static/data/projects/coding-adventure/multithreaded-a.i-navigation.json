@@ -1,8 +1,9 @@
 {
 	"title": "Multithreaded A.I Navigation",
 	"art": {
-		"background": "/assets/images/headers/AboutMeHeader.jpg",
+		"background": "/assets/images/misc/gifs/tokyo.gif",
 		"background_position": "50% 50%",
+		"style": "filter: grayscale(1);",
 		"logo": ""
 	},
 	"page_data": {
@@ -13,7 +14,7 @@
 		},
 		"projectBlocks": [
 			{
-				"projectGif": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest3.gif"
+				"projectGif": "/assets/images/coding-adventures/astar-pathing/PawnStressTest3.gif"
 			},
 			{
 				"blockTitle": "Summary",
@@ -59,7 +60,7 @@
 				"description": [
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/coding-adventures/astar-pathing/creatingGrid.gif",
+						"link": "/assets/images/coding-adventures/astar-pathing/creatingGrid.gif",
 						"text": "Base Grid Generation"
 					},
 					{
@@ -74,7 +75,7 @@
 				"description": [
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/coding-adventures/astar-pathing/GridWorldPos.gif",
+						"link": "/assets/images/coding-adventures/astar-pathing/GridWorldPos.gif",
 						"text": "Base Functions Created"
 					},
 					{
@@ -89,7 +90,7 @@
 				"description": [
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest2.gif",
+						"link": "/assets/images/coding-adventures/astar-pathing/PawnStressTest2.gif",
 						"text": "First Stress Test"
 					},
 					{
@@ -104,7 +105,7 @@
 				"description": [
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest3.gif",
+						"link": "/assets/images/coding-adventures/astar-pathing/PawnStressTest3.gif",
 						"text": "First Stress Test"
 					},
 					{
@@ -119,7 +120,7 @@
 				"description": [
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/coding-adventures/astar-pathing/PawnStressTest4.gif",
+						"link": "/assets/images/coding-adventures/astar-pathing/PawnStressTest4.gif",
 						"text": "First Stress Test"
 					},
 					{

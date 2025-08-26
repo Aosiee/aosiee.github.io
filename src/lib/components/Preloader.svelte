@@ -6,22 +6,23 @@
 	// Example lists of resources to load
 	/** @type {string[]} */
 	const imagesToLoad = [
-		'/assets/images/headers/TheChantHeader_NoLogo.jpg',
-		'/assets/images/headers/TheChantHeader_Logo.png',
-		'/assets/images/headers/TheChantDLCHeader-NoLogo.jpg',
-		'/assets/images/headers/TheChantDLCHeader_Logo.png',
-		'/assets/images/headers/ShiftHeader.jpg',
-		'/assets/images/headers/AIOverviewHeader.jpg'
+		'/assets/images/professional/the-chant/TheChantHeader_NoLogo.avif',
+		'/assets/images/professional/the-chant/TheChantHeader_Logo.avif',
+		'/assets/images/professional/the-chant-dlc/TheChantDLCHeader-NoLogo.avif',
+		'/assets/images/professional/the-chant-dlc/TheChantDLCHeader_Logo.avif',
+		'/assets/images/professional/shift/ShiftHeader.jpg'
 	];
 	// const exampleScriptsToLoad = ['script1.js', 'script2.js'];
 	/** @type {string[]} */
 	const scriptsToLoad = [
-		'/assets/scripts/flickity.pkgd.min.js',
 		'/assets/scripts/isotope.pkgd.min.js'
 	];
 
 	/** @type {string[]} */
-	const stylesToLoad = ['/assets/styles/styles.css'];
+	const stylesToLoad = [
+		'/assets/styles/styles.css',
+		'/assets/styles/carousel.css'
+	];
 
 	// Store to track loading progress
 	const progress = writable(0);
@@ -116,7 +117,9 @@
 				try {
 					await loadStylesheet(style);
 					loadedStylesheets++;
-					console.debug('Loaded Stylesheet: (' + loadedStylesheets + '/' + stylesToLoad.length + ')');
+					console.debug(
+						'Loaded Stylesheet: (' + loadedStylesheets + '/' + stylesToLoad.length + ')'
+					);
 				} catch (error) {
 					console.error('Failed To Load Stylesheet:', style, error);
 				}
@@ -124,7 +127,11 @@
 				progress.set(loadedTotalResources / totalResources);
 			}
 
-			console.debug('Completed Preloading', loadedStylesheets + '/' + stylesToLoad.length, 'Stylesheets');
+			console.debug(
+				'Completed Preloading',
+				loadedStylesheets + '/' + stylesToLoad.length,
+				'Stylesheets'
+			);
 		}
 
 		// Load Images
@@ -163,12 +170,16 @@
 			console.debug('Completed Preloading', loadedScripts + '/' + scriptsToLoad.length, 'Scripts');
 		}
 
-		console.log('Completed Preloading', loadedTotalResources + '/' + totalResources, 'Total Assets');
+		console.log(
+			'Completed Preloading',
+			loadedTotalResources + '/' + totalResources,
+			'Total Assets'
+		);
 	}
 
 	onMount(() => {
 		// document.body.classList.add('no-scroll'); // Add class to hide scrollbar
-		console.log("Preloader Mounted")
+		console.log('Preloader Mounted');
 		loadResources().then(() => {
 			// All resources loaded
 			progress.set(1); // Set progress to 100%
@@ -192,11 +203,7 @@
 
 <div class="preloader">
 	<div class="preloader-container">
-		<img
-			class="preloader-logo"
-			src="{base + '/assets/images/logos/logo-black-3.svg'}"
-			alt="Logo On Preloader"
-		/>
+		<img class="preloader-logo" src={base + '/favicon.svg'} alt="Logo On Preloader" />
 	</div>
 	<div class="loading-bar-container">
 		<h3>Loading Resources...</h3>
@@ -206,7 +213,6 @@
 					<!-- {progressBarWidth} -->
 				</div>
 			</div>
-
 		</div>
 	</div>
 	<div class="animate"></div>

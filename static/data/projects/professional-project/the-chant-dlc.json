@@ -1,9 +1,9 @@
 {
     "title": "The Chant - The Gloom Below",
 	"art": {
-		"background": "/assets/images/headers/TheChantDLCHeader-NoLogo.jpg",
+		"background": "/assets/images/professional/the-chant-dlc/TheChantDLCHeader-NoLogo.avif",
 		"background_position": "0% 10%",
-		"logo": "/assets/images/headers/TheChantDLCHeader_Logo.png"
+		"logo": "/assets/images/professional/the-chant-dlc/TheChantDLCHeader_Logo.avif"
 	},
 	"page_data": {
 		"headerBlock":
@@ -14,7 +14,14 @@
 		},
 		"projectBlocks": [
 			{
-				"projectVideo": "https://www.youtube.com/embed/u9h8j_wSLnI?si=H45kZnYwDheS8WkZ"
+				"projectCarousel": [
+					{
+						"title": "The Chant: The Gloom Below - Launch Trailer",
+						"position": "top",
+						"src": "u9h8j_wSLnI",
+						"type": "youtube"
+					}
+				]
 			},
 			{
 				"blockTitle": "Summary",
@@ -29,74 +36,19 @@
 				"blockTitle": "Accomplishments",
 				"list": [
 					{
-						"nav": "core-loop-prototyping",
 						"text": "Core Game Loop Prototyping"
 					},
 					{
-						"nav": "telemetry",
 						"text": "Created, Setup, & Owned Telemetry Systems"
 					},
 					{
-						"nav": "ui",
 						"text": "Main U.I Tech for Title"
 					},
 					{
-						"nav": "memreports",
 						"text": "Automated Memory Report and Analytics System"
 					},
 					{
-						"nav": "jenkins+build",
 						"text": "Owned and Maintained Jenkins & Build Machines"
-					}
-				]
-			},        
-			{
-				"nav": "core-loop-prototyping",
-				"blockTitle": "Core Game Loop Prototyping",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
-					}
-				]
-			},        
-			{
-				"nav": "telemetry",
-				"blockTitle": "Created, Setup, & Owned Telemetry Systems",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
-					}
-				]
-			},        
-			{
-				"nav": "ui",
-				"blockTitle": "Main U.I Tech for Title",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
-					}
-				]
-			},        
-			{
-				"nav": "memreports",
-				"blockTitle": "Automated Memory Report and Analytics System",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
-					}
-				]
-			},        
-			{
-				"nav": "jenkins+build",
-				"blockTitle": "Owned and Maintained Jenkins & Build Machines",
-				"description": [
-					{
-						"type": "text",
-						"text": "Under Construction..."
 					}
 				]
 			}

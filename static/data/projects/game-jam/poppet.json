@@ -1,9 +1,9 @@
 {
     "title": "Poppet",
 	"art": {
-		"background": "/assets/images/headers/Poppet_Header.jpg",
+		"background": "/assets/images/game-jams/poppet/Poppet_Header.avif",
 		"background_position": "62% 38%",
-		"logo": "/assets/images/headers/Poppet.png"
+		"logo": "/assets/images/game-jams/poppet/Poppet.avif"
 	},
 	"page_data": {
 		"headerBlock":
@@ -18,13 +18,13 @@
 					{
 						"title": "Gameplay Screenshot",
 						"position": "top",
-						"src": "/assets/images/project-images/poppet/game-image-1.jpg",
+						"src": "/assets/images/game-jams/poppet/game-image-1.jpg",
 						"type": "image"
 					},
 					{
 						"title": "Gameplay Screenshot",
 						"position": "top",
-						"src": "/assets/images/project-images/poppet/game-image-2.jpg",
+						"src": "/assets/images/game-jams/poppet/game-image-2.jpg",
 						"type": "image"
 					}
 				]

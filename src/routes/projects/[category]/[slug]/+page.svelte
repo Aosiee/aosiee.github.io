@@ -35,14 +35,14 @@
 			alt="{project.title} Decorative Background With Max Width"
 			loading="lazy"
 			style="object-position: {project.art.background_position}; max-width: {project.art
-				.maxWidth}; border-radius: 15%; object-fit: contain;"
+				.maxWidth}; border-radius: 15%; object-fit: contain; {project.art.style ? project.art.style : ''}"
 		/>
 	{:else if project && project.art.background}
 		<img
 			src={base + project.art.background}
 			alt="{project.title} Decorative Background"
 			loading="lazy"
-			style="object-position: {project.art.background_position};"
+			style="object-position: {project.art.background_position}; {project.art.style ? project.art.style : ''}"
 		/>
 	{/if}
 
@@ -75,22 +75,22 @@
 				{#each project.page_data.projectBlocks as block, index}
 					<div {...block.nav ? { id: block.nav } : {}}>
 						{#if block.projectCarousel}
-							<Carousel items={block.projectCarousel} />
+							<div class="carousel-sizer">
+								<Carousel items={block.projectCarousel} />
+							</div>
 						{/if}
 
 						{#if block.projectVideo}
 							<div class="media-sizing">
 								<iframe
-									width="540"
-									height="304"
-									src={block.projectVideo + '?rel=0&modestbranding=1&showinfo=0&color=white'}
+									src={block.projectVideo + '&rel=0&modestbranding=1&showinfo=0&color=white'}
 									title={block.title + ' ' + project.title + ' Video'}
 									frameborder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 									referrerpolicy="strict-origin-when-cross-origin"
 									allowfullscreen
 									loading="lazy"
-								></iframe>
+								/>
 							</div>
 						{/if}
 
@@ -219,6 +219,12 @@
 		position: relative;
 	}
 
+	.carousel-sizer {
+		width: 540px;
+		height: 304px;
+		max-width: 100%;
+	}
+
 	/* Use media queries to change the height based on Bootstrap breakpoints */
 	@media (max-width: 767.98px) {
 		/* For screens up to 575.98px wide (extra small devices) */
@@ -240,5 +246,20 @@
 
 			position: absolute;
 		}
+
+		.carousel-sizer {
+			width: 100%;
+			height: 304px;
+			max-width: 100%;
+		}
 	}
+
+	@media (min-width: 768px) and (max-width: 1200px) {
+		.carousel-sizer {
+			width: 100%;
+			height: 404px;
+			max-width: 100%;
+		}
+	}
+	
 </style>

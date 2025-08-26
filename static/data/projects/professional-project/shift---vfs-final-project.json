@@ -1,14 +1,21 @@
 {
     "title": "Shift - VFS Final Project",
 	"art": {
-		"background": "/assets/images/headers/ShiftHeader.jpg",
+		"background": "/assets/images/professional/shift/shift-thumbnail.avif",
 		"background_position": "bottom",
 		"logo": ""
 	},
 	"page_data": {
 		"projectBlocks": [
 			{
-				"projectVideo": "https://www.youtube.com/embed/CEN9Z9yFBho?si=1kJXzfp-hn3mzX41"
+				"projectCarousel": [
+					{
+						"title": "Shift - VFS Final Project",
+						"position": "top",
+						"src": "CEN9Z9yFBho",
+						"type": "youtube"
+					}
+				]
 			},
 			{
 				"blockTitle": "Summary",
@@ -70,7 +77,7 @@
 					},
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/shift/original-concept-shift.jpg",
+						"link": "/assets/images/professional/shift/original-concept-shift.jpg",
 						"text": "Original Isometric Concept Art"
 					},
 					{
@@ -93,7 +100,7 @@
 					},
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/shift/level-editor-3.jpg",
+						"link": "/assets/images/professional/shift/level-editor-3.jpg",
 						"text": "Level Editor After Adding Placement Ruleset"
 					},
 					{
@@ -102,7 +109,7 @@
 					},
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/shift/level-editor-4.jpg",
+						"link": "/assets/images/professional/shift/level-editor-4.jpg",
 						"text": "Level Editor with Interactable Integration"
 					}
 				]
@@ -121,8 +128,8 @@
 					},
 					{
 						"type": "img",
-						"link": "",
-						"text": "Original Isometric Concept Art"
+						"link": "/assets/images/professional/shift/level-editor-3.jpg",
+						"text": "Custom Level Editor"
 					},
 					{
 						"type": "text",
@@ -134,19 +141,6 @@
 				"nav": "optimization",
 				"blockTitle": "Optimization of Over 25,000 Components at Runtime",
 				"description": [
-					{
-						"type": "text",
-						"text": ""
-					},
-					{
-						"type": "text",
-						"text": ""
-					},
-					{
-						"type": "img",
-						"link": "",
-						"text": "Original Isometric Concept Art"
-					},
 					{
 						"type": "text",
 						"text": ""
@@ -163,7 +157,7 @@
 					},
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/shift/audio-tool.jpg",
+						"link": "/assets/images/professional/shift/audio-tool.jpg",
 						"text": "In-Engine Audio Tool"
 					},
 					{
@@ -182,7 +176,7 @@
 					},
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/shift/lobby.PNG",
+						"link": "/assets/images/professional/shift/lobby.PNG",
 						"text": "In-Game Lobby"
 					},
 					{
@@ -201,7 +195,7 @@
 					},
 					{
 						"type": "img",
-						"link": "/assets/images/project-images/shift/wwise.jpg",
+						"link": "/assets/images/professional/shift/wwise.jpg",
 						"text": "Wwise Profiler"
 					}
 				]			

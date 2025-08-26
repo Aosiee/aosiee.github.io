@@ -5,6 +5,7 @@
 
 	import PixelTransition from '$lib/transitions/pixelTransition.svelte';
 
+	import { dev } from '$app/environment';
 	export let data;
 </script>
 
@@ -136,6 +137,12 @@
 		></path>
 	</clipPath>
 </svg>
+
+<svelte:head>
+	{#if dev}
+		<link rel="icon" href="/assets/images/logos/dev-favicon.png" />
+	{/if}
+</svelte:head>
 
 <div class="app">
 	<Preloader />

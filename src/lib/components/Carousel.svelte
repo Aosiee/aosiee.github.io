@@ -1,11 +1,8 @@
 <script type="text/javascript" lang="ts">
-	import { onMount, onDestroy } from 'svelte';
 	import { base } from '$app/paths';
-	import { flickityStore } from '$lib/stores/flickityStore';
 
-	let flickityInstance: any = null;
-
-	const unusedClass = 'carousel-item-start';
+	import { Video } from '@splidejs/splide-extension-video';
+	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 
 	export let items: itemData[] = [];
 
@@ -16,151 +13,94 @@
 		type: string;
 	};
 
-	onMount(() => {
-		// Load Flickity JS after the component is mounted
-		flickityStore.update((store) => {
-			if (store.instance) {
-				console.debug('Flickity Already Initialized! Recreating Instance w/ Delay.');
-				flickityInstance = store.instance;
-				flickityInstance.destroy();
-				console.debug('Flickity Instance Destroyed!');
-
-				setTimeout(() => {
-					const carouselElement = document.querySelector('.carousel') as HTMLElement;
-					flickityInstance = new window.Flickity(carouselElement, {
-						wrapAround: true,
-						autoPlay: false,
-						pageDots: true,
-						lazyLoad: 1,
-					});
-				}, 750); // Small delay to ensure correct mounting
-			} else {
-				console.debug('Detected No Flickity Instance, Initializing New Flickity Instance');
-				const carouselElement = document.querySelector('.carousel') as HTMLElement;
-				flickityInstance = new window.Flickity(carouselElement, {
-					wrapAround: true,
-					autoPlay: false,
-					pageDots: true,
-					lazyLoad: 1,
-				});
-			}
-
-			console.debug('Initialized New Flickity Instance, Current Reference Count = ' + (store.count + 1).toString());
-			return { instance: flickityInstance, count: store.count + 1 }; // Increase count
-		});
-	});
-
-	onDestroy(() => {
-		flickityStore.update((store) => {
-			const newCount = store.count - 1;
-			if (newCount <= 0 && store.instance === flickityInstance && flickityInstance !== null) {
-				console.debug('Destroying Flickity Referencee, Flickity Has No More References, Destroying.');
-				flickityInstance.destroy();
-				return { instance: null, count: 0 }; // Fully clear store
-			} else if (newCount <= 0) {
-				return { instance: null, count: 0 }; // Fully clear store
-			}
-
-			console.debug('Destroying Flickity Referencee, New Reference Count = ' + newCount);
-			return { instance: store.instance, count: newCount }; // Just decrease count
-		});
-	});
+	var useArrows: boolean = items.length != 1;
+	var dynamicType: string = useArrows ? 'loop' : 'fade';
 </script>
 
-<div>
-	<div class="carousel-item-start carousel-item-end"></div>
-</div>
+<!-- Carousel CSS -->
+<link rel="stylesheet" href="/assets/styles/carousel.css" />
 
-<div class="carousel">
+<!-- Splide Carousel -->
+<Splide
+	aria-label="Splide Carousel"
+	class="splide-carousel"
+	options={{
+		type: dynamicType,
+		rewind: true,
+		rewindByDrag: true,
+		lazyLoad: 'nearby',
+		preloadPages: 1,
+		wheel: true,
+		wheelSleep: 75,
+		gap: 0,
+		snap: true,
+		arrows: useArrows,
+		pagination: useArrows,
+		video: {
+			host: 'https://www.youtube-nocookie.com',
+			playerOptions: {
+				youtube: {}
+			}
+		}
+	}}
+	extensions={{ Video }}
+	on:mounted={(e) => {
+		const splide = e.detail.splide;
+		splide.on('lazyload:loaded', (_img, slide) => {
+			if (_img) {
+				if (_img.naturalWidth <= 135) {
+					let choppedUrl = _img.currentSrc.split('/');
+					if (!_img.dataset.fallbackDone) {
+						_img.dataset.fallbackDone = '1';
+						// _img.setAttribute('data-splide-lazy', `https://img.youtube.com/vi/${choppedUrl[4]}/hqdefault.jpg`);
+						_img.setAttribute('src', `https://img.youtube.com/vi/${choppedUrl[4]}/hqdefault.jpg`);
+						console.log('Failed To Find MaxResDefault, Using HD');
+					}
+				}
+			}
+		});
+	}}
+>
 	{#each items as item}
-		<div class="carousel-cell">
-			{#if item.type === 'image'}
-				<img data-flickity-lazyload={base + item.src} class="d-block w-100" alt={item.title} />
-			{:else if item.type === 'video'}
-				<!-- svelte-ignore a11y-media-has-caption -->
-				<video class="carousel-video" controls>
-					<source src={base + item.src} type="video/mp4" />
-					Your browser does not support the video tag.
-				</video>
-			{:else if item.type === 'youtube'}
-				<iframe
-					width="100%"
-					height="100%"
-					src={item.src + '?rel=0&modestbranding=1&showinfo=0&color=white'}
-					title={item.title + ' Project Video'}
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen
-					loading="lazy"
-				></iframe>
-			{/if}
-		</div>
-	{/each}
-</div>
+		{#if item.type === 'image'}
+			<SplideSlide>
+				<img data-splide-lazy={base + item.src} alt={item.title} />
+			</SplideSlide>
+		{:else if item.type === 'youtube'}
+			<SplideSlide data-splide-youtube={'https://www.youtube.com/watch?v=' + item.src}>
+				<img
+					data-splide-lazy={`https://img.youtube.com/vi/${item.src}/maxresdefault.jpg`}
+					alt="Video Slide"
+				/>
 
-<none style="display: none;" class="carousel is-fullscreen"><none class="carousel-cell" /></none>
+				{#if useArrows}
+					<div class="blocker left" />
+					<div class="blocker right" />
+				{/if}
+			</SplideSlide>
+		{/if}
+	{/each}
+</Splide>
 
 <style>
-	.carousel {
-		background-color: var(--main-bg-colour);
-		width: 100%;
+	.blocker {
+		height: 65%;
+		top: 50px;
+		bottom: 80px;
+		width: calc(50% - 125px);
+		z-index: 6;
 	}
 
-	.carousel-cell {
-		width: 100%; /* 100% of container width */
-		height: 100%;
-		margin-right: 10px; /* optional, if you want space between cells */
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.blocker.left {
+		position: absolute;
+		left: 0;
+		/* border: 2px solid green; */
 	}
 
-	.carousel-cell img {
-		width: 100%; /* 100% of container width */
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.carousel-cell iframe {
-		height: 100%;
-		width: 100%;
-	}
-
-	/* Set a default height for the div */
-	.carousel {
-		height: 45vh; /* Default height */
-	}
-
-	/* Use media queries to change the height based on Bootstrap breakpoints */
-	@media (max-width: 575.98px) {
-		/* For screens up to 575.98px wide (extra small devices) */
-		.carousel {
-			height: 25vh;
-		}
-	}
-
-	@media (min-width: 576px) and (max-width: 767.98px) {
-		/* For screens between 576px and 767.98px wide (small devices) */
-		.carousel {
-			height: 30vh;
-		}
-	}
-
-	.carousel.is-fullscreen {
-		height: 100vh !important;
-		z-index: 9999999 !important;
-	}
-
-	.carousel.is-fullscreen .carousel-cell {
-		height: 100vh !important;
-		z-index: 9999998 !important;
-	}
-
-	.carousel.is-fullscreen .carousel-cell img {
-		height: 100vh !important;
-		z-index: 9999997 !important;
-		background-color: black;
+	.blocker.right {
+		position: absolute;
+		left: auto;
+		right: 0;
+		/* border: 2px solid red; */
 	}
 </style>

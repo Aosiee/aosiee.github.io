@@ -90,8 +90,8 @@
 		{
 			title: 'Kinshft',
 			page: '/projects/professional-project/kinshft',
-			src: '/assets/images/headers/Kinshift_NoLogo_2.jpg',
-			logo: '/assets/images/headers/Kinshift_Logo.png',
+			src: '/assets/images/professional/kinshft/Kinshift_NoLogo_2.avif',
+			logo: '/assets/images/professional/kinshft/Kinshift_Logo.avif',
 			platforms: [
 				{
 					platform: 'steam',
@@ -110,15 +110,15 @@
 		{
 			title: 'Unannounced Project',
 			page: '/projects/professional-project/unannounced-project',
-			src: '/assets/images/headers/UnannouncedProject.png',
+			src: '/assets/images/professional/bt-unannounced-project/UnannouncedProject.avif',
 			logo: '',
 			platforms: []
 		},
 		{
 			title: 'The Chant DLC',
 			page: '/projects/professional-project/the-chant-dlc',
-			src: '/assets/images/headers/TheChantDLCHeader-NoLogo.jpg',
-			logo: '/assets/images/headers/TheChantDLCHeader_Logo.png',
+			src: '/assets/images/professional/the-chant-dlc/TheChantDLCHeader-NoLogo.avif',
+			logo: '/assets/images/professional/the-chant-dlc/TheChantDLCHeader_Logo.avif',
 			platforms: [
 				{
 					platform: 'steam',
@@ -137,8 +137,8 @@
 		{
 			title: 'The Chant',
 			page: '/projects/professional-project/the-chant',
-			src: '/assets/images/headers/TheChantHeader_NoLogo.jpg',
-			logo: '/assets/images/headers/TheChantHeader_Logo.png',
+			src: '/assets/images/professional/the-chant/TheChantHeader_NoLogo.avif',
+			logo: '/assets/images/professional/the-chant/TheChantHeader_Logo.avif',
 			platforms: [
 				{
 					platform: 'steam',
@@ -157,7 +157,7 @@
 		{
 			title: 'Shift - VFS Final Project',
 			page: '/projects/professional-project/shift---vfs-final-project',
-			src: '/assets/images/headers/ShiftHeader.jpg',
+			src: '/assets/images/professional/shift/shift-thumbnail.avif',
 			logo: '',
 			platforms: []
 		}
@@ -167,14 +167,14 @@
 		{
 			title: 'Procedural Voxel Generation',
 			page: '/projects/coding-adventure/procedural-voxel-generation',
-			src: '/assets/images/headers/voxel-generation_header-2.jpg',
+			src: '/assets/images/coding-adventures/cubic-generation/voxel-generation_header-2.avif',
 			logo: '',
 			platforms: []
 		},
 		{
 			title: 'Multithreaded A.I Navigation',
 			page: '/projects/coding-adventure/multithreaded-a.i-navigation',
-			src: '/assets/images/headers/AIOverviewHeader.jpg',
+			src: '/assets/images/coding-adventures/astar-pathing/AIOverviewHeader.avif',
 			logo: '',
 			platforms: []
 		}
@@ -184,29 +184,29 @@
 		{
 			title: 'Totem',
 			page: '/projects/game-jam/totem',
-			src: '/assets/images/headers/totem.jpg',
-			logo: '/assets/images/headers/totem_logo_full.png',
+			src: '/assets/images/game-jams/totem/totem.avif',
+			logo: '/assets/images/game-jams/totem/totem_logo_full.avif',
 			platforms: []
 		},	
 		{
 			title: 'Hello Darkness',
 			page: '/projects/game-jam/hello-darkness',
-			src: '/assets/images/headers/HD_Main.png',
-			logo: '/assets/images/headers/HD_Logo.png',
+			src: '/assets/images/game-jams/hello-darkness/HD_Main.avif',
+			logo: '/assets/images/game-jams/hello-darkness/HD_Logo.avif',
 			platforms: []
 		},	
 		{
 			title: 'Poppet',
 			page: '/projects/game-jam/poppet',
-			src: '/assets/images/headers/Poppet_Header.jpg',
-			logo: '/assets/images/headers/Poppet.png',
+			src: '/assets/images/game-jams/poppet/Poppet_Header.avif',
+			logo: '/assets/images/game-jams/poppet/Poppet.avif',
 			platforms: []
 		},
 		{
 			title: 'Get A Grip',
 			page: '/projects/game-jam/get-a-grip',
-			src: '/assets/images/headers/GAG_Header2.png',
-			logo: '/assets/images/headers/GAG_Logo.png',
+			src: '/assets/images/game-jams/get-a-grip/GAG_Header2.avif',
+			logo: '/assets/images/game-jams/get-a-grip/GAG_Logo.avif',
 			platforms: []
 		}
 	];

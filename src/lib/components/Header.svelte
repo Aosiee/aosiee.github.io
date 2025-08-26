@@ -238,6 +238,7 @@
 
 			padding-left: 0.5rem;
 			padding-right: 0.5rem;
+			padding-bottom: 0.5rem;
 		}
 
 		#nav-block-left img {
@@ -394,7 +395,7 @@
 		<div class="row">
 			<div class="col">
 				<a class="navbar-brand" href="{base}/">
-					<img src={base + '/assets/images/logos/logo-black-2.svg'} alt="Home" />
+					<img src={base + '/favicon.svg'} alt="Home" />
 				</a>
 			</div>
 			<div class="col" style="text-align: right; margin-right: 1rem;">
@@ -448,7 +449,7 @@
 		<div class="desktop-navbar">
 			<div id="nav-block-left">
 				<a href="{base}/">
-					<img src={base + '/assets/images/logos/logo-black-3.svg'} alt="Home" />
+					<img src={base + '/favicon.svg'} alt="Home" />
 				</a>
 			</div>
 

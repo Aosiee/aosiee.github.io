@@ -1,245 +1,59 @@
 <script type="text/javascript" lang="ts">
-	import { onDestroy, onMount } from 'svelte';
-	import { base } from '$app/paths';
-	import { flickityStore } from '$lib/stores/flickityStore';
-
-	export let useBigDots: boolean = false;
-
-	let flickityInstance: any = null;
-
-	const unusedClass = 'carousel-item-start';
-
-	let items = [
-		{
-			title: 'The Chant DLC',
-			page: '/projects/professional-project/the-chant-dlc',
-			position: 'left top',
-			src: '/assets/images/headers/TheChantDLCHeader-NoLogo.jpg',
-			logo: '/assets/images/headers/TheChantDLCHeader_Logo.png'
-		},
-		{
-			title: 'The Chant',
-			page: '/projects/professional-project/the-chant',
-			position: 'top',
-			src: '/assets/images/headers/TheChantHeader_NoLogo.jpg',
-			logo: '/assets/images/headers/TheChantHeader_Logo.png'
-		},
-		{
-			title: 'Kinshft',
-			page: '/projects/professional-project/kinshft',
-			position: 'top',
-			src: '/assets/images/headers/Kinshift_NoLogo_2.jpg',
-			logo: '/assets/images/headers/Kinshift_Logo.png'
-		},
-		{
-			title: 'Poppet',
-			page: '/projects/game-jam/poppet',
-			position: '80% 50%',
-			src: '/assets/images/headers/Poppet_Header.jpg',
-			logo: '/assets/images/headers/Poppet.png'
-		},
-		{
-			title: 'Get A Grip',
-			page: '/projects/game-jam/get-a-grip',
-			position: '50% 25%',
-			src: '/assets/images/headers/GAG_Header2.png',
-			logo: '/assets/images/headers/GAG_Logo.png'
-		}
-	];
-
-	onMount(() => {
-		// Load Flickity JS after the component is mounted
-		flickityStore.update((store) => {
-			if (store.instance) {
-				console.debug('Flickity Already Initialized! Recreating Instance w/ Delay.');
-				flickityInstance = store.instance;
-				flickityInstance.destroy();
-				console.debug('Flickity Instance Destroyed!');
-
-				setTimeout(() => {
-					const carouselElement = document.querySelector('.carousel') as HTMLElement;
-					flickityInstance = new window.Flickity(carouselElement, {
-						wrapAround: true,
-						autoPlay: 18000,
-						pageDots: true,
-						lazyLoad: 1
-					});
-				}, 750); // Small delay to ensure correct mounting
-			} else {
-				console.debug('Detected No Flickity Instance, Initializing New Flickity Instance');
-				const carouselElement = document.querySelector('.carousel') as HTMLElement;
-				flickityInstance = new window.Flickity(carouselElement, {
-					wrapAround: true,
-					autoPlay: 18000,
-					pageDots: true,
-					lazyLoad: 1
-				});
-			}
-
-			console.debug(
-				'Initialized New Flickity Instance, Current Reference Count = ' +
-					(store.count + 1).toString()
-			);
-			return { instance: flickityInstance, count: store.count + 1 }; // Increase count
-		});
-	});
-
-	onDestroy(() => {
-		flickityStore.update((store) => {
-			const newCount = store.count - 1;
-			if (newCount <= 0 && store.instance === flickityInstance && flickityInstance !== null) {
-				console.debug(
-					'Destroying Flickity Referencee, Flickity Has No More References, Destroying.'
-				);
-				flickityInstance.destroy();
-				return { instance: null, count: 0 }; // Fully clear store
-			} else if (newCount <= 0) {
-				return { instance: null, count: 0 }; // Fully clear store
-			}
-
-			console.debug('Destroying Flickity Referencee, New Reference Count = ' + newCount);
-			return { instance: store.instance, count: newCount }; // Just decrease count
-		});
-	});
+	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+	import { items } from '$lib/components/Hero-Carousel-Items.svelte';
 </script>
 
-<div>
-	<div class="carousel-item-start carousel-item-end"></div>
-</div>
+<!-- Carousel CSS -->
+<link rel="stylesheet" href="/assets/styles/carousel.css" />
 
-<div class="carousel" class:bigDots={useBigDots}>
+<!-- Splide Hero Carousel -->
+<Splide
+	aria-label="Hero Carousel"
+	class="hero-carousel"
+	options={{
+		type: 'fade',
+		speed: 1200,
+		rewind: true,
+		rewindByDrag: true,
+		lazyLoad: 'nearby',
+		preloadPages: 2,
+		wheel: false,
+		wheelSleep: 75,
+		gap: 0,
+		snap: true,
+		arrows: true,
+		pagination: true,
+		autoplay: true,
+		interval: 10000,
+		perMove: 1,
+	}}
+>
 	{#each items as item}
-		<div class="carousel-cell">
-			{#if item.logo}
-				<div class="carousel-center">
-					<div class="carousel-background-image">
-						<img
-							data-flickity-lazyload={base + item.src}
-							style="object-position: {item.position};"
-							alt={item.title + ' Background Image'}
-						/>
-					</div>
+		<SplideSlide>
+			<img
+				alt={item.title}
+				class="d-block w-100"
+				style={'object-position:' + (item.position ?? 'center')}
+				data-splide-lazy-srcset={item.background_srcset ?? undefined}
+				sizes={item.background_sizes}
+				/>
+				<!-- data-splide-lazy={item.background_src ?? undefined} -->
 
-					<div class="carousel-logo-holder">
-						<a href={base + item.page} data-sveltekit-noscroll>
+			{#if item.logo_src || item.logo_srcset}
+				<div class="hero-carousel-center">
+					<div class="hero-carousel-logo-holder">
+						<a href={item.page} data-sveltekit-noscroll>
 							<img
-								data-flickity-lazyload={base + item.logo}
+								alt={`${item.title} logo`}
 								class="d-block w-100"
-								alt={item.title}
-							/>
+								data-splide-lazy-srcset={item.logo_srcset ?? undefined}
+								sizes={item.logo_sizes}
+								/>
+								<!-- data-splide-lazy={item.logo_src ?? undefined} -->
 						</a>
 					</div>
 				</div>
-			{:else}
-				<img data-flickity-lazyload={base + item.src} class="d-block w-100" alt={item.title} />
 			{/if}
-		</div>
+		</SplideSlide>
 	{/each}
-</div>
-
-<style>
-	.carousel {
-		background-color: black;
-		width: 100%;
-	}
-
-	.carousel-cell {
-		width: 100%; /* 100% of container width */
-		height: 100%;
-		margin-right: 10px; /* optional, if you want space between cells */
-	}
-
-	.carousel-center {
-		height: 100%;
-		width: 100%;
-
-		background-position: 50% 0% !important;
-
-		z-index: -10;
-
-		display: flex;
-		align-content: center;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	.carousel-background-image {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-	}
-
-	.carousel-background-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.carousel-logo-holder {
-		height: 35%;
-		object-fit: contain;
-		transition: 0.25s ease-out;
-		z-index: 1;
-	}
-
-	.carousel-logo-holder a {
-		display: flex;
-		height: 100%;
-	}
-
-	.carousel-logo-holder a img {
-		height: 100%;
-	}
-
-	.carousel-logo-holder:hover {
-		scale: 1.05;
-		transition: 0.25s;
-	}
-
-	/* Set a default height for the div */
-	.carousel {
-		height: 45vh; /* Default height */
-	}
-
-	/* Use media queries to change the height based on Bootstrap breakpoints */
-	@media (max-width: 575.98px) {
-		/* For screens up to 575.98px wide (extra small devices) */
-		.carousel {
-			height: 80vh;
-		}
-		.carousel-logo-holder {
-			max-height: 35vw;
-		}
-	}
-
-	@media (min-width: 576px) and (max-width: 767.98px) {
-		/* For screens between 576px and 767.98px wide (small devices) */
-		.carousel {
-			height: 75vh;
-		}
-		.carousel-logo-holder {
-			max-height: 40vw;
-		}
-	}
-
-	@media (min-width: 768px) and (max-width: 991.98px) {
-		/* For screens between 768px and 991.98px wide (medium devices) */
-		.carousel {
-			height: 70vh;
-		}
-	}
-
-	@media (min-width: 992px) and (max-width: 1199.98px) {
-		/* For screens between 992px and 1199.98px wide (large devices) */
-		.carousel {
-			height: 90vh;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		/* For screens 1200px and wider (extra large devices) */
-		.carousel {
-			height: 85vh;
-		}
-	}
-</style>
+</Splide>

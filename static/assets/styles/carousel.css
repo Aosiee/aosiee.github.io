@@ -1,0 +1,164 @@
+/* FOR GENERAL CAROUSEL */
+.splide-carousel {
+	background-color: var(--black-theme);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.splide__track {
+	height: 100%;
+}
+
+.splide__list .splide__slide img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.splide__arrow {
+	background-color: transparent;
+	border-radius: 0;
+    height: 4rem;
+}
+
+.splide__arrow svg {
+	fill: white;
+	width: 2em;
+	height: 2em;
+	transition: 0.3s;
+}
+
+.splide__pagination li {
+	margin: 0 2px;
+}
+
+.splide__pagination__page {
+	background-color: transparent;
+	border: 2px solid var(--main-bg-colour);
+	transition: 0.3s;
+	width: 1rem;
+	height: 1rem;
+}
+
+.splide__pagination__page.is-active {
+	background-color: var(--main-bg-colour) !important;
+	transform: scale(1);
+	transition: 0.3s;
+}
+
+/* FOR HERO CAROUSEL */
+.hero-carousel {
+    background-color: var(--black-theme)
+}
+
+.hero-carousel-center {
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	position: relative;
+	top: -100%;
+}
+
+.hero-carousel .splide__arrow {
+	background-color: transparent;
+	border-radius: 25px;
+    height: 75%;
+	width: calc(5vw + 2vh);
+}
+
+.hero-carousel-logo-holder {
+	height: 35%;
+	object-fit: contain;
+	transition: 0.25s ease-out;
+	z-index: 1;
+}
+
+.hero-carousel-logo-holder a {
+	display: flex;
+	height: 100%;
+}
+
+.hero-carousel-logo-holder a img {
+	height: 100%;
+}
+
+.hero-carousel-logo-holder:hover {
+	scale: 1.05;
+	transition: 0.25s;
+}
+
+.hero-carousel .splide__pagination__page {
+	background-color: transparent;
+	border: 2px solid var(--main-bg-colour);
+	transition: 0.3s;
+	width: 1rem;
+	height: 1rem;
+
+	margin-bottom: 4rem;
+}
+
+.hero-carousel .splide__pagination li {
+	margin: 0 4px;
+}
+
+
+/* Set a default height for the div */
+.hero-carousel {
+	height: 45vh;
+	/* Default height */
+}
+
+/* Use media queries to change the height based on Bootstrap breakpoints */
+@media (max-width: 575.98px) {
+
+	/* For screens up to 575.98px wide (extra small devices) */
+	.hero-carousel {
+		height: 80vh;
+	}
+
+	.hero-carousel-logo-holder {
+		max-height: 35vw;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	/* For screens between 576px and 767.98px wide (small devices) */
+	.hero-carousel {
+		height: 75vh;
+	}
+
+	.hero-carousel-logo-holder {
+		max-height: 40vw;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+	/* For screens between 768px and 991.98px wide (medium devices) */
+	.hero-carousel {
+		height: 70vh;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+	/* For screens between 992px and 1199.98px wide (large devices) */
+	.hero-carousel {
+		height: 90vh;
+	}
+}
+
+@media (min-width: 1200px) {
+
+	/* For screens 1200px and wider (extra large devices) */
+	.hero-carousel {
+		height: 85vh;
+	}
+}
