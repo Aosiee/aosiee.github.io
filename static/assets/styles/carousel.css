@@ -100,7 +100,8 @@
 	width: 1rem;
 	height: 1rem;
 
-	margin-bottom: 4rem;
+	/* margin-bottom: 4rem; */
+	margin-bottom: 250%;
 }
 
 .hero-carousel .splide__pagination li {

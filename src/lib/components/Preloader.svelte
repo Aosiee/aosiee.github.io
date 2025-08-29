@@ -241,8 +241,9 @@
 	.preloader-container {
 		text-align: center;
 		padding-top: 15dvh;
+		
+		height: 100%;
 		width: 100%;
-
 		max-width: 100%;
 
 		overflow: hidden;
@@ -251,7 +252,9 @@
 	}
 
 	.preloader-logo {
-		height: 25%;
+		height: 15rem;
+		max-height: 50%;
+		padding-top: 5%;
 
 		/* background-color: bisque; */
 	}
@@ -259,7 +262,7 @@
 	.loading-bar-container {
 		position: fixed;
 
-		bottom: 15rem;
+		bottom: 15%;
 		left: 7.5%;
 		right: 7.5%;
 	}
