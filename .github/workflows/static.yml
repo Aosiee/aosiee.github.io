@@ -22,8 +22,10 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      # Note: the build bakes images (sharp) and videos (ffmpeg, preinstalled
-      # on ubuntu-latest) from the committed source-media/ folder.
+      # The video bake needs ffmpeg/ffprobe; ubuntu-latest no longer ships it.
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
       - name: Build site
         run: yarn build
 
