@@ -1,0 +1,175 @@
+[
+	{
+		"src": "static/assets/images/professional/afe2/AFE2_Background_High.jpg",
+		"widths": [
+			800,
+			1200,
+			1600,
+			1920
+		]
+	},
+	{
+		"src": "static/assets/images/professional/afe2/AFE2_Logo.png",
+		"widths": [
+			895
+		]
+	},
+	{
+		"src": "static/assets/images/professional/the-chant-dlc/TheChantDLCHeader-NoLogo.jpg",
+		"widths": [
+			400,
+			800,
+			1200,
+			1600,
+			2000,
+			2160
+		]
+	},
+	{
+		"src": "static/assets/images/professional/the-chant-dlc/TheChantDLCHeader_Logo.png",
+		"widths": [
+			800,
+			1000,
+			1200,
+			1600,
+			1920
+		]
+	},
+	{
+		"src": "static/assets/images/professional/the-chant/TheChantHeader_NoLogo.jpg",
+		"widths": [
+			400,
+			800,
+			1200,
+			1600,
+			2000,
+			2160
+		]
+	},
+	{
+		"src": "static/assets/images/professional/the-chant/TheChantHeader_Logo.png",
+		"widths": [
+			800,
+			1000,
+			1200,
+			1600,
+			1920
+		]
+	},
+	{
+		"src": "static/assets/images/professional/kinshft/Kinshift_NoLogo_2.jpg",
+		"widths": [
+			400,
+			800,
+			1200,
+			1600,
+			2000,
+			2160
+		]
+	},
+	{
+		"src": "static/assets/images/professional/kinshft/Kinshift_Logo.png",
+		"widths": [
+			600,
+			800,
+			1000,
+			1200,
+			1600
+		]
+	},
+	{
+		"src": "static/assets/images/game-jams/poppet/Poppet_Header.jpg",
+		"widths": [
+			400,
+			800,
+			1000,
+			1090,
+			1200
+		]
+	},
+	{
+		"src": "static/assets/images/game-jams/poppet/Poppet.png",
+		"widths": [
+			800,
+			1000,
+			1200,
+			1366
+		]
+	},
+	{
+		"src": "static/assets/images/game-jams/get-a-grip/GAG_Header2.png",
+		"widths": [
+			400,
+			800,
+			1200,
+			1600,
+			2000,
+			2160
+		]
+	},
+	{
+		"src": "static/assets/images/game-jams/get-a-grip/GAG_Logo.png",
+		"widths": [
+			1000,
+			1200,
+			1600,
+			1920
+		]
+	},
+	{
+		"src": "static/assets/images/coding-adventures/astar-pathing/AIOverviewHeader.jpg",
+		"widths": [
+			400,
+			800,
+			1200
+		]
+	},
+	{
+		"src": "static/assets/images/coding-adventures/cubic-generation/voxel-generation_header-2.jpg",
+		"widths": [
+			400,
+			800,
+			1200
+		]
+	},
+	{
+		"src": "static/assets/images/game-jams/hello-darkness/HD_Main.png",
+		"widths": [
+			400,
+			800,
+			1200
+		]
+	},
+	{
+		"src": "static/assets/images/game-jams/totem/totem.jpg",
+		"widths": [
+			400,
+			800,
+			1200
+		]
+	},
+	{
+		"src": "static/assets/images/professional/afe2/AFE2_Background.png",
+		"widths": [
+			400,
+			800,
+			1200
+		]
+	},
+	{
+		"src": "static/assets/images/professional/shift/shift-thumbnail.jpg",
+		"widths": [
+			400,
+			800,
+			1200
+		]
+	},
+	{
+		"src": "static/assets/images/professional/bt-unannounced-project/UnannouncedProject.png",
+		"widths": [
+			400,
+			800,
+			1200
+		]
+	}
+]

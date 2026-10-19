@@ -108,10 +108,35 @@
 	margin: 0 4px;
 }
 
+/* Autoplay progress fill on the upcoming pagination dot */
+.hero-carousel .splide__pagination__page {
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-carousel .splide__pagination__page::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+
+	width: calc(100% * var(--autoplay-progress, 0));
+	background-color: var(--main-bg-colour);
+	opacity: 0.5;
+	border-radius: inherit;
+}
+
+/* Briefly animate the fill to full as a dot hands off to the active state */
+.hero-carousel .splide__pagination__page.completing::after {
+	transition: width 0.3s ease-out;
+}
+
 
 /* Set a default height for the div */
 .hero-carousel {
 	height: 45vh;
+	width: 100%;
 	/* Default height */
 }
 

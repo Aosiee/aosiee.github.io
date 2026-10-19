@@ -2,8 +2,6 @@
 	// @ts-nocheck
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
-
-	console.log($page.error.message);
 </script>
 
 <div class="error">

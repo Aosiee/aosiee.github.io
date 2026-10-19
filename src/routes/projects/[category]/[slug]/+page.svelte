@@ -3,12 +3,10 @@
 	export let data;
 	const { project } = data; // Destructure the post from data
 
-	let loading = false;
-	let error = null;
-
 	import { base } from '$app/paths';
-	import Carousel from '$lib/components/Carousel.svelte';
-	import CenterBackground from '$lib/components/CenterBackground.svelte';
+	import Carousel from '$lib/components/carousel/Carousel.svelte';
+	import BakedMedia from '$lib/components/BakedMedia.svelte';
+	import CenterBackground from '$lib/components/layout/CenterBackground.svelte';
 </script>
 
 <svelte:head>
@@ -19,34 +17,31 @@
 		<title>Felipe Lara - Loading</title>
 		<meta name="description" content="Portfolio - Loading" />
 	{/if}
-
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-		rel="stylesheet"
-	/>
 </svelte:head>
 
 <div class="project-header">
-	{#if project && project.art.background && project.art.maxWidth}
+	{#if project.art.background && project.art.maxWidth}
 		<img
 			src={base + project.art.background}
 			alt="{project.title} Decorative Background With Max Width"
 			loading="lazy"
 			style="object-position: {project.art.background_position}; max-width: {project.art
-				.maxWidth}; border-radius: 15%; object-fit: contain; {project.art.style ? project.art.style : ''}"
+				.maxWidth}; border-radius: 15%; object-fit: contain; {project.art.style
+				? project.art.style
+				: ''}"
 		/>
-	{:else if project && project.art.background}
+	{:else if project.art.background}
 		<img
 			src={base + project.art.background}
 			alt="{project.title} Decorative Background"
 			loading="lazy"
-			style="object-position: {project.art.background_position}; {project.art.style ? project.art.style : ''}"
+			style="object-position: {project.art.background_position}; {project.art.style
+				? project.art.style
+				: ''}"
 		/>
 	{/if}
 
-	{#if project && project.art.background && project.art.logo}
+	{#if project.art.background && project.art.logo}
 		<div class="project-logo">
 			<img src={base + project.art.logo} alt="{project.title} Decorative Logo" loading="lazy" />
 		</div>
@@ -56,14 +51,10 @@
 <CenterBackground />
 <div class="container">
 	<div class="content-area">
-		{#if loading}
-			<p>Loading...</p>
-		{:else if error}
-			<p>Error: {error}</p>
-		{:else if project}
+		{#if project}
 			<div class="project-page">
-				{#if project && !project.art.logo}
-					<h1>{project.title}</h1>
+				{#if !project.art.logo}
+					<h1 class="text-uppercase">{project.title}</h1>
 				{/if}
 
 				{#if project.page_data.headerBlock}
@@ -96,11 +87,10 @@
 
 						{#if block.projectGif}
 							<div class="media-sizing">
-								<img
-									style="width: 540px; height: 304px"
-									src={base + block.projectGif}
-									alt="{project.title} Project Gif"
-									loading="lazy"
+								<BakedMedia
+									src={block.projectGif}
+									title={project.title + ' Project Gif'}
+									style="max-width: 540px"
 								/>
 							</div>
 						{/if}
@@ -115,7 +105,9 @@
 										<p>{@html descriptor.text}</p>
 									{/if}
 									{#if descriptor.type === 'img'}
-										<img src={base + descriptor.link} alt={descriptor.text} />
+										{#if descriptor.link}
+											<BakedMedia src={descriptor.link} title={descriptor.text} />
+										{/if}
 										<p>{@html descriptor.text}</p>
 									{/if}
 								</div>
@@ -138,27 +130,10 @@
 				{/each}
 			</div>
 		{/if}
-
-		<div class="project-page">
-			<b />
-		</div>
-
-		<!-- TODO -->
-		<!-- <div style="height: 10rem; background-color: red; text-align: center; margin: 4rem;;">
-			<h3>Add Back to Top & Back To Projects Page Link</h3>
-			<p>Possibly Other Related / Recommended Projects</p>
-			<p>Like Warhammer Website</p>
-		</div> -->
 	</div>
 </div>
 
 <style>
-	.project-description img {
-		width: 100%;
-		max-width: 540px;
-		object-fit: contain;
-	}
-
 	.project-page h2,
 	.project-page p,
 	.project-page ul {
@@ -261,5 +236,4 @@
 			max-width: 100%;
 		}
 	}
-	
 </style>

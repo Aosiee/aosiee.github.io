@@ -1,0 +1,67 @@
+import type { Project } from '../types';
+
+const unannouncedProject: Project = {
+	category: 'professional-project',
+	slug: 'unannounced-project',
+	title: 'Unannounced Project',
+	thumbnail: '/assets/images/professional/bt-unannounced-project/UnannouncedProject.avif',
+	logo: '',
+	platforms: [],
+	art: {
+		background: '/assets/images/professional/bt-unannounced-project/UnannouncedProject.avif',
+		background_position: '0% 75%',
+		logo: ''
+	},
+	page_data: {
+		headerBlock: {
+			company: 'Brass Token',
+			title: 'Generalist Programmer',
+			duration: 'December 2022 - November 2023'
+		},
+		projectBlocks: [
+			{
+				blockTitle: 'Summary',
+				description: [
+					{
+						type: 'text',
+						text: 'Under Construction...'
+					}
+				]
+			},
+			{
+				blockTitle: 'Accomplishments',
+				list: [
+					{
+						text: 'Gameplay Programming & Prototyping (Character, Camera, & Gameflow)'
+					},
+					{
+						text: 'Performance Profiling & Optimization'
+					},
+					{
+						text: 'Main U.I Tech for Title'
+					},
+					{
+						text: 'Created Brass Token’s Debug System / Plugin'
+					},
+					{
+						text: 'Cinematic Prototyping and Implementation'
+					},
+					{
+						text: 'Created Custom Music Manager System'
+					},
+					{
+						text: 'Wwise Prototyping, Implementation, and Maintenance'
+					},
+					{
+						text: 'Created Automated Playthrough System'
+					},
+					{
+						text: 'Started and Developed Brass Token’s Unreal Q.O.L Plugin'
+					}
+				]
+			}
+		]
+	}
+};
+
+export default unannouncedProject;

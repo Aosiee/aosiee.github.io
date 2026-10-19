@@ -17,7 +17,7 @@ const config = {
 		adapter: adapter({
 			pages: 'docs', // Sets output directory to docs
 			assets: 'docs', // Ensure static assets also go to 'docs'
-			fallback: 'index.html',
+			fallback: '404.html',
 			precompress: false,
 			strict: true
 		}),

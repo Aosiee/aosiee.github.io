@@ -26,3 +26,13 @@ npm run build
 ```
 
 You can preview the production build with `npm run preview`.
+
+## Images
+
+Responsive image variants (e.g. `name-800w.avif`) are generated at build time from the
+highest-resolution sources. Sources are listed in `scripts/image-manifest.json` and processed by
+`scripts/generate-images.mjs` (requires `sharp`).
+
+- `npm run images` — generate/refresh variants (incremental; use `npm run images -- --force` to regenerate everything)
+- `npm run build` and `npm run dev` run this automatically
+- Generated files are gitignored; commit only the high-resolution sources and add new variants to the manifest

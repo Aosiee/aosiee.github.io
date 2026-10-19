@@ -11,3 +11,16 @@ docs/
 .output
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Generated image variants (see scripts/generate-images.mjs)
+static/assets/images/**/*-[0-9]*w.avif
+static/assets/images/**/*-lqip.avif
+
+# Generated media bakes (see scripts/generate-videos.mjs)
+static/assets/videos/
+src/lib/data/media-manifest.ts
+src/lib/data/image-lqips.ts
+src/lib/data/image-srcsets.ts
+
+# Yarn is the package manager of record
+package-lock.json

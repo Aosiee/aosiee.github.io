@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import CenterBackground from '$lib/components/CenterBackground.svelte';
+	import CenterBackground from '$lib/components/layout/CenterBackground.svelte';
 	import Hero_Grid from '$lib/components/HeroGrid.svelte';
 </script>
 

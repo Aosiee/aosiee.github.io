@@ -8,6 +8,17 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface Window {
+		Isotope: {
+			new (
+				selector: string,
+				options: Record<string, unknown>
+			): {
+				arrange: (options: Record<string, unknown>) => void;
+			};
+		};
+	}
 }
 
 export {};
